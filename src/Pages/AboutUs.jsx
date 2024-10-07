@@ -1,10 +1,6 @@
 import React from 'react'
-import us from '../assets/Images/us.jpeg';
-import wedo from '../assets/Images/wedo.jpeg';
-import teachers from '../assets/Images/teachers.jpeg';
 import Slides from './Slides';
-import Slide2 from './Slide2';
-import Slide3 from './Slide3';
+
 
 const AboutUs = () => {
   return (
@@ -16,7 +12,7 @@ const AboutUs = () => {
             {/* Image Section */}
             <div className="lg:w-1/2 flex flex-col">
               <div className="w-full h-64 sm:h-80 rounded-md shadow-lg shadow-gray-500 overflow-hidden">
-                <Slides />
+                <Slides num={1} />
               </div>
               <div className="p-4">
                 <p className="text-2xl sm:text-3xl font-medium font-playfair text-center">
@@ -88,7 +84,7 @@ const AboutUs = () => {
 
               {/* Image Section */}
               <div className="lg:w-1/2 h-64 sm:h-80 rounded-md shadow-lg overflow-hidden">
-              <Slide2 />
+              <Slides num={2} />
               </div>
             </div>
           </div>
@@ -104,7 +100,7 @@ const AboutUs = () => {
               <div className="lg:flex bg-white rounded-3xl shadow-lg">
                 {/* Image Section */}
                 <div className="lg:w-1/2 h-64 sm:h-80 rounded-md shadow-lg overflow-hidden">
-                <Slide3 />
+                <Slides num={3} />
                 </div>
                 {/* Text Section */}
                 <div className="lg:w-1/2 font-nunito text-sm flex flex-col">
