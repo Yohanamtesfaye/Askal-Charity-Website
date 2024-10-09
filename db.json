@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "John",
+      "email": "john@example.com",
+      "phone": "098765432",
+      "often": "daily"
+    },
+    {
+      "id": "2",
+      "name": "Jane",
+      "email": "jane@example.com",
+      "phone": "123456789",
+      "often": "monthely"
+    },
+    {
+      "id": "6e90",
+      "name": "Yeabsira zelalem Tilahun",
+      "email": "yeabsirazelalem791@gmail.com",
+      "phone": "0976647859",
+      "often": "yearly"
+    },
+    {
+      "id": "f2c7",
+      "name": "Yeabsira zelalem Tilahun",
+      "email": "yeabzelalemtilahun@gmail.com",
+      "phone": "0976647859",
+      "often": "daily"
+    },
+    {
+      "id": "dbec",
+      "name": "Yeabsira zelalem Tilahun",
+      "email": "yeabzelalemtilahun@gmail.com",
+      "phone": "0976647859",
+      "often": "daily"
+    }
+  ]
+}

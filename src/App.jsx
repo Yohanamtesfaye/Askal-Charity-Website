@@ -10,6 +10,7 @@ import AboutUs from './Pages/AboutUs'
 import Voulenteer from './Pages/Voulenteer'
 import JoinUs from './Pages/JoinUs'
 import Donate from './Pages/Donate'
+import Register from './Pages/Register'
 
 function App() {
 
@@ -24,6 +25,8 @@ function App() {
             <Route path='/voulenteer' element={<Voulenteer/>} />
             <Route path='/join-us' element={<JoinUs/>} />
             <Route path='/donate' element={<Donate/>} />
+            <Route path='/register' element = {<Register/>} />
+
           </Routes>
       <Footer/>
      </BrowserRouter>
