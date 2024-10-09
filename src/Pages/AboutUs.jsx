@@ -1,5 +1,6 @@
 import React from 'react'
 import Slides from './Slides';
+import Slideshow from '../Components/Slideshow';
 
 
 const AboutUs = () => {
@@ -12,13 +13,13 @@ const AboutUs = () => {
             {/* Image Section */}
             <div className="lg:w-1/2 flex flex-col">
               <div className="w-full h-64 sm:h-80 rounded-md shadow-lg shadow-gray-500 overflow-hidden">
-                <Slides num={1} />
+                <Slideshow num={2} />
               </div>
-              <div className="p-4">
+              {/* <div className="p-4">
                 <p className="text-2xl sm:text-3xl font-medium font-playfair text-center">
                   A place for Kids to Grow
                 </p>
-              </div>
+              </div> */}
             </div>
 
             {/* Text Section */}
@@ -84,7 +85,7 @@ const AboutUs = () => {
 
               {/* Image Section */}
               <div className="lg:w-1/2 h-64 sm:h-80 rounded-md shadow-lg overflow-hidden">
-              <Slides num={2} />
+              <Slides />
               </div>
             </div>
           </div>
@@ -100,7 +101,7 @@ const AboutUs = () => {
               <div className="lg:flex bg-white rounded-3xl shadow-lg">
                 {/* Image Section */}
                 <div className="lg:w-1/2 h-64 sm:h-80 rounded-md shadow-lg overflow-hidden">
-                <Slides num={3} />
+                <Slides />
                 </div>
                 {/* Text Section */}
                 <div className="lg:w-1/2 font-nunito text-sm flex flex-col">

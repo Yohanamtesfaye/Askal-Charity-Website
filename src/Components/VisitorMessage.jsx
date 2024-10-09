@@ -35,7 +35,7 @@ const VisitorMessage = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto my-10">
+    <div className="max-w-6xl  mx-auto my-10">
       <div className="flex my-5 justify-between">
       <p className='max-md:mx-5 text-2xl mt-16 text-gray-600 font-bold'>Message from visitors</p>
       <div className="flex space-x-4 mb-6">
@@ -63,7 +63,7 @@ const VisitorMessage = () => {
             alt={visitors[activeIndex].name}
             className="w-1/3 rounded-lg"
           />
-          <div className="lg:w-2/3 max-md:mx-5 w-full lg:ml-5 flex flex-col justify-center">
+          <div className=" lg:mx-10 max-md:mx-5 w-full lg:ml-5 flex flex-col justify-center">
             <h2 className="text-2xl font-bold">{visitors[activeIndex].name}</h2>
             <p className="text-gray-500 mb-4">{visitors[activeIndex].title}</p>
             <p className="text-gray-600 leading-relaxed">{visitors[activeIndex].message}</p>
