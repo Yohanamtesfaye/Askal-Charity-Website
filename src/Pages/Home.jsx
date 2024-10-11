@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import Slides from './Slides'
+import Slides from '../Components/Slides'
 import { FaYoutube,FaUserPlus, FaChild, FaChalkboardTeacher, FaDonate , FaTelegramPlane, FaTiktok, FaFacebookF } from 'react-icons/fa';
 import { FaHeart } from 'react-icons/fa';
 import "../App.css"

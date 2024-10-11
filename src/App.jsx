@@ -10,7 +10,9 @@ import AboutUs from './Pages/AboutUs'
 import Voulenteer from './Pages/Voulenteer'
 import JoinUs from './Pages/JoinUs'
 import Donate from './Pages/Donate'
-
+import Register from './Pages/Register'
+import More from'./Pages/More'
+import Login from './Pages/Login'
 function App() {
 
 
@@ -23,6 +25,9 @@ function App() {
             <Route path="/about-us" element={<AboutUs/>} />
             <Route path='/voulenteer' element={<Voulenteer/>} />
             <Route path='/join-us' element={<JoinUs/>} />
+            <Route path='/register' element={<Register/>} />
+            <Route path="/more/:id" element={<More />} />
+            <Route path='/login' element={<Login />} />
             <Route path='/donate' element={<Donate/>} />
           </Routes>
       <Footer/>

@@ -10,8 +10,9 @@ const divStyle = {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  backgroundSize: 'cover',
-  height: '350px',
+  backgroundSize: 'cover', 
+  height: '100%', 
+  width: '100%', 
   opacity: 1,
   position: 'relative',
 };
@@ -22,41 +23,38 @@ const overlayStyle = {
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: 'rgba(0, 0, 0, 0)',
+  backgroundColor: 'rgba(0, 0, 0, 0.3)',
   zIndex: 1,
 };
 
-const slideImages = [
+const slidesData = [
   {
     url: wedo,
-    
+    alt: 'WeDo product image',
   },
   {
     url: bag,
-    
+    alt: 'Bag product image',
   },
   {
     url: basic,
-
+    alt: 'Basic product image',
   },
 ];
 
 const Slides = () => {
   return (
-    <div className="slide-container">
-      <Slide  prevArrow={null} 
-        nextArrow={null}>
-        {slideImages.map((slideImage, index) => (
+    <div className="slide-container" style={{ height: '100%', width: '100%' }}>
+      <Slide prevArrow={null} nextArrow={null}>
+        {slidesData.map((slide, index) => (
           <div key={index}>
-            <div style={{ ...divStyle, backgroundImage: `url(${slideImage.url})` }}>
+            <div style={{ ...divStyle, backgroundImage: `url(${slide.url})` }}>
               <div style={overlayStyle}></div>
             </div>
           </div>
         ))}
       </Slide>
-      
     </div>
-    
   );
 };
 

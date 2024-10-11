@@ -1,7 +1,11 @@
 import React from 'react'
-import Slides from './Slides';
+import Slides from '../Components/Slides';
 import Slideshow from '../Components/Slideshow';
 
+import teach from "../assets/Images/teach.png"
+import donation from "../assets/Images/donation.png"
+import lifetraining from "../assets/Images/lifetraining.png"
+import Gallery from '../Components/Gallery';
 
 const AboutUs = () => {
   return (
@@ -15,11 +19,11 @@ const AboutUs = () => {
               <div className="w-full h-64 sm:h-80 rounded-md shadow-lg shadow-gray-500 overflow-hidden">
                 <Slideshow num={2} />
               </div>
-              {/* <div className="p-4">
+              <div className="p-4">
                 <p className="text-2xl sm:text-3xl font-medium font-playfair text-center">
                   A place for Kids to Grow
                 </p>
-              </div> */}
+              </div>
             </div>
 
             {/* Text Section */}
@@ -84,9 +88,10 @@ const AboutUs = () => {
               </div>
 
               {/* Image Section */}
-              <div className="lg:w-1/2 h-64 sm:h-80 rounded-md shadow-lg overflow-hidden">
-              <Slides />
+              <div className="lg:w-1/2 h-64 sm:h-80 w-full rounded-md shadow-lg overflow-hidden">
+                <Slides />
               </div>
+
             </div>
           </div>
 
@@ -134,8 +139,11 @@ const AboutUs = () => {
               </div>
             </div>
             {/* parteners part */}
-        <div className='div 4'>
-              
+        <div className='mx-4 sm:mx-8 lg:mx-36 py-10'>
+        <div className="text-green-600 font-inter text-2xl sm:text-3xl font-medium mb-6 text-center lg:text-left">
+              OUR GALLERY
+       </div>
+       <Gallery />
         </div>
 
         </div>
