@@ -1,90 +1,107 @@
-import React, { useState, useEffect } from 'react';
-import './Slideshow.css'; // Import custom styles
-import gift from '../assets/Images/gift.jpeg';
-import basic from '../assets/Images/basic.jpeg';
-import trip from '../assets/Images/trip.jpeg';
-import vector from '../assets/Images/vector.png'; 
-import vector2 from '../assets/Images/vector2.png';
-import { Link } from 'react-router-dom';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import gift from '../assets/Images/gift.jpeg'
+import basic from '../assets/Images/basic.jpeg'
+import trip from '../assets/Images/trip.jpeg'
 const Slideshow = ({ num }) => {
-  useGSAP(()=>{
-    gsap.fromTo('.intro', {
-      opacity:0,
-      y:-100
-    },
-  {
-    opacity:1,
-    y:0,
-    delay:1,
-    ease:'power1.inOut',
-    stagger:1
-  })
-  } , [])
-  let images = [];
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const statsData = [
+  { end: 1000, label: 'Children Helped' },
+  { end: 500, label: 'Volunteers' },
+  { end: 200, label: 'Daily Meals' },
+  { end: 50, label: 'Programs' },
+  { end: 20, label: 'Locations' }
+]
+  useGSAP(() => {
+    gsap.fromTo('.intro-text',
+      { opacity: 0, y: -50 },
+      { 
+        opacity: 1, 
+        y: 0, 
+        duration: 1,
+        delay: 0.5,
+        ease: 'power2.out'
+      }
+    )
+  }, [])
 
-  switch (num) {
-    case 1:
-      images = [gift, basic, trip];
-      break;
-    case 2:
-      images = [gift, basic, trip];
-      break;
-    default:
-      images = [gift];
-  }
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  const slides = [
+    { image: gift, alt: 'Gift giving' },
+    { image: basic, alt: 'Basic needs' },
+    { image: trip, alt: 'Children trip' }
+  ]
 
   useEffect(() => {
-    const intervalId = setInterval(nextSlide, 5000);
-    return () => clearInterval(intervalId);
-  }, []);
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [slides.length])
 
   return (
-    <div className="slideshow-container">
-      {images.map((image, index) => (
-        <div
-          key={index}
-          className={`slide ${index === currentIndex ? 'active' : ''}`}
+    <div className='relative h-[80vh] overflow-hidden'>
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1 }}
+          className='absolute inset-0'
         >
-          <img src={image} alt={`Slide ${index + 1}`} className="slide-image" />
-          {/* Text that will appear on the image with the animation */}
-          <div className="slide-text">
-            {num === 1 && index === currentIndex && (
-              <div>
-               
-              
-              </div>
-            )}
-          </div>
-          
-        </div>
-      ))}
+          <img
+            src={slides[currentIndex].image || "/placeholder.svg"}
+            alt={slides[currentIndex].alt}
+            className='w-full h-full object-cover'
+          />
+          <div className='absolute inset-0 bg-black/40' />
+        </motion.div>
+      </AnimatePresence>
 
       {num === 1 && (
-        <div style={{ zIndex: 2, color: 'white' }}>
-          <div className='max-md:mx-10 intro'>
-            <img className='lg:block hidden' src={vector} alt="Vector 1" />
-            <h1 className='lg:text-8xl max-md:text-5xl lg:ml-10 text-center'>
-                  ባይኖረንም ያለንን እናካፍላለን!!
-                </h1>
-                <h1 className='text-center max-md:text-md max-md:mb-10 mt-3 lg:text-3xl font-serif'>
-                  There can be no keener revelation of a society’s soul than <br /> the way in which it treats its children.
-                </h1>
-            <img className='lg:ml-[1000px] mb-24 lg:block hidden' src={vector2} alt="Vector 2" />
-            <Link to='/about-us' className='lg:px-20 max-md:px-5 max-md:ml-20 text-center hover:bg-white  hover:text-[#399918] lg:mx-96 py-6 bg-[#399918] rounded-xl font-bold text-xl '> OUR STORY </Link>
-          </div>
+        <div className='absolute inset-0 flex flex-col items-center justify-center text-white px-4'>
+          <motion.div
+            className='intro-text text-center max-w-4xl mx-auto'
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <h1 className='text-4xl md:text-7xl font-bold mb-6'>
+              ባይኖረንም ያለንን እናካፍላለን!!
+            </h1>
+            <p className='text-xl md:text-2xl mb-12 font-serif'>
+              There can be no keener revelation of a society's soul than
+              <br /> the way in which it treats its children.
+            </p>
+            <Link
+              to='/about-us'
+              className='inline-block px-12 py-4 bg-[#399918] text-white rounded-full
+                       text-lg font-semibold hover:bg-[#2d7313] transition-all duration-300
+                       transform hover:scale-105'
+            >
+              OUR STORY
+            </Link>
+          </motion.div>
         </div>
       )}
-    </div>
-  );
-};
 
-export default Slideshow;
+      {/* Slide indicators */}
+      <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2'>
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentIndex ? 'bg-white scale-125' : 'bg-white/50'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+export default Slideshow
