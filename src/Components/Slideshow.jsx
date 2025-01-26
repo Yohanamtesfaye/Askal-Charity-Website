@@ -8,13 +8,6 @@ import basic from '../assets/Images/basic.jpeg'
 import trip from '../assets/Images/trip.jpeg'
 const Slideshow = ({ num }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const statsData = [
-  { end: 1000, label: 'Children Helped' },
-  { end: 500, label: 'Volunteers' },
-  { end: 200, label: 'Daily Meals' },
-  { end: 50, label: 'Programs' },
-  { end: 20, label: 'Locations' }
-]
   useGSAP(() => {
     gsap.fromTo('.intro-text',
       { opacity: 0, y: -50 },
@@ -87,7 +80,32 @@ const Slideshow = ({ num }) => {
           </motion.div>
         </div>
       )}
-
+       {num === 2 && (
+        <div className='absolute inset-0 flex flex-col items-center justify-center text-white px-4'>
+          <motion.div
+            className='intro-text text-center max-w-4xl mx-auto'
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <h1 className='text-4xl md:text-7xl font-bold mb-6'>
+               Give a little, change a lot
+            </h1>
+            <p className='text-xl md:text-2xl mb-12 font-serif'>
+              There can be no keener revelation of a society's soul than
+              <br /> the way in which it treats its children.
+            </p>
+            <Link
+              to='/about-us'
+              className='inline-block px-12 py-4 bg-[#399918] text-white rounded-full
+                       text-lg font-semibold hover:bg-[#2d7313] transition-all duration-300
+                       transform hover:scale-105'
+            >
+              OUR STORY
+            </Link>
+          </motion.div>
+        </div>
+      )}
       {/* Slide indicators */}
       <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2'>
         {slides.map((_, index) => (

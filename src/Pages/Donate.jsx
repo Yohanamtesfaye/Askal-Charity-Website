@@ -72,7 +72,7 @@ const Donate = () => {
   [])
   return (
     <div className='bg-white'> 
-      <Slideshow  num={1}/>
+      <Slideshow  num={2}/>
       <div className='lg:flex justify-center lg:mx-16 space-y-5 lg:space-y-0 box text-white'>
   {/* Visit Us Section */}
   <div className='bg-[#399918]  box flex flex-col items-center justify-center px-10 py-20 w-full lg:w-1/3 mx-4 rounded-lg shadow-md  text-center cursor-pointer transition-transform  duration-700 ease-in-out transform  hover:-translate-y-3'>

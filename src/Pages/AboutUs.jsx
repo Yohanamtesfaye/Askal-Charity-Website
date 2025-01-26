@@ -1,152 +1,117 @@
 import React from 'react'
-import Slides from '../Components/Slides';
-import Slideshow from '../Components/Slideshow';
-
-import teach from "../assets/Images/teach.png"
-import donation from "../assets/Images/donation.png"
-import lifetraining from "../assets/Images/lifetraining.png"
-import Gallery from '../Components/Gallery';
-
+import { motion } from 'framer-motion'
+import Slideshow from '../Components/Slideshow'
+import Gallery from '../Components/Gallery'
+import { FaGraduationCap, FaHandHoldingHeart, FaUsers, FaSeedling } from 'react-icons/fa'
+import us from '../assets/Images/us.jpeg'
 const AboutUs = () => {
+  const helpingPoints = [
+    {
+      icon: FaGraduationCap,
+      text: "Offering consistent educational support to children, helping them build foundational knowledge and skills."
+    },
+    {
+      icon: FaSeedling,
+      text: "Focusing on identifying and nurturing each child's unique talents, encouraging them to explore their strengths."
+    },
+    {
+      icon: FaUsers,
+      text: "Life training for parents and adults, focusing on nurturing and developing children."
+    },
+    {
+      icon: FaHandHoldingHeart,
+      text: "Offering financial assistance, food, and basic necessities to those in need."
+    }
+  ]
+
   return (
-  <div className='bg-gray-200'>
-         <div className="">
-          {/* Section Container */}
-          <div className="flex flex-col lg:flex-row mx-4 sm:mx-8 lg:mx-36 py-8 sm:py-12 space-y-6 lg:space-y-0 lg:space-x-12">
-            
-            {/* Image Section */}
-            <div className="lg:w-1/2 flex flex-col">
-              <div className="w-full h-64 sm:h-80 rounded-md shadow-lg shadow-gray-500 overflow-hidden">
-                <Slideshow num={2} />
-              </div>
-              <div className="p-4">
-                <p className="text-2xl sm:text-3xl font-medium font-playfair text-center">
-                  A place for Kids to Grow
-                </p>
-              </div>
-            </div>
+    <div className="min-h-screen bg-gradient-to-b from-[#399918]/5 to-white">
+      {/* Hero Section */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="relative h-[40vh] bg-[#399918] overflow-hidden"
+      >
+        <div className="absolute inset-0 bg-[#399918] opacity-90"></div>
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">About Us</h1>
+          <div className="w-24 h-1 bg-[#FCCD2A] rounded-full"></div>
+        </div>
+      </motion.div>
 
-            {/* Text Section */}
-            <div className="lg:w-1/2 font-nunito text-sm sm:text-base">
-              <div className="pb-4">
-                <p>
-                  The main focus of Askal Charity Organization is children. We aim to provide children with essential needs and offer support in health care, education, and skill development, ensuring they have a stable future. Our goal is to help them grow into capable and responsible citizens who can contribute to their country. In addition to supporting the children, we also provide financial and vocational assistance to their parents or guardians, enabling them to overcome poverty and become self-sufficient. This is another key focus of our efforts.
-                </p>
-              </div>
-              <div className="pb-4">
-                <p>
-                  To achieve our organization's goals, even though we occasionally find a few individual donors, we are committed to standing on our own. Instead of relying solely on external support, we are working to develop various income-generating methods. This enables us to be more self-sufficient and sustainable in our mission.
-                </p>
-              </div>
-              <div className="mb-2">
-                <p>
-                  Our vision is to see all children nurtured in physical health, expanded in knowledge, and strengthened emotionally, so they can contribute to the country's lasting progress.
-                </p>
-              </div>
-            </div>
-          </div>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-16">
+        {/* Mission Section */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+          >
+            <img src={us} alt="About Us" className="w-full h-full object-cover" />
+          </motion.div>
 
-          {/* Divider Line */}
-          <div className="w-3/4 sm:w-1/2 h-1 mx-auto border-t-4 mb-6 border-gray-300"></div>
-
-
-        {/* we're helping part */}
-        <div className=" flex-col lg:flex-row mx-4 sm:mx-8 lg:mx-36 py-10">
-            {/* Heading Section */}
-            <div className="text-green-600 font-inter text-2xl sm:text-3xl font-medium mb-6 text-center lg:text-left">
-              HOW WE'RE HELPING
-            </div>
-
-            {/* Main Content Section */}
-            <div className="lg:flex bg-white rounded-3xl shadow-lg">
-              {/* Text Section */}
-              <div className="lg:w-1/2 font-nunito text-sm flex flex-col">
-                <div className="flex px-4 sm:px-8 py-6 pt-8">
-                  <div className="h-10 border-r-4 border-green-600"></div>
-                  <div className="px-4 sm:px-6">
-                    Offering consistent educational support to children, helping them build foundational knowledge and skills.
-                  </div>
-                </div>
-                <div className="flex px-4 sm:px-8 pb-6">
-                  <div className="h-10 border-r-4 border-green-600"></div>
-                  <div className="px-4 sm:px-6">
-                    Focusing on identifying and nurturing each child's unique talents, encouraging them to explore their strengths.
-                  </div>
-                </div>
-                <div className="flex px-4 sm:px-8 pb-6">
-                  <div className="h-10 border-r-4 border-green-600"></div>
-                  <div className="px-4 sm:px-6">
-                    Life training for parents and adults, focusing on nurturing and developing children.
-                  </div>
-                </div>
-                <div className="flex px-4 sm:px-8 pb-4">
-                  <div className="h-10 border-r-4 border-green-600"></div>
-                  <div className="px-4 sm:px-6">
-                    Offering financial assistance, food, and basic necessities to those in need.
-                  </div>
-                </div>
-              </div>
-
-              {/* Image Section */}
-              <div className="lg:w-1/2 h-64 sm:h-80 w-full rounded-md shadow-lg overflow-hidden">
-                <Slides />
-              </div>
-
-            </div>
-          </div>
-
-
-            {/* help with */}
-            <div className=" flex-col lg:flex-row mx-4 sm:mx-8 lg:mx-36 py-10">
-              {/* Heading Section */}
-              <div className="text-green-600 font-inter text-2xl sm:text-3xl font-medium mb-6 text-center lg:text-left">
-                YOU CAN HELP WITH
-              </div>
-              {/* Main Content Section */}
-              <div className="lg:flex bg-white rounded-3xl shadow-lg">
-                {/* Image Section */}
-                <div className="lg:w-1/2 h-64 sm:h-80 rounded-md shadow-lg overflow-hidden">
-                <Slides />
-                </div>
-                {/* Text Section */}
-                <div className="lg:w-1/2 font-nunito text-sm flex flex-col">
-                
-                  <div className="flex px-4 sm:px-8 py-6 pt-8">
-                    <div className="h-10 border-r-4 border-green-600"></div>
-                    <div className="px-4 sm:px-6">
-                    understanding their pain and offering them love, comfort,
-                    and emotional support in times of hardship.                    </div>
-                  </div>
-                  <div className="flex px-4 sm:px-8 pb-6">
-                    <div className="h-10 border-r-4 border-green-600"></div>
-                    <div className="px-4 sm:px-6">
-                    Volunteer services                    </div>
-                  </div>
-                  <div className="flex px-4 sm:px-8 pb-6">
-                    <div className="h-10 border-r-4 border-green-600"></div>
-                    <div className="px-4 sm:px-6">
-                    Mobilizing and providing donations                    </div>
-                  </div>
-                  <div className="flex px-4 sm:px-8 pb-4">
-                    <div className="h-10 border-r-4 border-green-600"></div>
-                    <div className="px-4 sm:px-6">
-                    Raising awareness about Askal by informing friends,
-                    colleagues, and family members.                    </div>
-                  </div>
-                </div>
-
-                
-              </div>
-            </div>
-            {/* parteners part */}
-        <div className='mx-4 sm:mx-8 lg:mx-36 py-10'>
-        <div className="text-green-600 font-inter text-2xl sm:text-3xl font-medium mb-6 text-center lg:text-left">
-              OUR GALLERY
-       </div>
-       <Gallery />
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#399918]">
+              A Place for Kids to Grow
+            </h2>
+            <div className="w-20 h-1 bg-[#FCCD2A] rounded-full"></div>
+            <p className="text-gray-600 leading-relaxed">
+              The main focus of Askal Charity Organization is children. We aim to provide children with essential needs and offer support in health care, education, and skill development, ensuring they have a stable future.
+            </p>
+            <p className="text-gray-600 leading-relaxed">
+              Our vision is to see all children nurtured in physical health, expanded in knowledge, and strengthened emotionally, so they can contribute to the country's lasting progress.
+            </p>
+          </motion.div>
         </div>
 
-        </div>
+        {/* How We're Helping Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <h2 className="text-3xl font-bold text-[#399918] mb-12 text-center">
+            How We're Helping
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {helpingPoints.map((point, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+              >
+                <div className="w-12 h-12 bg-[#399918]/10 rounded-full flex items-center justify-center mb-4">
+                  <point.icon className="text-[#399918] text-2xl" />
+                </div>
+                <p className="text-gray-600">{point.text}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Gallery Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-[#399918] mb-12 text-center">
+            Our Gallery
+          </h2>
+          <Gallery />
+        </motion.div>
+      </div>
     </div>
   )
 }
