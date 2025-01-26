@@ -7,7 +7,6 @@ import teach4 from "../assets/Images/teach4.jpg";
 import teach5 from "../assets/Images/teach5.jpg";
 import teach6 from "../assets/Images/teach6.jpg";
 import teach7 from "../assets/Images/teach7.jpg";
-// import teach8 from "../assets/Images/teach8.jpg";
 import dancing from '../assets/Images/dancing.jpg'
 import dancing1 from '../assets/Images/dancing1.jpg'
 import dancing2 from '../assets/Images/dancing2.jpg'
