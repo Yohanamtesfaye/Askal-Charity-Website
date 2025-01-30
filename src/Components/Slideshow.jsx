@@ -8,7 +8,12 @@ import basic from '../assets/Images/basic.jpeg';
 import trip from '../assets/Images/trip.jpeg';
 import certified from '../assets/Images/certified.jpg';
 import us from '../assets/Images/us.jpeg';
-
+import vol from '../assets/Images/vol.jpg';
+import volunt from '../assets/Images/volunt.jpg';
+import volll from '../assets/Images/volll.jpg';
+import volun from '../assets/Images/volun.jpg';
+import voulnteer from '../assets/Images/volunteer.jpg';
+import voul from '../assets/Images/voul.jpg';
 const Slideshow = ({ num }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -23,6 +28,11 @@ const Slideshow = ({ num }) => {
       { image: trip, alt: 'Children trip', text: 'Give a Little, Change a Lot', description: 'Your small contribution can make a big difference in a child\'s life.' },
       { image: us, alt: 'Gift giving', text: 'Spread Love and Kindness', description: 'We believe in sharing love and kindness with every child.' },
       { image: certified, alt: 'Basic needs', text: 'Support Their Future', description: 'Help us build a brighter future for vulnerable children.' },
+    ],
+    3: [
+      { image: vol, alt: 'Children trip', text: 'Give a Little, Change a Lot', description: 'Your small contribution can make a big difference in a child\'s life.' },
+      { image: volunt, alt: 'Gift giving', text: 'Spread Love and Kindness', description: 'We believe in sharing love and kindness with every child.' },
+      { image: volll, alt: 'Basic needs', text: 'Support Their Future', description: 'Help us build a brighter future for vulnerable children.' },
     ],
     // Add more slide sets for other `num` values if needed
   };
@@ -70,34 +80,34 @@ const Slideshow = ({ num }) => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Dynamic text content based on `num` */}
-      <div className='absolute inset-0 flex flex-col items-center justify-center text-white px-4'>
-        <motion.div
-          className='intro-text text-center max-w-4xl mx-auto'
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-        >
-          <h1 className='text-4xl md:text-7xl font-bold mb-6'>
-            {slides[currentIndex]?.text}
-          </h1>
-          <p className='text-xl md:text-2xl mb-12 font-serif'>
-            {slides[currentIndex]?.description}
-          </p>
-          <Link
-            to='/about-us'
-            className='inline-block px-12 py-4 bg-[#399918] text-white rounded-full
-                     text-lg font-semibold hover:bg-[#2d7313] transition-all duration-300
-                     transform hover:scale-105'
-          >
-            OUR STORY
-          </Link>
-        </motion.div>
-      </div>
-
-      {/* Slide indicators */}
+      
+            <div className={`absolute inset-0 flex flex-col items-center justify-center text-white px-4 ${num === 3 ? 'mt-20' : ''}`}>
+            <motion.div
+              className='intro-text text-center max-w-4xl mx-auto'
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+            >
+              <h1 className='text-4xl md:text-7xl font-bold mb-6'>
+              {slides[currentIndex]?.text}
+              </h1>
+              <p className='text-xl md:text-2xl mb-12 font-serif'>
+              {slides[currentIndex]?.description}
+              </p>
+              {num != 3 && <Link
+              to='/about-us'
+              className='inline-block px-12 py-4 bg-[#399918] text-white rounded-full
+                   text-lg font-semibold hover:bg-[#2d7313] transition-all duration-300
+                   transform hover:scale-105'
+              >
+              OUR STORY
+              </Link>}
+            </motion.div>
+            </div>
+        
+            {/* Slide indicators */}
       <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2'>
-        {slides.map((_, index) => (
+        { slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
