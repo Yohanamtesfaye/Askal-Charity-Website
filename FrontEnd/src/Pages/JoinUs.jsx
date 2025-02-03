@@ -12,30 +12,49 @@ const JoinUs = () => {
 
   const memberships = [
     {
-      type: "Basic",
+      type: "Franchise",
       price: "$29/month",
       features: ["Access to basic facilities", "Standard support", "Monthly newsletter", "Community access"],
       color: "bg-green-500",
     },
     {
-      type: "Premium",
+      type: "Special Member",
       price: "$49/month",
       features: ["All Basic features", "Priority support", "Exclusive events", "Personal trainer consultation"],
       color: "bg-yellow-500",
     },
     {
-      type: "Elite",
+      type: "Volunteer",
       price: "$99/month",
       features: ["All Premium features", "24/7 VIP support", "Private sessions", "Custom nutrition plan"],
       color: "bg-red-500",
     },
   ]
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log(formData)
-  }
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    try {
+      const response = await fetch('http://localhost:5000/api/membership', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData), // Use formData directly here
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        console.log('Registration successful!', data);
+      } else {
+        console.error('Registration failed:', data.message);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
+  
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -127,9 +146,9 @@ const JoinUs = () => {
                   required
                 >
                   <option value="">Select a membership</option>
-                  <option value="basic">Basic</option>
-                  <option value="premium">Premium</option>
-                  <option value="elite">Elite</option>
+                  <option value="franchise">Franchise</option>
+                  <option value="specialmember">Special Member</option>
+                  <option value="volunteer">Volunteer</option>
                 </select>
               </div>
 
@@ -193,4 +212,3 @@ const JoinUs = () => {
 }
 
 export default JoinUs
-

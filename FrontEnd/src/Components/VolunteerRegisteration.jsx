@@ -31,11 +31,26 @@ function RegistrationForm() {
     return tempErrors;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formErrors = validateForm();
     if (Object.keys(formErrors).length === 0) {
-      console.log('Form submitted:', formData);
+      try {
+        const response = await fetch('http://localhost:5000/api/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+        console.log('Response:', response);
+        const result = await response.json();
+        console.log('Registration successful:', result);
+        alert('Registration successful!');
+      } catch (err) {
+        console.error('Registration failed:', err);
+        alert('Registration failed. Please try again.');
+      }
     } else {
       setErrors(formErrors);
     }
