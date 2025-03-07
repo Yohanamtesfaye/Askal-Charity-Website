@@ -16,6 +16,7 @@ import VisitorMessage from '../Components/VisitorMessage';
 import Slideshow from '../Components/Slideshow';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useTranslation } from 'react-i18next';
 
 const statsData = [
   { end: 1000, label: 'Children Helped' },
@@ -26,6 +27,13 @@ const statsData = [
 ]
 
 const Home = () => {
+  const { i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const { t } = useTranslation()
   const fadeRefs = useRef([])
   useEffect(() => {
     const observer = new IntersectionObserver(

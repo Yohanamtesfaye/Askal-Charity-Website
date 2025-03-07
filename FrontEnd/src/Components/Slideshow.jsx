@@ -14,15 +14,18 @@ import volll from '../assets/Images/volll.jpg';
 import volun from '../assets/Images/volun.jpg';
 import voulnteer from '../assets/Images/volunteer.jpg';
 import voul from '../assets/Images/voul.jpg';
+import { useTranslation } from 'react-i18next';
 const Slideshow = ({ num }) => {
+  const { t } = useTranslation();
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Define different slide sets for each `num` value
   const slideSets = {
     1: [
-      { image: gift, alt: 'Gift giving', text: 'ባይኖረንም ያለንን እናካፍላለን!!', description: 'There can be no keener revelation of a society\'s soul than the way in which it treats its children.' },
-      { image: basic, alt: 'Basic needs', text: 'Providing Basic Needs', description: 'We ensure children have access to food, shelter, and education.' },
-      { image: trip, alt: 'Children trip', text: 'Creating Joyful Memories', description: 'We organize trips and events to bring happiness to children.' },
+      { image: gift, alt: 'Gift giving', text: 'ባይኖረንም ያለንን እናካፍላለን!!', description: t('homeintro1') },
+      { image: basic, alt: 'Basic needs', text: 'Providing Basic Needs', description: t('homeintro2') },
+      { image: trip, alt: 'Children trip', text: 'Creating Joyful Memories', description: t('homeintro3') },
     ],
     2: [
       { image: trip, alt: 'Children trip', text: 'Give a Little, Change a Lot', description: 'Your small contribution can make a big difference in a child\'s life.' },

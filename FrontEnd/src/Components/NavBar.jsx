@@ -1,18 +1,25 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { Menu, X } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const { t, i18n } = useTranslation()
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
+  }
+
+  const changeLanguage = (event) => {
+    i18n.changeLanguage(event.target.value)
   }
 
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
+          {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img
@@ -23,37 +30,66 @@ const Navbar = () => {
               <span className="ml-2 text-xl font-bold text-gray-800">Askal Charity Association</span>
             </Link>
           </div>
-          <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/donate">Donate</NavLink>
-            <NavLink to="/about-us">About Us</NavLink>
-            <NavLink to="/volunteer">Volunteer</NavLink>
-            <NavLink to="/join-us">Join Us</NavLink>
+
+          {/* Desktop Menu */}
+          <div className="hidden sm:flex sm:space-x-8 items-center">
+            <NavLink to="/">{t("home")}</NavLink>
+            <NavLink to="/donate">{t("donate")}</NavLink>
+            <NavLink to="/about-us">{t("aboutUs")}</NavLink>
+            <NavLink to="/volunteer">{t("volunteer")}</NavLink>
+            <NavLink to="/join-us">{t("joinUs")}</NavLink>
+
+            {/* Language Dropdown */}
+            <select
+              onChange={changeLanguage}
+              value={i18n.language}
+              className="border rounded px-2 py-1 text-gray-700"
+            >
+              <option value="en">English</option>
+              <option value="am">አማርኛ (Amharic)</option>
+              <option value="om">Afaan Oromoo</option>
+            </select>
           </div>
+
+          {/* Mobile Menu Button */}
           <div className="-mr-2 flex items-center sm:hidden">
             <button
               onClick={toggleMenu}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500"
             >
               <span className="sr-only">Open main menu</span>
-              {isOpen ? (
-                <X className="block h-6 w-6" aria-hidden="true" />
-              ) : (
-                <Menu className="block h-6 w-6" aria-hidden="true" />
-              )}
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="sm:hidden">
           <div className="pt-2 pb-3 space-y-1">
-            <MobileNavLink to="/">Home</MobileNavLink>
-            <MobileNavLink to="/donate">Donate</MobileNavLink>
-            <MobileNavLink to="/about-us">About Us</MobileNavLink>
-            <MobileNavLink to="/volunteer">Volunteer</MobileNavLink>
-            <MobileNavLink to="/join-us">Join Us</MobileNavLink>
+            <MobileNavLink to="/">{t("home")}</MobileNavLink>
+            <MobileNavLink to="/donate">{t("donate")}</MobileNavLink>
+            <MobileNavLink to="/about-us">{t("aboutUs")}</MobileNavLink>
+            <MobileNavLink to="/volunteer">{t("volunteer")}</MobileNavLink>
+            <MobileNavLink to="/join-us">{t("joinUs")}</MobileNavLink>
+
+            {/* Language Dropdown in Mobile */}
+            <div className="px-4 py-2">
+              <label htmlFor="language-select" className="block text-sm font-medium text-gray-700">
+                {t("language")}
+              </label>
+              <select
+                id="language-select"
+                onChange={changeLanguage}
+                value={i18n.language}
+                className="w-full border rounded px-2 py-1 mt-1 text-gray-700"
+              >
+                <option value="en">English</option>
+                <option value="am">አማርኛ (Amharic)</option>
+                <option value="om">Afaan Oromoo</option>
+              </select>
+            </div>
           </div>
         </div>
       )}
@@ -80,4 +116,3 @@ const MobileNavLink = ({ to, children }) => (
 )
 
 export default Navbar
-
