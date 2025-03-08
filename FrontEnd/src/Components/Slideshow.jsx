@@ -23,19 +23,19 @@ const Slideshow = ({ num }) => {
   // Define different slide sets for each `num` value
   const slideSets = {
     1: [
-      { image: gift, alt: 'Gift giving', text: 'ባይኖረንም ያለንን እናካፍላለን!!', description: t('homeintro1') },
-      { image: basic, alt: 'Basic needs', text: 'Providing Basic Needs', description: t('homeintro2') },
-      { image: trip, alt: 'Children trip', text: 'Creating Joyful Memories', description: t('homeintro3') },
+      { image: gift, alt: 'Gift giving', text: t('slide_1'), description: t('homeintro1') },
+      { image: basic, alt: 'Basic needs', text: t('slide_2'), description: t('homeintro2') },
+      { image: trip, alt: 'Children trip', text: t('slide_3'), description: t('homeintro3') },
     ],
     2: [
-      { image: trip, alt: 'Children trip', text: 'Give a Little, Change a Lot', description: 'Your small contribution can make a big difference in a child\'s life.' },
-      { image: us, alt: 'Gift giving', text: 'Spread Love and Kindness', description: 'We believe in sharing love and kindness with every child.' },
-      { image: certified, alt: 'Basic needs', text: 'Support Their Future', description: 'Help us build a brighter future for vulnerable children.' },
+      { image: trip, alt: 'Children trip', text:t('slide_4'), description: t('homeintro3') },
+      { image: us, alt: 'Gift giving', text: t('slide_5'), description: t('homeintro5') },
+      { image: certified, alt: 'Basic needs', text: t('slide_6'), description:t('homeintro6')},
     ],
     3: [
-      { image: vol, alt: 'Children trip', text: 'Give a Little, Change a Lot', description: 'Your small contribution can make a big difference in a child\'s life.' },
-      { image: volunt, alt: 'Gift giving', text: 'Spread Love and Kindness', description: 'We believe in sharing love and kindness with every child.' },
-      { image: volll, alt: 'Basic needs', text: 'Support Their Future', description: 'Help us build a brighter future for vulnerable children.' },
+      { image: vol, alt: 'Children trip', text: t('slide_4'), description: t('homeintro3') },
+      { image: volunt, alt: 'Gift giving', text:t('slide_5'), description: t('homeintro5') },
+      { image: volll, alt: 'Basic needs', text: t('slide_6'), description:t('homeintro6')},
     ],
     // Add more slide sets for other `num` values if needed
   };
@@ -103,7 +103,7 @@ const Slideshow = ({ num }) => {
                    text-lg font-semibold hover:bg-[#2d7313] transition-all duration-300
                    transform hover:scale-105'
               >
-              OUR STORY
+              {t('our_story')}
               </Link>}
             </motion.div>
             </div>

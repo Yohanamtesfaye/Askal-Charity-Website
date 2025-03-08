@@ -18,13 +18,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { useTranslation } from 'react-i18next';
 
-const statsData = [
-  { end: 1000, label: 'Children Helped' },
-  { end: 500, label: 'Volunteers' },
-  { end: 200, label: 'Daily Meals' },
-  { end: 50, label: 'Programs' },
-  { end: 20, label: 'Locations' }
-]
+// const statsData = [
+//   { end: 1000, label: 'Children Helped' },
+//   { end: 500, label: 'Volunteers' },
+//   { end: 200, label: 'Daily Meals' },
+//   { end: 50, label: 'Programs' },
+//   { end: 20, label: 'Locations' }
+// ]
 
 const Home = () => {
   const { i18n } = useTranslation();
@@ -32,8 +32,15 @@ const Home = () => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
-
   const { t } = useTranslation()
+  const statsData = [ 
+    { end: 1000, label: t('children') },
+    { end: 500, label: t("volunteers") }, 
+    { end: 200, label: t("daily_meals") },
+    { end: 50, label: t("programs") },
+    { end: 20, label: t("locations") }, ];
+
+  
   const fadeRefs = useRef([])
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -79,20 +86,20 @@ const Home = () => {
   const features = [
     {
       icon: FaChild,
-      title: "Protect Our Kids",
-      description: "Dedicated to ensuring a safe and nurturing environment for children everywhere",
+      title: t('protect_kids'),
+      description: t('protect_des'),
       color: "#399918",
     },
     {
       icon: FaChalkboardTeacher,
-      title: "Shape Our Kids",
-      description: "Provide educational resources and support to help children thrive",
+      title: t('shape_kids'),
+      description: t('shape_des'),
       color: "#FCCD2A",
     },
     {
       icon: FaHandHoldingHeart,
-      title: "Support Our Kids",
-      description: "Offering comprehensive care including food, shelter, and medical assistance",
+      title: t('support_kids'),
+      description: t('support_des'),
       color: "#EB8317",
     },
   ]
@@ -108,16 +115,16 @@ const Home = () => {
           >
             <div className='p-8 text-white text-center'>
               <FaHeart className='mx-auto text-5xl mb-4' />
-              <h2 className='text-2xl font-bold mb-4'>Visit Us</h2>
+              <h2 className='text-2xl font-bold mb-4'>{t('visit_us')}</h2>
               <p className='mb-6 text-white/90'>
-                In Addis Ababa, Saris Adey Ababa, near the Total fuel station
+                {t('address')}
               </p>
               <Link 
                 to='/about-us'
                 className='inline-block px-6 py-3 border-2 border-white rounded-full
                          hover:bg-white hover:text-[#399918] transition-all duration-300'
               >
-                Read More
+                 {t('read_more')}
               </Link>
             </div>
           </motion.div>
@@ -128,16 +135,16 @@ const Home = () => {
           >
             <div className='p-8 text-gray-800 text-center'>
               <FaUserPlus className='mx-auto text-5xl mb-4' />
-              <h2 className='text-2xl font-bold mb-4'>Join Us</h2>
+              <h2 className='text-2xl font-bold mb-4'> {t('join_us')}</h2>
               <p className='mb-6'>
-                Volunteer your time, labor, and ideas to make a difference
+              {t('difference')}
               </p>
               <Link 
                 to='/join-us'
                 className='inline-block px-6 py-3 border-2 border-gray-800 rounded-full
                          hover:bg-gray-800 hover:text-[#FCCD2A] transition-all duration-300'
               >
-                Join Now
+                 {t('join_now')}
               </Link>
             </div>
           </motion.div>
@@ -148,17 +155,17 @@ const Home = () => {
           >
             <div className='p-8 text-white text-center'>
               <FaDonate className='mx-auto text-5xl mb-4' />
-              <h2 className='text-2xl font-bold mb-4'>Donate Online</h2>
+              <h2 className='text-2xl font-bold mb-4'> {t('donate_online')}</h2>
               <p className='mb-6'>
-                CBE: 1000278927892<br />
-                Telebirr: 0909090909
+              {t('cbe')}: 1000278927892<br />
+              {t('telebirr')}: 0909090909
               </p>
               <Link 
                 to='/donate'
                 className='inline-block px-6 py-3 border-2 border-white rounded-full
                          hover:bg-white hover:text-[#EB8317] transition-all duration-300'
               >
-                Donate Now
+                 {t('donate_now')}
               </Link>
             </div>
           </motion.div>
@@ -169,7 +176,7 @@ const Home = () => {
         <div className='container mx-auto px-4'>
           <div className='flex flex-col md:flex-row justify-between items-center'>
             <div className='flex flex-col md:flex-row items-center gap-4 text-gray-600'>
-              <span>Tel: +251902404444</span>
+              <span>{t('tel')}: +251902404444</span>
               <span className='hidden md:block'>•</span>
               <span>askalcharityassociation@gmail.com</span>
             </div>
@@ -227,12 +234,10 @@ const Home = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-[#399918] mb-4">Investing in Hope</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#399918] mb-4"> {t('invest_hope')}</h2>
               <div className="w-24 h-1 bg-[#FCCD2A] rounded-full mb-6"></div>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Our mission is to empower vulnerable children by providing essential resources like food, shelter,
-                medical care, and education. We aim to protect them from harm and create a safe environment for their
-                growth. By sharing what we have, we help them realize their potential.
+              {t('our_mission')}
               </p>
             </motion.div>
 
@@ -298,7 +303,7 @@ const Home = () => {
 <div className='bg-gray-50 py-16'>
         <div className='container mx-auto px-4'>
           <h2 className='text-4xl font-bold text-[#399918] mb-12'>
-            What we're Doing
+          {t('we_do')}
           </h2>
           <motion.div
             ref={el => fadeRefs.current[1] = el}
@@ -322,7 +327,7 @@ const Home = () => {
               className='inline-block px-12 py-4 bg-[#399918] text-white rounded-full
                        hover:bg-[#2d7313] transition-colors duration-300'
             >
-              EXPLORE MORE
+               {t('explore_more')}
             </Link>
           </div>
         </div>

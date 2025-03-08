@@ -27,7 +27,7 @@ const Navbar = () => {
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/askallogo.jpg-LPP18eDjV7UVahOKtQ16dfe4lBwJ3b.jpeg"
                 alt="Logo"
               />
-              <span className="ml-2 text-xl font-bold text-gray-800">Askal Charity Association</span>
+              <span className="ml-2 text-xl font-bold text-gray-800">{t('askal')}</span>
             </Link>
           </div>
 

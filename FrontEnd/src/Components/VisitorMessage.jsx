@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import sente from "../assets/Images/sente.png";
+import { useTranslation } from 'react-i18next';
 
 const VisitorMessage = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const visitors = [
@@ -47,7 +49,7 @@ const VisitorMessage = () => {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-[#399918] mb-4">
-            Messages from Visitors
+           {t('visitor_message')}
           </h2>
           <div className="w-24 h-1 bg-[#FCCD2A] mx-auto rounded-full"></div>
         </motion.div>

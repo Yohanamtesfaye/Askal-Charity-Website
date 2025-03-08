@@ -2,8 +2,10 @@ import React from "react"
 import { motion } from "framer-motion"
 import { FaYoutube, FaTelegramPlane, FaTiktok, FaFacebookF, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
 import logo from "../assets/Images/askallogo.jpg"
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const socialLinks = [
     { icon: FaYoutube, href: "https://youtube.com", color: "#FF0000" },
     { icon: FaTelegramPlane, href: "https://telegram.org", color: "#0088cc" },
@@ -30,13 +32,13 @@ const Footer = () => {
               />
             </motion.div>
             <p className="text-white/90 text-center md:text-left mt-4">
-              Empowering communities through compassion and action
+              {t('footer_des')}
             </p>
           </div>
 
           {/* Contact Information */}
           <div className="flex flex-col items-center md:items-start space-y-6">
-            <h3 className="text-2xl font-bold mb-4 text-[#FCCD2A]">Contact Us</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#FCCD2A]">{t('contact_us')}</h3>
 
             <div className="flex items-center space-x-3 group">
               <div className="p-2 bg-white/10 rounded-full group-hover:bg-white/20 transition-colors">
@@ -60,7 +62,7 @@ const Footer = () => {
               <div className="p-2 bg-white/10 rounded-full group-hover:bg-white/20 transition-colors">
                 <FaMapMarkerAlt className="text-[#FCCD2A]" />
               </div>
-              <span>Addis Ababa, Ethiopia</span>
+              <span>{t('addis_ababa')}</span>
             </div>
 
             {/* Social Media Links */}
@@ -82,7 +84,7 @@ const Footer = () => {
 
           {/* Map Section */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-2xl font-bold mb-4 text-[#FCCD2A]">Find Us</h3>
+            <h3 className="text-2xl font-bold mb-4 text-[#FCCD2A]">{t('find_us')}</h3>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -103,7 +105,7 @@ const Footer = () => {
 
         {/* Copyright Section */}
         <div className="mt-12 pt-8 border-t border-white/10 text-center text-white/80">
-          <p>© {new Date().getFullYear()} Askal Charity Association. All rights reserved.</p>
+          <p>© {new Date().getFullYear()}{t('askal_asso')} {t('all_rights')}</p>
         </div>
       </div>
     </footer>
