@@ -7,54 +7,56 @@ import lifetraining from "../assets/Images/training.jpg"
 import art from "../assets/Images/art.jpg"
 import trip from "../assets/Images/triip.jpg"
 import byye from '../assets/Images/byye.jpg'
+import { useTranslation } from 'react-i18next';
 
 const Gallery = () => {
+  const {t}= useTranslation();
   const galleryItems = [
     {
       src: teach,
       alt: "Teaching Kids",
-      title: "Educational Programs",
-      description: "Providing quality education and learning opportunities",
+      title:t('educational_programs'),
+      description: t('edu_des'),
       prop: 1,
       category: "Education",
     },
     {
       src: gift,
       alt: "gifts",
-      title: "Community Support",
-      description: "Distributing essential supplies to families in need",
+      title: t('community_support'),
+      description: t('comm_des'),
       prop: 2,
       category: "Support",
     },
     {
       src: art,
       alt: "Extra Carricular Activities",
-      title: "Extra Curricular Activities ",  
-      description: "Teaching valuable life skills for a better future",
+      title: t('extra_curric'),  
+      description: t('extra_des'),
       prop: 3,
       category: "Extra Curricular",
     },
     {
       src: trip,
       alt: "Fun & Entertainment",
-      title: "Fun & Entertainment",
-      description: "Ensuring children's mental health and well-being",
+      title: t('fun'),
+      description: t('fun_des'),
       prop: 4,
       category: "Fun",
     },
     {
       src: byye,
       alt: "Emotional Goodbyes",
-      title: "Emotional Goobyes",
-      description: "Emotional Goodbyes to the children Voulenteers have tought and loved",
+      title: t('emotional'),
+      description: t('emotional_des'),
       prop: 5,
       category: "Love",
     },
     {
       src: lifetraining,
       alt: "Parent Training",
-      title: "Parent Education",
-      description: "Supporting parents in child development",
+      title: t('parent_edu'),
+      description: t('parent_des'),
       prop: 6,
       category: "Training",
     },

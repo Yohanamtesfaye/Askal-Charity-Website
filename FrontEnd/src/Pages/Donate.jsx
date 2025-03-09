@@ -4,6 +4,7 @@ import { FaYoutube,FaUserPlus, FaChild, FaChalkboardTeacher, FaDonate , FaTelegr
 import { FaHeart } from 'react-icons/fa';
 import "../App.css"
 import CountUp from 'react-countup';
+import { useTranslation } from 'react-i18next';
 
 import hand from "../assets/Images/trip.jpeg"
 import bag from "../assets/Images/teach.png"
@@ -17,7 +18,8 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 
 
-const Donate = () => {
+const Donate = () => { 
+   const { t } = useTranslation();
   const fadeRefs = useRef([]);
   
   useEffect(() => {
@@ -77,33 +79,33 @@ const Donate = () => {
   {/* Visit Us Section */}
   <div className='bg-[#399918]  box flex flex-col items-center justify-center px-10 py-20 w-full lg:w-1/3 mx-4 rounded-lg shadow-md  text-center cursor-pointer transition-transform  duration-700 ease-in-out transform  hover:-translate-y-3'>
   <FaDonate size={50} className='mb-5' />
-    <h1 className='text-xl font-bold text-center mb-4'>Daily Expense</h1>
-    <p className='text-center mb-7'>$2/PERSON</p>
-    <p className='text-center mb-7'>That means 100 Birr will be the daily expense of one person at Askal.</p>
-    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>Register</Link>
+    <h1 className='text-xl font-bold text-center mb-4'>{t('daily_expense')}</h1>
+    <p className='text-center mb-7'>$2/{t('person')}</p>
+    <p className='text-center mb-7'>{t('daily_des')}</p>
+    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>{t('register')}</Link>
   </div>
 
   {/* Join Us Section */}
   <div className='bg-[#FCCD2A] box flex flex-col items-center justify-center px-10 py-20 w-full lg:w-1/3 mx-4 rounded-lg shadow-md  text-center cursor-pointer transition-transform  duration-700 ease-in-out transform  hover:-translate-y-3'>
   <FaDonate size={50} className='mb-5' />
-    <h1 className='text-xl font-bold text-center mb-4'>Monthly Expense</h1>
-    <p className='text-center mb-7'>$80/PERSON</p>
-    <p className='text-center mb-7'>That means 100 Birr will be the daily expense of one person at Askal.</p>  
-    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>Register</Link>
+    <h1 className='text-xl font-bold text-center mb-4'>{t('monthly_expense')}</h1>
+    <p className='text-center mb-7'>$80/{t('person')}</p>
+    <p className='text-center mb-7'>{t('monthly_expense')}</p>  
+    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>{t('register')}</Link>
   </div>
 
   {/* Donate Section */}
   <div className='bg-[#EB8317] box flex flex-col items-center justify-center px-10 py-20 w-full lg:w-1/3 mx-4 rounded-lg shadow-md  text-center cursor-pointer transition-transform  duration-700 ease-in-out transform  hover:-translate-y-3'>
     <FaDonate size={50} className='mb-5' />
-    <h1 className='text-xl font-bold text-center mb-4'>Yearly Expense</h1>
-    <p className='text-center mb-7'>$100/PERSON</p>
-    <p className='text-center mb-7'>That means 100 Birr will be the daily expense of one person at Askal.</p>    
-    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>Register</Link>
+    <h1 className='text-xl font-bold text-center mb-4'>{t('yearly_expense')}</h1>
+    <p className='text-center mb-7'>$100/{t('person')}</p>
+    <p className='text-center mb-7'>{t('yearly_expense')}</p>    
+    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>{t('register')}</Link>
     </div>
   </div>
   <div ref={el => fadeRefs.current[2] = el} className="flex flex-col items-center bg-gray-100 py-10">
             
-            <h2 className="text-green-600 text-3xl font-bold mb-8">Contribute for our causes</h2>
+            <h2 className="text-green-600 text-3xl font-bold mb-8">{t('contribute')}</h2>
 
            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
@@ -115,12 +117,10 @@ const Donate = () => {
                 <div className="p-6">
                   <div className="bg-gray-200 rounded-full h-2 mb-4"></div>
                   <p className="text-gray-700 mb-4">
-                    Our mission is to bridge the support gap for children by developing a
-                    strong, reliable system that ensures their needs are continuously
-                    met. We aim to provide comprehensive support, including health.
+                    {t('cause_des')}
                   </p>
                   <Link  to="/register"><button className="bg-green-600 lg:ml-64 text-white px-4 py-2 rounded-lg  font-bold hover:bg-green-900 transition-all duration-300">
-                    Donate
+                   {t('donate')}
                   </button></Link>
                   
                 </div>
@@ -133,12 +133,10 @@ const Donate = () => {
                 <div className="p-6">
                   <div className="bg-gray-200 rounded-full h-2 mb-4"></div>
                   <p className="text-gray-700 mb-4">
-                    Our mission is to bridge the support gap for children by developing a
-                    strong, reliable system that ensures their needs are continuously
-                    met. We aim to provide comprehensive support, including health.
+                    {t('cause_des')}
                   </p>
                   <Link  to="/register"><button className="bg-green-600 lg:ml-64 text-white px-4 py-2 rounded-lg  font-bold hover:bg-green-900 transition-all duration-300 ">
-                    Donate
+                    {t('donate')}
                   </button></Link>
                   
                 </div>

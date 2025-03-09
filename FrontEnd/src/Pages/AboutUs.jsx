@@ -4,24 +4,26 @@ import Slideshow from '../Components/Slideshow'
 import Gallery from '../Components/Gallery'
 import { FaGraduationCap, FaHandHoldingHeart, FaUsers, FaSeedling } from 'react-icons/fa'
 import us from '../assets/Images/us.jpeg'
+import { useTranslation } from 'react-i18next';
 const AboutUs = () => {
+  const {t}= useTranslation();
   const helpingPoints = [
     {
-      icon: FaGraduationCap,
-      text: "Offering consistent educational support to children, helping them build foundational knowledge and skills."
-    },
-    {
       icon: FaSeedling,
-      text: "Focusing on identifying and nurturing each child's unique talents, encouraging them to explore their strengths."
+      text: t('help_1')
     },
     {
       icon: FaUsers,
-      text: "Life training for parents and adults, focusing on nurturing and developing children."
+      text: t('help_2')
     },
     {
       icon: FaHandHoldingHeart,
-      text: "Offering financial assistance, food, and basic necessities to those in need."
-    }
+      text: t('help_3')
+    },
+    {
+      icon: FaGraduationCap,
+      text: t('help_4')
+    },
   ]
 
   return (
@@ -34,7 +36,7 @@ const AboutUs = () => {
       >
         <div className="absolute inset-0 bg-[#399918] opacity-90"></div>
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">About Us</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">{t('aboutUs')}</h1>
           <div className="w-24 h-1 bg-[#FCCD2A] rounded-full"></div>
         </div>
       </motion.div>
@@ -59,14 +61,13 @@ const AboutUs = () => {
             className="space-y-6"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-[#399918]">
-              A Place for Kids to Grow
+             {t('place_for_kids')} 
             </h2>
             <div className="w-20 h-1 bg-[#FCCD2A] rounded-full"></div>
             <p className="text-gray-600 leading-relaxed">
-              The main focus of Askal Charity Organization is children. We aim to provide children with essential needs and offer support in health care, education, and skill development, ensuring they have a stable future.
-            </p>
+             {t('focus')}            </p>
             <p className="text-gray-600 leading-relaxed">
-              Our vision is to see all children nurtured in physical health, expanded in knowledge, and strengthened emotionally, so they can contribute to the country's lasting progress.
+              {t('vision')}
             </p>
           </motion.div>
         </div>
@@ -79,7 +80,7 @@ const AboutUs = () => {
           className="mb-24"
         >
           <h2 className="text-3xl font-bold text-[#399918] mb-12 text-center">
-            How We're Helping
+            {t('how_help')}
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {helpingPoints.map((point, index) => (
@@ -107,7 +108,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold text-[#399918] mb-12 text-center">
-            Our Gallery
+            {t('our_gallery')}
           </h2>
           <Gallery />
         </motion.div>
