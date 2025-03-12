@@ -3,7 +3,9 @@ import Slideshow from '../Components/Slideshow'
 import { motion } from "framer-motion"
 import vol from '../assets/Images/vol.jpg';
 import RegistrationForm from '../Components/VolunteerRegisteration';
+import { useTranslation } from 'react-i18next';
 const Voulenteer = () => {
+  const {t}= useTranslation();
   return (
     <div>
       <Slideshow num ={3}/>
@@ -39,12 +41,10 @@ const Voulenteer = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-[#399918] mb-4">Investing in Hope</h2>
+              <h2 className="text-4xl md:text-5xl font-bold text-[#399918] mb-4">{t('invest_hope')}</h2>
               <div className="w-24 h-1 bg-[#FCCD2A] rounded-full mb-6"></div>
               <p className="text-gray-600 text-lg leading-relaxed">
-                Our mission is to empower vulnerable children by providing essential resources like food, shelter,
-                medical care, and education. We aim to protect them from harm and create a safe environment for their
-                growth. By sharing what we have, we help them realize their potential.
+              {t('our_mission')}
               </p>
             </motion.div>
           

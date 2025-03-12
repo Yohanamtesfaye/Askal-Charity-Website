@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './styles.css';
+import { useTranslation } from 'react-i18next';
 
 function RegistrationForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     phoneNumber: '',
@@ -65,33 +67,36 @@ function RegistrationForm() {
             alt="Logo" 
             className="logo"
           />
-          <h1 className="welcome-text">Welcome to Our Community!</h1>
+          <h1 className="welcome-text">{t('welcome_')}</h1>
         </div>
         
         <div className="form-section">
-          <h2>Registration Form</h2>
+          <h2  className='pb-6 m-4 font-bold text-lg'>{t('registration_form')}</h2>
           <form onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
-                <label>Full Name:</label>
+                <label>{t('full_name')}</label>
                 <input
                   type="text"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Enter your full name"
+                  placeholder={t('enter_name')}
+                  className='p-2'
                 />
                 {errors.name && <span className="error">{errors.name}</span>}
+                
               </div>
 
               <div className="form-group">
-                <label>Phone Number:</label>
+                <label>{t('phone_number')}</label>
                 <input
                   type="tel"
                   name="phoneNumber"
                   value={formData.phoneNumber}
                   onChange={handleChange}
-                  placeholder="Enter phone number"
+                  placeholder={t('enter_number')}
+                  className='p-2'
                 />
                 {errors.phoneNumber && <span className="error">{errors.phoneNumber}</span>}
               </div>
@@ -99,61 +104,65 @@ function RegistrationForm() {
 
             <div className="form-row">
               <div className="form-group">
-                <label>Age:</label>
+                <label>{t('age')}</label>
                 <input
                   type="number"
                   name="age"
                   value={formData.age}
                   onChange={handleChange}
-                  placeholder="Age"
+                  placeholder={t('enter_age')}
                   min="16"
                   max="100"
+                   className='p-2'
                 />
                 {errors.age && <span className="error">{errors.age}</span>}
               </div>
 
               <div className="form-group">
-                <label>Education Level:</label>
+                <label>{t('education_level')}</label>
                 <select
+                 className='p-2'
                   name="educationLevel"
                   value={formData.educationLevel}
                   onChange={handleChange}
                 >
-                  <option value="">Select level</option>
-                  <option value="high-school">High School</option>
-                  <option value="bachelors">Bachelor's</option>
-                  <option value="masters">Master's</option>
-                  <option value="phd">Ph.D.</option>
-                  <option value="other">Other</option>
+                  <option value="">{t('select_level')}</option>
+                  <option value="high-school">{t('high_school')}</option>
+                  <option value="bachelors">{t('bachelors')}</option>
+                  <option value="masters">{t('masters')}</option>
+                  <option value="phd">{t('phd')}</option>
+                  <option value="other">{t('other')}</option>
                 </select>
                 {errors.educationLevel && <span className="error">{errors.educationLevel}</span>}
               </div>
             </div>
 
             <div className="form-group">
-              <label>Address:</label>
+              <label>{t('addr')}</label>
               <textarea
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                placeholder="Enter your complete address"
+                placeholder={t('enter_addr')}
                 rows="2"
+                 className='px-2'
               />
               {errors.address && <span className="error">{errors.address}</span>}
             </div>
 
             <div className="form-group">
-              <label>Previous Experience (Optional):</label>
+              <label>{t('experiance')}</label>
               <textarea
                 name="experience"
                 value={formData.experience}
                 onChange={handleChange}
-                placeholder="Brief description of relevant experience..."
+                placeholder={t('enter_exp')}
                 rows="2"
+                 className='p-2'
               />
             </div>
 
-            <button type="submit">Submit Registration</button>
+            <button  className='p-2 bg-green-700 hover:bg-green-600 text-white' type="submit">{t('submit')}</button>
           </form>
         </div>
       </div>
