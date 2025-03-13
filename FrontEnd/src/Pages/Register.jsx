@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import children from "../assets/Images/children.png";
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Register() {
+    const { t } = useTranslation();
     const [data, setData] = useState([]);
     const [formData, setFormData] = useState({
         name: '',
@@ -41,63 +43,63 @@ function Register() {
             <div className="flex flex-col md:flex-row mx-32 h-screen items-center justify-center bg-gray-100">
                 {/* Left part */}
                 <div className="bg-white p-8 rounded-lg shadow-lg mr-16 w-full md:w-1/2 max-w-lg">
-                    <h2 className="text-2xl font-bold text-center text-gray-700 mb-2">Get Started Now</h2>
+                    <h2 className="text-2xl font-bold text-center text-gray-700 mb-2">{t('get_Satrtd')}</h2>
                     <p className="text-center text-gray-500 mb-6">
-                        Enter required information and become a family member of Askal
+                       {t('enter_required')}
                     </p>
                     <form onSubmit={handleSubmit}>
                         {/* Full Name */}
                         <div className="mb-4">
-                            <label className="block text-gray-700">Full name</label>
+                            <label className="block text-gray-700">{t('full_name')}</label>
                             <input
                                 type="text"
                                 name="name"
                                 value={formData.name}
                                 onChange={handleChange}
                                 className="w-full border border-green-500 rounded-lg px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                                placeholder="Enter your full name"
+                                placeholder={t('enter_name')}
                             />
                         </div>
 
                         {/* Email */}
                         <div className="mb-4">
-                            <label className="block text-gray-700">Email</label>
+                            <label className="block text-gray-700">{t('email')}</label>
                             <input
                                 type="email"
                                 name="email"
                                 value={formData.email}
                                 onChange={handleChange}
                                 className="w-full border border-green-500 rounded-lg px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                                placeholder="Enter your email"
+                                placeholder={t('enter_email')}
                             />
                         </div>
 
                         {/* Phone Number */}
                         <div className="mb-4">
-                            <label className="block text-gray-700">Phone number</label>
+                            <label className="block text-gray-700">{t('phone_number')}</label>
                             <input
                                 type="tel"
                                 name="phone"
                                 value={formData.phone}
                                 onChange={handleChange}
                                 className="w-full border border-green-500 rounded-lg px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                                placeholder="Enter your phone number"
+                                placeholder={t('enter_number')}
                             />
                         </div>
                         
 
                         {/* Type Dropdown */}
                         <div className="mb-6">
-                            <label className="block text-gray-700">How often will you make the specified donation?</label>
+                            <label className="block text-gray-700">{t('how_often')}</label>
                             <select
                                 name="often"
                                 value={formData.often}
                                 onChange={handleChange}
                                 className="w-full border border-green-500 rounded-lg px-4 py-2 mt-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                             >
-                                <option value="daily">Daily</option>
-                                <option value="monthly">Monthly</option>
-                                <option value="yearly">Yearly</option>
+                                <option value="daily">{t('daily')}</option>
+                                <option value="monthly">{t('monthly')}</option>
+                                <option value="yearly">{t('yearly')}</option>
                             </select>
                         </div>
 
@@ -108,7 +110,7 @@ function Register() {
                             type="submit"
                             className="w-full bg-green-600 text-white py-2 rounded-lg font-bold hover:bg-green-900 transition duration-300"
                         >
-                            Sign Up
+                           {t('signup')}
                         </button>
                         </Link>
                     </form>

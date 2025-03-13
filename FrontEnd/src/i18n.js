@@ -122,7 +122,30 @@ i18n
           "education_error":"Education level is required",
           "success":"Success",
           "success_message":"You have successfully registered!",
-          
+          "member_option":"Membership Option",
+        "member_register":"Membership Registration",
+        "membership_type":"Membership Type",
+        "select_membership":"Select Membership",
+        "franchise":"Franchise",
+        "special_member":"Special Member",
+        "volunteer":"Volunteer",
+        "join_reason":"Why do you want to Join Us?",
+        "submit_register":"Submit Registration",
+        "get_Satrtd":"Get Started",
+        "email":"Email",
+        "enter_email":"Enter your email",
+        "signup":"Sign Up",
+        "enter_required":" Enter required information and become a family member of Askal",
+        "how_often":"How often will you make the specified donation?",
+        "daily":"Daily",
+        "monthly":"Monthly",
+        "yearly":"Yearly",
+        "welcome_askal":"Welcome to Askal",
+        "register_message":"Register to become a member of our community and help us make a difference in the lives of children",
+        "login":"Login",
+        "our_gallery":"Our Gallery",
+        "description":"Description",
+
 
  
         }
@@ -189,7 +212,7 @@ i18n
           "yearly_expense":"አመታዊ ",
           "yearly_des":"በአመት 100 ብር ይለግሱ",
           "person":"ሰው",
-          "contribute":"ስራዎቻችንን ያግዙር",
+          "contribute":"ስራዎቻችንን ያግዙ",
           "cause_des":"የእኛ ተልእኮ የህጻናትን የድጋፍ ክፍተት በማስተካከል ጠንካራና አስተማማኝ ስርዓት በማዘጋጀት ፍላጎቶቻቸውን በቀጣይነት መሟላቱን ያረጋግጣል። ዓላማችን ጤናን ጨምሮ አጠቃላይ ድጋፍን ለመስጠት ነው።",
           "donate":"ይለግሱ",
           "register":"ይመዝገቡ",
@@ -243,11 +266,30 @@ i18n
           "education_error":"የትምህርት ደረጃዎን ያስገቡ",
           "success":"Success",
           "success_message":"በሚገባ ተመዝግበዋል!",
+          "member_option":"የአባልነት አማራጭ",
+          "member_register":"የአባልነት ምዝገባ",
+          "membership_type":"የአባልነት አይነት",
+          "select_membership":"አባልነት ይምረጡ",
+          "franchise":"Franchise",
+          "special_member":"ልዩ አባል",
+          "volunteer":"በጎ ፍቃደኛ",
+          "join_reason":"ለምን ከእኛ ጋር መቀላቀል ይፈልጋሉ?",
+          "submit_register":"መዝግብ",
+          "get_Satrtd":"ይጀምሩ",
+          "email":"ኢሜል",
+          "enter_email":"ኢሜልዎን ያስገቡ",
+          "signup":"ይመዝገቡ",
+          "enter_required":"አስፈላጊውን መረጃ ያስገቡ እና የአስካል ቤተሰብ ይሁኑ!",
+          "how_often":"የተጠቀሰውን ልገሳ በምን ያህል ወቅት ይለግሳሉ?",
+          "daily":"በቀን",
+          "monthly":"በወር",
+          "yearly":"በአመት",
+          "welcome_askal":"እንኳን ወደ አስካል በደህና መጡ!",
+          "register_message":"የኛ ቤተሰብ ይሁኑ እና ልጆችን አብረን እንርዳ",
+          "login":"ይግቡ",
+              
 
-         
 
-
-  
         }
       },
       // Add more languages here

@@ -58,8 +58,12 @@ import donate9 from '../assets/Images/donate9.jpg';
 // // Import video files
 // import video1 from '../assets/Videos/video1.mp4';
 // import video2 from '../assets/Videos/video2.mp4';
+import { useTranslation } from 'react-i18next';
+
+
 
 const More = () => {
+  const { t } = useTranslation();
   const { id } = useParams();
   const [selectedMedia, setSelectedMedia] = useState(null);
 
@@ -134,7 +138,7 @@ const More = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-100">
       <div className="container mx-auto px-4 py-12">
         <h2 className="text-4xl font-bold text-green-600 mb-8 text-center">
-          Our Gallery
+         {t('our_gallery')}
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -203,7 +207,7 @@ const More = () => {
                 )}
                 <div className="p-6 bg-white">
                   <h3 className="text-xl font-semibold text-green-600 mb-2">
-                    Description
+                    {t('description')}
                   </h3>
                   <p className="text-gray-700">{selectedMedia.alt}</p>
                   <button
