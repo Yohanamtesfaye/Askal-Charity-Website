@@ -43,7 +43,7 @@ const Navbar = () => {
             <select
               onChange={changeLanguage}
               value={i18n.language}
-              className="border rounded px-2 py-1 text-gray-700"
+              className="border w-24 rounded px-2 py-1 text-gray-700"
             >
               <option value="en">English</option>
               <option value="am">አማርኛ (Amharic)</option>
@@ -86,7 +86,7 @@ const Navbar = () => {
                 className="w-full border rounded px-2 py-1 mt-1 text-gray-700"
               >
                 <option value="en">English</option>
-                <option value="am">አማርኛ (Amharic)</option>
+                <option value="am">አማርኛ</option>
                 <option value="om">Afaan Oromoo</option>
               </select>
             </div>
