@@ -58,14 +58,14 @@ const VisitorMessage = () => {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 lg:ml-20 mt-44 w-14 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-10 bg-white p-3 rounded-full shadow-lg text-[#399918] hover:text-[#FCCD2A] transition-colors"
+            className="absolute left-0 lg:ml-20 mt-48 w-14 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-10 bg-white p-4 rounded-full shadow-lg text-[#399918] hover:text-[#FCCD2A] transition-colors"
             aria-label="Previous testimonial"
           >
             <FaChevronLeft size={24} />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-0 lg:mr-20 top-1/2 mt-44 w-14 -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 bg-white p-3 rounded-full shadow-lg text-[#399918] hover:text-[#FCCD2A] transition-colors"
+            className="absolute right-0 lg:mr-20  top-1/2 mt-48 w-14 -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 bg-white p-4 rounded-full shadow-lg text-[#399918] hover:text-[#FCCD2A] transition-colors"
             aria-label="Next testimonial"
           >
             <FaChevronRight size={24} />
@@ -128,7 +128,7 @@ const VisitorMessage = () => {
         </div>
 
         {/* Visitor Thumbnails */}
-        <div className="flex justify-center space-x-4 mt-8">
+        <div className="flex justify-center space-x-4 mt-8 ">
           {visitors.map((visitor, index) => (
             <motion.button
               key={index}

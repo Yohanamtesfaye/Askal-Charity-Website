@@ -119,9 +119,12 @@ const Donate = () => {
                   <p className="text-gray-700 mb-4">
                     {t('cause_des')}
                   </p>
-                  <Link  to="/register"><button className="bg-green-600 lg:ml-64 text-white px-4 py-2 rounded-lg  font-bold hover:bg-green-900 transition-all duration-300">
-                   {t('donate')}
-                  </button></Link>
+                    <div className='flex justify-end '>
+                      <Link  to="/register"><button className="  bg-green-600  text-white px-8 py-2 rounded-lg  font-bold hover:bg-green-900 transition-all duration-300">
+                       {t('donate')}
+                                        </button></Link>
+                    </div>
+                 
                   
                 </div>
               </div>
@@ -135,9 +138,11 @@ const Donate = () => {
                   <p className="text-gray-700 mb-4">
                     {t('cause_des')}
                   </p>
-                  <Link  to="/register"><button className="bg-green-600 lg:ml-64 text-white px-4 py-2 rounded-lg  font-bold hover:bg-green-900 transition-all duration-300 ">
-                    {t('donate')}
-                  </button></Link>
+                  <div className='flex justify-end '>
+                    <Link  to="/register"><button className="  bg-green-600  text-white px-8 py-2 rounded-lg  font-bold hover:bg-green-900 transition-all duration-300">
+                                       {t('donate')}
+                                      </button></Link>
+                    </div>
                   
                 </div>
               </div>

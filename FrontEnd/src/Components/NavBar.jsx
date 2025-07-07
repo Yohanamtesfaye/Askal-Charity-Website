@@ -47,7 +47,13 @@ const Navbar = () => {
             >
               <option value="en">English</option>
               <option value="am">አማርኛ (Amharic)</option>
+              <option value="rs">Russian</option>
+              <option value="ar">العربية (Arabic)</option>
               <option value="om">Afaan Oromoo</option>
+              <option value="tg">Tigrinya</option>
+              <option value="gr">Guraginga</option>
+              <option value="sd">Sidamigna</option>
+
             </select>
           </div>
 
@@ -87,7 +93,13 @@ const Navbar = () => {
               >
                 <option value="en">English</option>
                 <option value="am">አማርኛ</option>
+                <option value="ar">العربية</option> 
+                <option value="rs">Rassian</option>
                 <option value="om">Afaan Oromoo</option>
+                <option value="tg">Tigrinya</option>
+                <option value="gr">Guraginga</option>
+                <option value="sd">Sidamigna</option>
+
               </select>
             </div>
           </div>
