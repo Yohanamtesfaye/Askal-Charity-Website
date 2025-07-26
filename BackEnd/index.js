@@ -6,7 +6,14 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const path = require('path');  // Add this at the top
 
+// Add this after your other middleware but before your routes
+app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
+  setHeaders: (res) => {
+    res.set('Cache-Control', 'public, max-age=31536000');
+  }
+}));
 // Middleware
 app.use(cors({ origin: 'http://localhost:5173' })); // Update to match frontend port
 app.use(express.json());

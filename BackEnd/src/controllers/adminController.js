@@ -10,6 +10,40 @@ const getAllMemberships = async (req, res) => {
     res.status(500).json({ message: 'Server Error' });
   }
 };
+const getMembershipById = async (req, res) => {
+  const { id } = req.params;
+  
+  if (!id || isNaN(id)) {
+    return res.status(400).json({ message: 'Invalid member ID' });
+  }
+
+  try {
+    const [results] = await db.query(
+      'SELECT *, DATE_FORMAT(created_at, "%Y-%m-%d") as formatted_date FROM memberships WHERE id = ?', 
+      [id]
+    );
+
+    if (results.length === 0) {
+      return res.status(404).json({ message: 'Member not found' });
+    }
+
+    const member = results[0];
+    
+    // Parse payments if stored as JSON string
+    if (member.payments && typeof member.payments === 'string') {
+      member.payments = JSON.parse(member.payments);
+    }
+
+    res.status(200).json(member);
+    
+  } catch (err) {
+    console.error('Database Error:', err);
+    res.status(500).json({ 
+      message: 'Server Error',
+      error: err.message 
+    });
+  }
+};
 
 const updateMembership = async (req, res) => {
   const { id } = req.params;
@@ -49,4 +83,5 @@ const deleteMembership = async (req, res) => {
   }
 };
 
-module.exports = { getAllMemberships, updateMembership, deleteMembership };
+module.exports = { getAllMemberships, updateMembership, deleteMembership,  getMembershipById, 
+ };

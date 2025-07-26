@@ -1,4 +1,3 @@
-// src/routes/index.js
 const express = require('express');
 const router = express.Router();
 const membershipController = require('../controllers/membershipController');
@@ -12,9 +11,9 @@ const upload = multer({ storage: storage });
 router.get('/test', (req, res) => {
   res.status(200).json({ message: 'Test route working!' });
 });
-router.post('/memberships/register', upload.single('photo'), membershipController.register); // Handle photo upload
+router.post('/memberships/register', upload.single('photo'), membershipController.register);
 router.get('/admin/memberships', adminController.getAllMemberships);
-router.put('/admin/memberships/:id', adminController.updateMembership);
+router.get('/admin/memberships/:id', adminController.getMembershipById); 
 router.delete('/admin/memberships/:id', adminController.deleteMembership);
 
 module.exports = router;
