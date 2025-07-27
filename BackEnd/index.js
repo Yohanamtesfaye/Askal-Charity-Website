@@ -6,9 +6,7 @@ require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const path = require('path');  // Add this at the top
-
-// Add this after your other middleware but before your routes
+const path = require('path');  
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'), {
   setHeaders: (res) => {
     res.set('Cache-Control', 'public, max-age=31536000');

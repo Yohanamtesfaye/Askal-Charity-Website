@@ -1,5 +1,6 @@
 const db = require('../config/db');
 
+
 const register = async (req, res) => {
     console.log('Request Body:', req.body);
     const { name, phoneNumber, age, educationLevel, address, experience } = req.body;
