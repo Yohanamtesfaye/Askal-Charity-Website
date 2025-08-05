@@ -38,7 +38,7 @@ function RegistrationForm() {
     const formErrors = validateForm();
     if (Object.keys(formErrors).length === 0) {
       try {
-        const response = await fetch('http://localhost:5000/api/register', {
+        const response = await fetch('http://localhost:5000/api//volunteers/register', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
