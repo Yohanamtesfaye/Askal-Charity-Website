@@ -54,18 +54,20 @@ const VisitorMessage = () => {
           <div className="w-24 h-1 bg-[#FCCD2A] mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="relative ">
+        <div className="relative">
           {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 lg:ml-20 mt-48 w-14 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-10 bg-white p-4 rounded-full shadow-lg text-[#399918] hover:text-[#FCCD2A] transition-colors"
+            className="absolute left-0 lg:ml-20 mt-48 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-8 z-10 bg-white p-2 rounded-full shadow-lg text-[#399918] hover:text-[#FCCD2A] transition-colors flex items-center justify-center w-12 h-12"
+            style={{ minWidth: '3rem', minHeight: '3rem' }}
             aria-label="Previous testimonial"
           >
             <FaChevronLeft size={24} />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-0 lg:mr-20  top-1/2 mt-48 w-14 -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 bg-white p-4 rounded-full shadow-lg text-[#399918] hover:text-[#FCCD2A] transition-colors"
+            className="absolute right-0 lg:mr-20 mt-48 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-8 z-10 bg-white p-2 rounded-full shadow-lg text-[#399918] hover:text-[#FCCD2A] transition-colors flex items-center justify-center w-12 h-12"
+            style={{ minWidth: '3rem', minHeight: '3rem' }}
             aria-label="Next testimonial"
           >
             <FaChevronRight size={24} />
@@ -114,7 +116,7 @@ const VisitorMessage = () => {
               <motion.button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`w-3 h-3  rounded-full transition-all duration-300 ${
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
                   activeIndex === index
                     ? "bg-[#399918] w-8"
                     : "bg-[#399918]/20 hover:bg-[#399918]/40"
@@ -128,7 +130,7 @@ const VisitorMessage = () => {
         </div>
 
         {/* Visitor Thumbnails */}
-        <div className="flex justify-center space-x-4 mt-8 ">
+        {/* <div className="flex justify-center space-x-4 mt-8">
           {visitors.map((visitor, index) => (
             <motion.button
               key={index}
@@ -138,11 +140,10 @@ const VisitorMessage = () => {
               className="relative group"
             >
               <div
-                className={`absolute inset-0  rounded-full transition-all duration-300 ${
+                className={`absolute inset-0 rounded-full transition-all duration-300 ${
                   activeIndex === index
-                    ? "border-4 border-[#399918] scale-110"
-                    : "border-4 border-transparent group-hover:border-[#]"
-                }`}
+                    ? "border border-[#399918] scale-110"
+:""                }`}
               />
               <img
                 src={visitor.img || "/placeholder.svg"}
@@ -151,7 +152,7 @@ const VisitorMessage = () => {
               />
             </motion.button>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );
