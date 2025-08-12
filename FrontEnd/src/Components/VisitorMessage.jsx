@@ -128,31 +128,6 @@ const VisitorMessage = () => {
             ))}
           </div>
         </div>
-
-        {/* Visitor Thumbnails */}
-        {/* <div className="flex justify-center space-x-4 mt-8">
-          {visitors.map((visitor, index) => (
-            <motion.button
-              key={index}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={() => setActiveIndex(index)}
-              className="relative group"
-            >
-              <div
-                className={`absolute inset-0 rounded-full transition-all duration-300 ${
-                  activeIndex === index
-                    ? "border border-[#399918] scale-110"
-:""                }`}
-              />
-              <img
-                src={visitor.img || "/placeholder.svg"}
-                alt={visitor.name}
-                className="w-16 h-16 rounded-full object-cover"
-              />
-            </motion.button>
-          ))}
-        </div> */}
       </div>
     </section>
   );
