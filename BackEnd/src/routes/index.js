@@ -4,6 +4,7 @@ const membershipController = require('../controllers/membershipController');
 const adminController = require('../controllers/adminController');
 const adminAuthController = require('../controllers/adminAuthController');
 const { register, getVolunteers,deleteVolunteer,getVolunteerById } = require('../controllers/VolunteerregistrationController');
+const { updatePaymentStatus } = require('../controllers/PaymentController');
 
 const multer = require('multer');
 
@@ -32,6 +33,6 @@ router.post('/admin/forgot-password', adminAuthController.forgotPassword);
 router.post('/admin/logout', adminAuthController.logout);
 router.get('/admin', adminAuthController.getAllAdmins); // GET /api/admin
 router.get('/admin/:id', adminAuthController.getAdminById); // GET /api
-
+router.post('/update-payment', updatePaymentStatus);// POST /api/admin/payments/update
 
 module.exports = router;
