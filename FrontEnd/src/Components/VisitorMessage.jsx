@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaQuoteLeft, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import sente from "../assets/Images/sente.png";
+import pep2 from "../assets/Images/pep2.avif";
+import pep3 from "../assets/Images/pep3.png";
 import { useTranslation } from 'react-i18next';
 
 const VisitorMessage = () => {
@@ -21,14 +23,14 @@ const VisitorMessage = () => {
       title: "Musician",
       message:
         "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
-      img: "/placeholder.svg?height=400&width=400",
+      img: pep2,
     },
     {
       name: "Visitor 3",
       title: "Actor",
       message:
         "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.",
-      img: "/placeholder.svg?height=400&width=400",
+      img: pep3,
     },
   ];
 
