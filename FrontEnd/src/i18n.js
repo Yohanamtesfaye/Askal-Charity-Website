@@ -91,7 +91,7 @@ i18n
           "fun_des": "Ensuring children's mental health and well-being",
           "emotional": "Emotional Goobyes",
           "emotional_des": "Emotional Goodbyes to the children Voulenteers have tought and loved",
-          "parent_edu": "Parent Education",
+          "parent_edu": "Parent Traning",
           "parent_des": "Supporting parents in child development",
           "investint_hope":"Investing in Hope",
           "our_mission":"Our mission is to empower vulnerable children by providing essential resources like food, shelter, medical care, and education. We aim to protect them from harm and create a safe environment for their growth. By sharing what we have, we help them realize their potential.",
@@ -158,7 +158,7 @@ i18n
           "shape_des":"የነገዋን ኢትዮጵያን ለመገንባት ዛሬ ልጆቻችንን በትምህርት እናግዝ",
           "support_kids":"ልጆቻችንን እንርዳ ",
           "support_des":"የምግብ፣ የመጠለያ እና የህክምና እርዳታን ጨምሮ አጠቃላይ እንክብካቤ ለልጆች",
-          "slide_1":"ባይኖረንም ያለንን እናካፍላለን!!",
+          "slide_1":"ባይተርፈንም ያለንን እናካፍላለን!!",
           "homeintro1":"ልጆችን ለነገ ከማብቃት በላይ የማህበረሰብ ስኬት የለም",
           "slide_2":"መሰረታዊ ፍላጎት እና ትምህርት",
           "homeintro2":"ለልጆቻችን ከመሰረታዊ ፍላጎታቸው ባለፈ የትምህርት ቁሳቁሶችን እናሟላለን",
@@ -993,7 +993,7 @@ ar: {
       },
       gr:{
 translation:{
-"protect_kids":"ቅስርየዴንጋንዳቀረቦዮ",
+"protect_kids":"ቅስርየ ዴንጋንዳ ቀረቦዮ",
 "protect_des":"ብንም መደርበዜግነትአነቦቅስርየዴንጋደህንነተታየቅየተንከባካቢየኸረቄያይፈጥሬተረሳም ",
 "shape_kids":"ቅስርየዴንጋንዳንሰክትነ",
 "shape_des":"ዴንጋንዳወኸይመደርይሰሮኸማ የትምህርትያግዞመፅሃፍ፤በንጎድም ቃርኧግዞት",
