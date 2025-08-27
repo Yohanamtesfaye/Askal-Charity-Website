@@ -36,7 +36,6 @@ const Navbar = () => {
             <NavLink to="/">{t("home")}</NavLink>
             <NavLink to="/donate">{t("donate")}</NavLink>
             <NavLink to="/about-us">{t("aboutUs")}</NavLink>
-            <NavLink to="/volunteer">{t("volunteer")}</NavLink>
             <NavLink to="/join-us">{t("joinUs")}</NavLink>
 
             {/* Language Dropdown */}
@@ -77,7 +76,6 @@ const Navbar = () => {
             <MobileNavLink to="/">{t("home")}</MobileNavLink>
             <MobileNavLink to="/donate">{t("donate")}</MobileNavLink>
             <MobileNavLink to="/about-us">{t("aboutUs")}</MobileNavLink>
-            <MobileNavLink to="/volunteer">{t("volunteer")}</MobileNavLink>
             <MobileNavLink to="/join-us">{t("joinUs")}</MobileNavLink>
 
             {/* Language Dropdown in Mobile */}
@@ -96,8 +94,8 @@ const Navbar = () => {
                 <option value="ar">العربية</option> 
                 <option value="rs">Rassian</option>
                 <option value="om">Afaan Oromoo</option>
-                <option value="tg">Tigrinya</option>
-                <option value="gr">Guraginga</option>
+                <option value="tg">ትግርኛ</option>
+                <option value="gr">ጉራግኛ</option>
                 <option value="sd">Sidamigna</option>
 
               </select>
