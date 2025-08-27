@@ -10,6 +10,7 @@ import Donate from './Pages/Donate'
 import Register from './Pages/Register'
 import More from'./Pages/More'
 import Login from './Pages/Login'
+import ContactUs from './Pages/ContactUs'
 function App() {
 
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="/more/:id" element={<More />} />
             <Route path='/login' element={<Login />} />
             <Route path='/donate' element={<Donate/>} />
+            <Route path='/contact-us' element={<ContactUs />} />
           </Routes>
       <Footer/>
      </BrowserRouter>

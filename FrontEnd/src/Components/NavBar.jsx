@@ -50,8 +50,8 @@ const Navbar = () => {
               <option value="rs">Russian</option>
               <option value="ar">العربية (Arabic)</option>
               <option value="om">Afaan Oromoo</option>
-              <option value="tg">Tigrinya</option>
-              <option value="gr">Guraginga</option>
+              <option value="tg">ትግርኛ</option>
+              <option value="gr">ጉራግኛ</option>
               <option value="sd">Sidamigna</option>
 
             </select>
