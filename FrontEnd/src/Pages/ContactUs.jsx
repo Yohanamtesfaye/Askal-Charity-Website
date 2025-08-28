@@ -172,7 +172,7 @@ const ContactUs = () => {
               <div className="pt-4">
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-white py-4 px-8 rounded-xl font-bold text-lg hover:from-green-600 hover:via-green-700 hover:to-green-800 transform hover:scale-105 hover:shadow-xl transition-all duration-300 focus:ring-4 focus:ring-green-200"
+                  className="w-full bg-gradient-to-r from-green-500 via-green-600 to-green-700 text-white py-2 px-8 rounded-xl font-bold text-md hover:from-green-600 hover:via-green-700 hover:to-green-800 transform hover:scale-105 hover:shadow-xl transition-all duration-300 focus:ring-4 focus:ring-green-200"
                 >
                   SEND MESSAGE
                 </button>

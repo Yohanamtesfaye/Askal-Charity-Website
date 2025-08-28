@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { Menu, X } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import logo from "../assets/Images/logo.jpg"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,22 +24,18 @@ const Navbar = () => {
           <div className="flex-shrink-0 flex items-center">
             <Link to="/" className="flex items-center">
               <img
-                className="h-8 w-auto"
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/askallogo.jpg-LPP18eDjV7UVahOKtQ16dfe4lBwJ3b.jpeg"
+                className="h-8 w-auto rounded-full"
+                src={logo}
                 alt="Logo"
               />
               <span className="ml-2 text-xl font-bold text-gray-800">{t('askal')}</span>
             </Link>
           </div>
-
-          {/* Desktop Menu */}
           <div className="hidden sm:flex sm:space-x-8 items-center">
             <NavLink to="/">{t("home")}</NavLink>
             <NavLink to="/donate">{t("donate")}</NavLink>
             <NavLink to="/about-us">{t("aboutUs")}</NavLink>
             <NavLink to="/join-us">{t("joinUs")}</NavLink>
-
-            {/* Language Dropdown */}
             <select
               onChange={changeLanguage}
               value={i18n.language}
@@ -55,8 +52,6 @@ const Navbar = () => {
 
             </select>
           </div>
-
-          {/* Mobile Menu Button */}
           <div className="-mr-2 flex items-center sm:hidden">
             <button
               onClick={toggleMenu}
@@ -69,7 +64,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <div className="sm:hidden">
           <div className="pt-2 pb-3 space-y-1">
@@ -77,8 +71,6 @@ const Navbar = () => {
             <MobileNavLink to="/donate">{t("donate")}</MobileNavLink>
             <MobileNavLink to="/about-us">{t("aboutUs")}</MobileNavLink>
             <MobileNavLink to="/join-us">{t("joinUs")}</MobileNavLink>
-
-            {/* Language Dropdown in Mobile */}
             <div className="px-4 py-2">
               <label htmlFor="language-select" className="block text-sm font-medium text-gray-700">
                 {t("language")}
