@@ -145,6 +145,7 @@ i18n
         "login":"Login",
         "our_gallery":"Our Gallery",
         "description":"Description",
+        "send_msg":"SEND MESSAGE",
 
 
  
@@ -287,6 +288,7 @@ i18n
           "welcome_askal":"እንኳን ወደ አስካል በደህና መጡ!",
           "register_message":"የኛ ቤተሰብ ይሁኑ እና ልጆችን አብረን እንርዳ",
           "login":"ይግቡ",
+          "send_msg":"ይላኩ",
               
 
 
