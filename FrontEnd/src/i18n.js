@@ -146,9 +146,67 @@ i18n
         "our_gallery":"Our Gallery",
         "description":"Description",
         "send_msg":"SEND MESSAGE",
+        "msg":"Message",
+        "msg_ph":"Enter your message",
+         "email1": "Email Address",
+    "email_ph": "Enter your email address",
+    "phone": "Phone Number",
+    "phone_ph": "Enter your phone number",
+    "full_name1": "Full Name",
+    "full_name_ph": "Enter your full name",
+    "send_message": "Send us a message",
+    "fill_out_form": "Fill out the form below and we'll get back to you as soon as possible.",
+
+    "contact_us1": "Contact Us",
+    "hear_from_you": "We'd love to hear from you. Get in touch with our team!",
+    "get_in_touch": "Get in Touch",
+    "ready_to_make_difference": "Ready to make a difference? Reach out to us and let's work together to create positive change in our community.",
+    "email_us": "Email us",
+    "address1": "Address",
+    "address_detail": "Saris, Addis Ababa, around total gas station 'dawi' building 2nd floor, Addis Ababa, Ethiopia",
+    "call_us": "Call us",
+    "office_hours": "Office hours",
+    "office_hours_detail": "Monday to Sunday, 9:00 A.M. to 7:00 P.M.",
+    "join_community": "Join Our Amazing Community",
+    "community_message": "Choose your preferred way to work with us and become part of something bigger. Together, we can make a real difference in our community.",
+     "volunteer1": [
+        "Choose to be seasonal or lifetime volunteer",
+        "Seasonal: volunteer on specific tasks like teaching students during summer",
+        "Help on different tasks seasonally as needed",
+        "Fulltime volunteers are always available when needed",
+        "Volunteer"
+    ],
+"member_option1": [
+        "Participate in every task when needed",
+        "Be present in annual meetings",
+        "Take on additional responsibilities as required",
+        "Become a Member",
+    ],
+    "special_member1": [
+        "Perfect for those living outside Addis Ababa or Ethiopia",
+        "Help Askal mainly through donations",
+        "Stay connected with our mission from anywhere",
+        "Special Member",
+        
+
+    ],
+    "franchise1": [
+        "Represent Askal in your company or location",
+        "Expand our reach and impact",
+        "Build partnerships in your community",
+        "Franchise",
+    ],
 
 
+    "learn":"Learn More",
+    "welcome_future_member": "Welcome, Future Member!",
+    "thank_you_message": "Thank you for deciding to be an Askal member. Please come to our office at Saris, Addis Ababa, around total gas station 'dawi' building 2nd floor, and bring a formal letter to be a member of Askal.",
  
+    "register_as_franchise": "Register as Franchise",
+    "represent_askal": "Represent Askal in your location",
+    "register_as_special_member": "Register as Special Member",
+    "join_global_community": "Join our global community of supporters"
+
         }
       },
       am: {
@@ -289,8 +347,65 @@ i18n
           "register_message":"የኛ ቤተሰብ ይሁኑ እና ልጆችን አብረን እንርዳ",
           "login":"ይግቡ",
           "send_msg":"ይላኩ",
-              
+        
+          "email1": "ኢሜይል አድራሻ",
+    "email_ph": "ኢሜይልዎን ያስገቡ",
+    "phone": "ስልክ ቁጥር",
+    "phone_ph": "ስልክ ቁጥርዎን ያስገቡ",
+    "full_name1": "ሙሉ ስም",
+    "full_name_ph": "ሙሉ ስምዎን ያስገቡ",
+    "msg": "መልዕክት",
+    "msg_ph": "መልዕክትዎን ያስገቡ",
+    "send_message": "መልዕክት ይላኩልን",
+    "fill_out_form": "ከዚህ በታች ያለውን ቅጽ ይሙሉ አኛም በተቻለ ፍጥነት ምላሽ እንሰጥዎታለን።",
+    "contact_us1": "አግኙን",
+    "hear_from_you": "ከእርስዎ መስማት እንፈልጋለን። ከአባሎቻችን ጋር ይገናኙ!",
+    "get_in_touch": "ያግኙን",
+    "ready_to_make_difference": "ለውጥ ለማምጣት ዝግጁ ነዎት? አነጋግሩን እና በህብረተሰባችን ውስጥ አወንታዊ ለውጥ እንዲመጣ በጋራ እንስራ።",
+    "email_us": "ኢሜይል ይላኩልን",
+    "address1": "አድራሻ",
+    "address_detail": "ሳሪስ፣ አዲስ አበባ፣ ቶታል ነዳጅ ማደያ 'ዳዊ' ህንፃ 2ኛ ፎቅ፣ አዲስ አበባ፣ ኢትዮጵያ",
+    "call_us": "ይደውሉልን",
+    "office_hours": "የቢሮ ሰዓት",
+    "office_hours_detail": "ከሰኞ እስከ እሁድ 9:00 ኤ.ኤም. እስከ 7፡00 ፒ.ኤም.",
+    "join_community": "ወደ አስደናቂ ማህበረሰባችን ይቀላቀሉ",
+    "community_message": "ከእኛ ጋር ለመስራት የሚመርጡትን መንገድ ይምረጡ እና የትልቅ ነገር አካል ይሁኑ። በጋራ በማህበረሰባችን ውስጥ እውነተኛ ለውጥ ማምጣት እንችላለን።",
+        
+    "volunteer1": [
+        "ወቅታዊ ወይም የህይወት ጊዜ በጎ ፈቃደኝነትን ይምረጡ",
+        "ወቅታዊ፡ በበጋ ወቅት ተማሪዎችን በማስተማር ላይ ባሉ ልዩ ተግባራት ላይ የበጎ ፈቃድ አገልግሎት",
+        "እንደ አስፈላጊነቱ በየወቅቱ በተለያዩ ሥራዎች ላይ እገዛ ያድርጉ",
+        "የሙሉ ጊዜ በጎ ፈቃደኞች ሁል ጊዜ አስፈላጊ ሲሆኑ ይገኛሉ",
+        "በጎ ፈቃደኛ"
+    ],      
+"member_option1": [
+        "አስፈላጊ ሆኖ ሲገኝ በእያንዳንዱ ተግባር ውስጥ ይሳተፉ",
+        "በዓመታዊ ስብሰባዎች ላይ ተገኙ",
+        "እንደ አስፈላጊነቱ ተጨማሪ ኃላፊነቶችን ይውሰዱ",
+        "አባል ይሁኑ",
+    ],
+    "special_member1": [
+        "በአዲስ አበባ ወይም በኢትዮጵያ ውስጥ ለሚኖሩ የተሻለ",
+        "አስካልን በዋናነት በገንዘብ ይደግፉ",
+        "ከየትኛውም ቦታ ሆነው ከተልዕኳችን ጋር እንደተገናኙ ይቆዩ",
+        "ልዩ አባል"
 
+    ],
+    "franchise1": [
+        "በድርጅትዎ ወይም በአከባቢዎ ውስጥ አስካልን ይወክሉ",
+        "ተደራሽነታችንን እና ተጽኖአችንን ያስፉ",
+        "በማህበረሰብዎ ውስጥ ሽርክና ይፍጠሩ",//
+        "ፍራንቻይስ"
+    ],
+
+    "learn":"ተጨማሪ ይወቁ",
+    "welcome_future_member": "እንኳን ደህና መጡ!",
+    "thank_you_message": "የአስካል አባል ለመሆን ስለወሰኑ እናመሰግናለን። እባኮትን ሳሪስ አዲስ አበባ ቶታል ነዳጅ ማደያ 'ዳዊ' ህንፃ 2ኛ ፎቅ አካባቢ በሚገኘው ቢሮአችን በመምጣት አባል ለመሆን መደበኛ ደብዳቤ ይዘው ይምጡ",
+    
+     "register_as_franchise": "እንደ ፍራንቻይስ ይመዝግቡ",
+    "represent_askal": "አስካልን በየቦታችሁ ይወክሉ",
+    "register_as_special_member": "እንደ ልዩ አባል ይመዝግቡ",
+    "join_global_community": "የአለምአቀፍ ደጋፊዎቻችንን ይቀላቀሉ"
 
         }
       },

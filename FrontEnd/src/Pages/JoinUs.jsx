@@ -80,45 +80,45 @@ const JoinUs = () => {
 
   const cards = [
     {
-      type: "Volunteer",
+      type:  t('volunteer1.4'),
       description: [
-        "Choose to be seasonal or lifetime volunteer",
-        "Seasonal: volunteer on specific tasks like teaching students during summer",
-        "Help on different tasks seasonally as needed",
-        "Fulltime volunteers are always available when needed",
-      ],
+        t('volunteer1.0'), 
+            t('volunteer1.1'), 
+            t('volunteer1.2'), 
+            t('volunteer1.3')  
+      ] ,
       gradient: "from-green-400 to-green-600",
       icon: <FaHandshake className="text-4xl" color="white" />,
       onClick: () => (window.location.href = "./volunteer"),
     },
     {
-      type: "Become a Member",
+      type: t('member_option1.3'),
       description: [
-        "Participate in every task when needed",
-        "Be present in annual meetings",
-        "Take on additional responsibilities as required",
+        t('member_option1.0'),
+            t('member_option1.1'),
+            t('member_option1.2')
       ],
       gradient: "from-yellow-400 to-yellow-500",
       icon: <UsersIcon className="text-4xl" color="white" />,
       onClick: () => setShowMemberModal(true),
     },
     {
-      type: "Special Member",
+      type:  t('special_member1.3'),
       description: [
-        "Perfect for those living outside Addis Ababa or Ethiopia",
-        "Help Askal mainly through donations",
-        "Stay connected with our mission from anywhere",
+        t('special_member1.0'),
+            t('special_member1.1'),
+            t('special_member1.2')
       ],
       gradient: "from-red-400 to-red-600",
       icon: <FaStar className="text-4xl" color="white" />,
       onClick: () => setShowSpecialFormModal(true),
     },
     {
-      type: "Franchise",
+      type: t('franchise1.3'),
       description: [
-        "Represent Askal in your company or location",
-        "Expand our reach and impact",
-        "Build partnerships in your community",
+        t('franchise1.0'),
+            t('franchise1.1'),
+            t('franchise1.2')
       ],
       gradient: "from-green-400 to-green-600",
       icon: <FaBuilding className="text-4xl" color="white" />,
@@ -149,11 +149,10 @@ const JoinUs = () => {
         {/* Hero Section */}
         <div className="text-center mb-16 text-green-600">
           <h1 className="text-5xl font-bold   mb-6">
-            Join Our Amazing Community
+            {t('join_community')} 
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto text-balance leading-relaxed">
-            Choose your preferred way to work with us and become part of something bigger. Together, we can make a real
-            difference in our community.
+            {t('community_message')} 
           </p>
                   <hr className="mt-4 border border-t-8 border-red-500 w-64 mx-auto rounded-lg" />
 
@@ -188,7 +187,7 @@ const JoinUs = () => {
                   ))}
                 </ul>
                 <div className="mt-4 flex items-center text-green-600 font-medium text-sm group-hover:text-green-700">
-                  Learn More
+                  {t('learn')}
                   <span className="ml-2 transform group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>
@@ -207,11 +206,9 @@ const JoinUs = () => {
           <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <span className="text-2xl"><UsersIcon color="white" /></span>
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Welcome, Future Member!</h3>
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('welcome_future_member')}</h3>
           <p className="text-gray-700 leading-relaxed">
-            Thank you for deciding to be an Askal member. Please come to our office at
-                      Saris, Addis Ababa, around total gas station "dawi" building 2nd floor, and bring a formal
-            letter to be a member of Askal.
+            {t('thank_you_message')}
           </p>
           <button
             onClick={() => setShowMemberModal(false)}
@@ -228,8 +225,8 @@ const JoinUs = () => {
           <div className="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl"><FaStar color="white" /></span>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">Register as Special Member</h2>
-          <p className="text-gray-600 mt-2">Join our global community of supporters</p>
+          <h2 className="text-2xl font-bold text-gray-900">{t('register_as_special_member')}</h2>
+          <p className="text-gray-600 mt-2">{t('join_global_community')}</p>
         </div>
         <form onSubmit={(e) => handleSubmit(e, specialFormData, setSpecialFormData)} className="space-y-6">
           <div>
@@ -322,8 +319,8 @@ const JoinUs = () => {
           <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl"><FaBuilding color="white" /></span>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900">Register as Franchise</h2>
-          <p className="text-gray-600 mt-2">Represent Askal in your location</p>
+          <h2 className="text-2xl font-bold text-gray-900">{t('register_as_franchise')}</h2>
+          <p className="text-gray-600 mt-2">{t('represent_askal')}</p>
         </div>
         <form onSubmit={(e) => handleSubmit(e, franchiseFormData, setFranchiseFormData)} className="space-y-6">
           <div>

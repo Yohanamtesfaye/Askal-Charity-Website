@@ -30,8 +30,8 @@ const ContactUs = () => {
   return (
     <div className=" min-h-screen">
       <div className=" py-8 text-center text-green-600 ">
-        <h1 className="text-xl lg:text-6xl font-bold mb-2 text-balance">Contact Us</h1>
-        <p className="text-green-700 text-lg">We'd love to hear from you. Get in touch with our team!</p>
+        <h1 className="text-xl lg:text-6xl font-bold mb-2 text-balance">{t('contact_us1')} </h1>
+        <p className="text-green-700 text-lg">{t('hear_from_you')} </p>
         <hr className="mt-4 border border-t-8 border-yellow-400 w-64 mx-auto rounded-lg" />
       </div>
 
@@ -42,10 +42,9 @@ const ContactUs = () => {
             <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-br from-red-400 to-yellow-400 rounded-full opacity-10 transform -translate-x-12 translate-y-12"></div>
 
             <div className="relative z-10">
-              <h2 className="text-4xl lg:text-4xl font-bold mb-8 text-balance text-white">Get in Touch</h2>
+              <h2 className="text-4xl lg:text-4xl font-bold mb-8 text-balance text-white">{t('get_in_touch')}</h2>
               <p className="text mb-12 text-lg leading-relaxed">
-                Ready to make a difference? Reach out to us and let's work together to create positive change in our
-                community.
+                {t('ready_to_make_difference')}
               </p>
 
               <div className="space-y-8">
@@ -54,7 +53,7 @@ const ContactUs = () => {
                     <MdEmail className="text-2xl text-white" />
                   </div>
                   <div>
-                    <p className="text-xl font-bold mb-2">Email us</p>
+                    <p className="text-xl font-bold mb-2">{t('email_us')}</p>
                     <p className="text-yellow-300 font-medium hover:text-yellow-200 transition-colors duration-300">
                       askalcharityassociation@gmail.com
                     </p>
@@ -66,9 +65,9 @@ const ContactUs = () => {
                     <FaMapMarkerAlt className="text-2xl text-white" />
                   </div>
                   <div>
-                    <p className="text-xl font-bold mb-2">Address</p>
+                    <p className="text-xl font-bold mb-2">{t('address1')}</p>
                     <p className="text-gray-300 leading-relaxed">
-                      Saris, Addis Ababa, around total gas station "dawi" building 2nd floor, Addis Ababa, Ethiopia
+                      {t('address_detail')}
                     </p>
                   </div>
                 </div>
@@ -78,7 +77,7 @@ const ContactUs = () => {
                     <FaPhone className="text-2xl text-white" />
                   </div>
                   <div>
-                    <p className="text-xl font-bold mb-2">Call us</p>
+                    <p className="text-xl font-bold mb-2">{t('call_us')}</p>
                     <p className="text-yellow-300 font-medium hover:text-yellow-200 transition-colors duration-300">
                       +251 90 240 4444
                     </p>
@@ -90,8 +89,8 @@ const ContactUs = () => {
                     <FaClock className="text-2xl text-white" />
                   </div>
                   <div>
-                    <p className="text-xl font-bold mb-2">Office hours</p>
-                    <p className="text-gray-300">Monday to Sunday, 9:00 A.M. to 7:00 P.M.</p>
+                    <p className="text-xl font-bold mb-2">{t('office_hours')}</p>
+                    <p className="text-gray-300">{t('office_hours_detail')}</p>
                   </div>
                 </div>
               </div>
@@ -100,16 +99,16 @@ const ContactUs = () => {
 
           <div className="lg:w-1/2 p-8 lg:p-12 bg-gradient-to-br from-white to-gray-50">
             <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Send us a message</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">{t('send_message')} </h3>
               <p className="text-gray-600 leading-relaxed">
-                Fill out the form below and we'll get back to you as soon as possible.
+                {t('fill_out_form')} 
               </p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-2">
               <div>
                 <label htmlFor="fullName" className="block text-md font-semibold text-gray-800 mb-2">
-                  Full Name
+                   {t('full_name1')} 
                 </label>
                 <input
                   type="text"
@@ -118,14 +117,14 @@ const ContactUs = () => {
                   value={formData.fullName}
                   onChange={handleChange}
                   className="w-full p-2 border-2 border-gray-200 rounded-xl bg-white focus:border-green-500 focus:ring-4 focus:ring-green-100 transition-all duration-300 text-gray-900 placeholder-gray-500"
-                  placeholder="Enter your full name"
+                  placeholder= {t('full_name_ph')} 
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="phoneNumber" className="block text-md font-semibold text-gray-800 mb-2">
-                  Phone Number
+                   {t('phone')} 
                 </label>
                 <input
                   type="tel"
@@ -134,14 +133,14 @@ const ContactUs = () => {
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   className="w-full p-2 border-2 border-gray-200 rounded-xl bg-white focus:border-yellow-500 focus:ring-4 focus:ring-yellow-100 transition-all duration-300 text-gray-900 placeholder-gray-500"
-                  placeholder="Enter a valid phone number"
+                  placeholder= {t('phone_ph')} 
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-md font-semibold text-gray-800 mb-2">
-                  Email Address
+                  {t('email1')} 
                 </label>
                 <input
                   type="email"
@@ -150,14 +149,14 @@ const ContactUs = () => {
                   value={formData.email}
                   onChange={handleChange}
                   className="w-full p-2 border-2 border-gray-200 rounded-xl bg-white focus:border-red-500 focus:ring-4 focus:ring-red-100 transition-all duration-300 text-gray-900 placeholder-gray-500"
-                  placeholder="Enter a valid email address"
+                  placeholder={t('email_ph')}
                   required
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-md font-semibold text-gray-800 mb-2">
-                  Message
+                  {t('msg')}
                 </label>
                 <textarea
                   id="message"
@@ -165,7 +164,7 @@ const ContactUs = () => {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full p-2 border-2 border-gray-200 rounded-xl bg-white focus:border-green-500 focus:ring-4 focus:ring-green-100 transition-all duration-300 text-gray-900 placeholder-gray-500 resize-none"
-                  placeholder="Enter your message"
+                  placeholder={t('msg_ph')} 
                   rows="5"
                   required
                 ></textarea>
