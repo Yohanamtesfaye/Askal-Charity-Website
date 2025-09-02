@@ -245,14 +245,14 @@ const JoinUs = () => {
           </div>
 
           <div>
-            <label htmlFor="age" className="block text-sm font-semibold text-gray-700 mb-2">
-              {t("age")}
+            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("email")}
             </label>
             <input
-              type="number"
-              name="age"
-              id="age"
-              value={specialFormData.age}
+              type="text"
+              name="email"
+              id="email"
+              value={specialFormData.email}
               onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
               className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
               required
@@ -260,14 +260,14 @@ const JoinUs = () => {
           </div>
 
           <div>
-            <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 mb-2">
-              {t("phone_number")}
+            <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("phone")}
             </label>
             <input
               type="tel"
-              name="phoneNumber"
-              id="phoneNumber"
-              value={specialFormData.phoneNumber}
+              name="phone"
+              id="phone"
+              value={specialFormData.phone}
               onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
               className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
               required
@@ -275,10 +275,137 @@ const JoinUs = () => {
           </div>
 
           <div>
-            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
-              {t("addr")}
+            <label htmlFor="gender" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("gender")}
             </label>
-            <textarea
+            <input
+              type="text"
+              name="gender"
+              id="gender"
+              value={specialFormData.gender}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="nationality" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("nationality")}
+            </label>
+            <input
+              type="text"
+              name="nationality"
+              id="nationality"
+              value={specialFormData.nationality}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="Countryresidence" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("Countryresidence")}
+            </label>
+            <input
+              type="text"
+              name="Countryresidence"
+              id="Countryresidence"
+              value={specialFormData.Countryresidence}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </div>
+           <div>
+            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("address")}
+            </label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              value={specialFormData.address}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </div>
+           <div>
+            <label htmlFor="moneyamount" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("moneyamount")}
+            </label>
+           <select
+              name="moneyamount"
+              id="moneyamount"
+              value={specialFormData.moneyamount}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value="op-1">{t("op-1")}</option>
+              <option value="op-2">{t("op-2")}</option>
+              <option value="op-3">{t("op-3")}</option>
+              <option value="op-4">{t("op-4")}</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="moneyamountschedule" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("moneyamountschedule")}
+            </label>
+           <select
+              name="moneyamountschedule"
+              id="moneyamountschedule"
+              value={specialFormData.moneyamountschedule}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value="op-1">{t("op-1")}</option>
+              <option value="op-2">{t("op-2")}</option>
+              <option value="op-3">{t("op-3")}</option>
+              <option value="op-4">{t("op-4")}</option>
+            </select>
+          </div>
+          <div>
+            <label htmlFor="schedule" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("schedule")}
+            </label>
+            <input
+              type="text"
+              name="schedule"
+              id="schedule"
+              value={specialFormData.schedule}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("address")}
+            </label>
+            <input
+              type="text"
+              name="address"
+              id="address"
+              value={specialFormData.address}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("address")}
+            </label>
+            <input
+              type="text"
               name="address"
               id="address"
               value={specialFormData.address}
