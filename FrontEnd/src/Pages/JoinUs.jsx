@@ -29,6 +29,9 @@ const JoinUs = () => {
     age: "",
     phoneNumber: "",
     address: "",
+    country: "",
+    academicLevel: "",
+    maritalStatus: "",
     reason: "",
     membershipType: "franchise",
   })
@@ -50,14 +53,13 @@ const JoinUs = () => {
       if (response.ok) {
         console.log("Registration successful!", data)
         // Reset form and close modal
-        setFormData({
-          name: "",
-          age: "",
-          phoneNumber: "",
-          address: "",
-          reason: "",
-          membershipType: formData.membershipType,
-        })
+        const emptiedForm = Object.fromEntries(
+          Object.keys(formData).map((key) => [
+            key,
+            key === "membershipType" ? formData.membershipType : "",
+          ])
+        )
+        setFormData(emptiedForm)
         if (formData.membershipType === "specialmember") {
           setShowSpecialFormModal(false)
         } else if (formData.membershipType === "franchise") {
@@ -508,6 +510,62 @@ const JoinUs = () => {
               className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors resize-none"
               required
             />
+          </div>
+
+          <div>
+            <label htmlFor="country" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("country")}
+            </label>
+            <input
+              type="text"
+              name="country"
+              id="country"
+              value={franchiseFormData.country}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            />
+          </div>
+
+          <div>
+            <label htmlFor="academicLevel" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("academic_level")}
+            </label>
+            <select
+              name="academicLevel"
+              id="academicLevel"
+              value={franchiseFormData.academicLevel}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value="">{t("select_option")}</option>
+              <option value="high_school">{t("level_high_school")}</option>
+              <option value="diploma">{t("level_diploma")}</option>
+              <option value="bachelor">{t("level_bachelor")}</option>
+              <option value="master">{t("level_master")}</option>
+              <option value="phd">{t("level_phd")}</option>
+            </select>
+          </div>
+
+          <div>
+            <label htmlFor="maritalStatus" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("marital_status")}
+            </label>
+            <select
+              name="maritalStatus"
+              id="maritalStatus"
+              value={franchiseFormData.maritalStatus}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value="">{t("select_option")}</option>
+              <option value="single">{t("single")}</option>
+              <option value="married">{t("married")}</option>
+              <option value="divorced">{t("divorced")}</option>
+              <option value="widowed">{t("widowed")}</option>
+            </select>
           </div>
 
           <div>
