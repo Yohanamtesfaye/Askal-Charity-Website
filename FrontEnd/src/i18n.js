@@ -205,8 +205,60 @@ i18n
     "register_as_franchise": "Register as Franchise",
     "represent_askal": "Represent Askal in your location",
     "register_as_special_member": "Register as Special Member",
-    "join_global_community": "Join our global community of supporters"
+    "join_global_community": "Join our global community of supporters",
+    "moneyamount":"How much money would you like to donate",
+    "gender":"Gender",
+    "countryresidence": "Country of residence",
+    "nationality": "Nationality",
+    "moneyamountschedule": "How often do you make your donation?",
+    "start_donation": "When can you start donating?",
+    "late_notification": "How will we notify you if you are late in making the donation for various reasons?",
+    "birr":"birr",
+    "Countryresidence":"Country of residence",
+    "addressresidence":"Residential address - city/region/zone",
+    "donation_frequency": [
+        "Every week",
+        "Every 15 days",
+        "Every month",
+        "Every three months",
+        "Every six months",
+        "Once a year"
+    ],
 
+    "donation_duration": [
+      "How long can you donate the amount you choose?",
+        "For six consecutive months",
+        "For one year",
+        "For three years",
+        "I would not stop."],
+
+        "donation_option": [
+        "Which option would you prefer to make your donation?",
+        "By direct deposit into Askal's bank account (CBE-1000448386377)",
+        "By transferring money to Askal's account via phone (CBE-1000448386377)",
+        "By visiting Askal's office in person",
+        "By coming to your location and receiving it"
+    ],
+    
+     "reminder_preference": [
+      "Would you like us to remind you when your donation date is approaching?",
+        "Yes",
+        "NO"
+    ],
+    "reminder_method": [
+        "If your answer is 'yes' to the previous question, what method should we use to remind you?",
+        "Call me",
+        "Send me a short text message",
+        "Connect with me through my social media page",
+        "Come to my location in person and remember me"
+    ],
+
+    "missed_deadline_notification": [
+        "How soon should we notify you if you miss the deadline of the donation?",
+        "If I passed the donation deadline by 1 day",
+        "If I passed the donation deadline by 3 days",
+        "If I passed the donation deadline by 1 week"
+    ],
         }
       },
       am: {
@@ -405,8 +457,62 @@ i18n
      "register_as_franchise": "እንደ ፍራንቻይስ ይመዝግቡ",
     "represent_askal": "አስካልን በየቦታችሁ ይወክሉ",
     "register_as_special_member": "እንደ ልዩ አባል ይመዝግቡ",
-    "join_global_community": "የአለምአቀፍ ደጋፊዎቻችንን ይቀላቀሉ"
+    "join_global_community": "የአለምአቀፍ ደጋፊዎቻችንን ይቀላቀሉ",
+    "moneyamount":"ድጋፍ ማድረግ የሚችሉት የገንዘብ መጠን",
+    "gender":"ጾታ",
+     "countryresidence": "የአገር መኖሪያ",
+    "nationality": "ዜግነት",
+    "moneyamountschedule": "የወሰኑትን መዋጮ ገቢ የሚያደርጉት በየስንት ጊዜው ልዩነት ነው?",
+    "start_donation": " መዋጮውን መቼ መጀመር ይችላሉ?",
+    "late_notification": "በተለያዩ ምክንያቶች ገቢ ሳያደርጉ ቢዘገዩ በምን አግባብ እናሳውቅዎ?",
+    "birr":"ብር",
+    "Countryresidence":"የመኖሪያ ሃገር",
+    "addressresidence":"የመኖሪያ አድራሻ-ከተማ/ክልል/ዞን",
 
+    "donation_frequency": [
+        "በየሳምንቱ",
+        "በየ15 ቀኑ",
+        "በየወሩ",
+        "በየሶስት ወሩ",
+        "በየስድስት ወሩ",
+        "በዓመት አንድ ጊዜ"
+    ],
+     "donation_duration": [
+      "የመረጡትን የገንዘብ መጠን ለምን ያህል ጊዜ ነው መለገስ የሚችሉት?",
+        "ለስድስት ተከታታይ ወራት",
+        "ለአንድ ዓመት",
+        "ለሶስት ዓመት",
+        "እድሜና ጤና ቢሰጠኝ ማቋረጥ አልፈግም"
+    ],
+
+    "donation_option": [
+        "መዋጮውን በየትኛው አማራጭ ገቢ ማድረግ ይመችዎታል?",
+        "የአስካል የባንክ ተቀማጭ ሂሳብ ውስጥ በቀጥታ በማስገባት(CBE-1000448386377)",
+        "በስልክዎ ወደ አስካል ሂሳብ  በማስተላለፍ(CBE-1000448386377)",
+        "አስካል ጽ/ቤት በአካል በመምጣት",
+        "እኛ እርስዎ ያሉበት ድረስ መጥተን በመቀበል"
+    ],
+    
+     "reminder_preference": [
+      "የሚለግሱበት ቀን ሲቃረብ እንድናስታውስዎ ይፈልጋሉ?",
+        "አዎ",
+        "አልፈልግም"
+    ],
+
+     "reminder_method": [
+        "ለቀደመው ጥያቄ መልስዎ “አዎ” ከሆነ እንድናስታውስዎ የትኛውን መንገድ እንጠቀም?",
+        "ስልክ ብትደውሉልኝ",
+        "አጭር የጽሁፍ መልዕክት ብትልኩልኝ",
+        "በማኅበራዊ የትስስር ገጼ ብትፉልኝ",
+        "ያለሁበት ቦታ በአካል መጥታችሁ ብታስታውሱኝ"
+    ],
+    
+      "missed_deadline_notification": [
+        "ምናልባት ማስገባት ካለብዎ  ቀነ ገደብ ቢያሳልፉ ከምን ያህል ጊዜ በኋላ  እናሳውቅዎ?",
+        "አንድ ቀን ካሳለፍኩ",
+        "ሦስት ቀን ካሳለፍኩ",
+        "አንድ ሳምንት ከሞላኝ"
+    ],
         }
       },
       om: {

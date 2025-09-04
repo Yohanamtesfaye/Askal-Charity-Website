@@ -321,21 +321,23 @@ const JoinUs = () => {
               required
             />
           </div>
-           <div>
-            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
-              {t("address")}
-            </label>
-            <input
-              type="text"
-              name="address"
-              id="address"
-              value={specialFormData.address}
-              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
-              rows={2}
-              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
-              required
-            />
-          </div>
+
+          <div>
+  <label htmlFor="addressresidence" className="block text-sm font-semibold text-gray-700 mb-2">
+    {t("addressresidence")}
+  </label>
+  <input
+    type="text"
+    name="addressresidence"
+    id="addressresidence"
+    value={specialFormData.addressresidence}
+    onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+    rows={2}
+    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+    required
+  />
+</div>
+           
            <div>
             <label htmlFor="moneyamount" className="block text-sm font-semibold text-gray-700 mb-2">
               {t("moneyamount")}
@@ -348,10 +350,14 @@ const JoinUs = () => {
               className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
               required
             >
-              <option value="op-1">{t("op-1")}</option>
-              <option value="op-2">{t("op-2")}</option>
-              <option value="op-3">{t("op-3")}</option>
-              <option value="op-4">{t("op-4")}</option>
+              <option value="op-1"> 50 {t("birr")}</option>
+              <option value="op-2">100 {t("birr")}</option>
+              <option value="op-3">500 {t("birr")}</option>
+              <option value="op-4">1000 {t("birr")}</option>
+              <option value="op-1">5,000 {t("birr")}</option>
+              <option value="op-2">10,000 {t("birr")}</option>
+              <option value="op-3">30,000 {t("birr")}</option>
+              <option value="op-4">50,000 {t("birr")}</option>
             </select>
           </div>
           <div>
@@ -366,72 +372,143 @@ const JoinUs = () => {
               className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
               required
             >
-              <option value="op-1">{t("op-1")}</option>
-              <option value="op-2">{t("op-2")}</option>
-              <option value="op-3">{t("op-3")}</option>
-              <option value="op-4">{t("op-4")}</option>
+                 <option value={t('donation_frequency.0')}>{t('donation_frequency.0')}</option>
+    <option value={t('donation_frequency.1')}>{t('donation_frequency.1')}</option>
+    <option value={t('donation_frequency.2')}>{t('donation_frequency.2')}</option>
+    <option value={t('donation_frequency.3')}>{t('donation_frequency.3')}</option>
+    <option value={t('donation_frequency.4')}>{t('donation_frequency.4')}</option>
+    <option value={t('donation_frequency.5')}>{t('donation_frequency.5')}</option>
             </select>
           </div>
+          
           <div>
-            <label htmlFor="schedule" className="block text-sm font-semibold text-gray-700 mb-2">
-              {t("schedule")}
-            </label>
-            <input
-              type="text"
-              name="schedule"
-              id="schedule"
-              value={specialFormData.schedule}
-              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
-              rows={2}
-              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
-              {t("address")}
-            </label>
-            <input
-              type="text"
-              name="address"
-              id="address"
-              value={specialFormData.address}
-              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
-              rows={2}
-              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
-              {t("address")}
-            </label>
-            <input
-              type="text"
-              name="address"
-              id="address"
-              value={specialFormData.address}
-              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
-              rows={2}
-              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
-              required
-            />
-          </div>
+  <label htmlFor="donation_duration" className="block text-sm font-semibold text-gray-700 mb-2">
+    {t("donation_duration.0")}
+  </label>
+  <select
+    name="donation_duration"
+    id="donation_duration"
+    value={specialFormData.donation_duration}
+    onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+    required
+  >
+    <option value={t('donation_duration.1')}>{t('donation_duration.1')}</option>
+    <option value={t('donation_duration.2')}>{t('donation_duration.2')}</option>
+    <option value={t('donation_duration.3')}>{t('donation_duration.3')}</option>
+    <option value={t('donation_duration.4')}>{t('donation_duration.4')}</option>
+  </select>
+</div>
 
-          <div>
-            <label htmlFor="reason" className="block text-sm font-semibold text-gray-700 mb-2">
-              {t("join_reason")}
-            </label>
-            <textarea
-              name="reason"
-              id="reason"
-              value={specialFormData.reason}
-              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
-              rows={3}
-              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
-              required
-            />
-          </div>
+<div>
+  <label htmlFor="start_donation" className="block text-sm font-semibold text-gray-700 mb-2">
+    {t("start_donation")}
+  </label>
+  <input
+    type="date"
+    name="start_donation"
+    id="start_donation"
+    value={specialFormData.start_donation}
+    onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+    required
+  />
+</div>
+
+<div>
+  <label htmlFor="donation_option" className="block text-sm font-semibold text-gray-700 mb-2">
+    {t("donation_option.0")}
+  </label>
+  <select
+    name="donation_option"
+    id="donation_option"
+    value={specialFormData.donation_option}
+    onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+    required
+  >
+    <option value={t('donation_option.1')}>{t('donation_option.1')}</option>
+    <option value={t('donation_option.2')}>{t('donation_option.2')}</option>
+    <option value={t('donation_option.3')}>{t('donation_option.3')}</option>
+    <option value={t('donation_option.4')}>{t('donation_option.4')}</option>
+  </select>
+</div>
+
+<div>
+  <label htmlFor="reminder_preference" className="block text-sm font-semibold text-gray-700 mb-2">
+    {t("reminder_preference.0")}
+  </label>
+  <select
+    name="reminder_preference"
+    id="reminder_preference"
+    value={specialFormData.reminder_preference}
+    onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+    required
+  >
+    <option value={t('reminder_preference.1')}>{t('reminder_preference.1')}</option>
+    <option value={t('reminder_preference.2')}>{t('reminder_preference.2')}</option>
+
+  </select>
+</div>
+
+<div>
+  <label htmlFor="reminder_method" className="block text-sm font-semibold text-gray-700 mb-2">
+    {t("reminder_method.0")}
+  </label>
+  <select
+    name="reminder_method"
+    id="reminder_method"
+    value={specialFormData.reminder_method}
+    onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+    required
+  >
+    <option value={t('reminder_method.1')}>{t('reminder_method.1')}</option>
+    <option value={t('reminder_method.2')}>{t('reminder_method.2')}</option>
+    <option value={t('reminder_method.3')}>{t('reminder_method.3')}</option>
+    <option value={t('reminder_method.4')}>{t('reminder_method.4')}</option>
+   
+  </select>
+</div>
+
+<div>
+  <label htmlFor="reminder_method" className="block text-sm font-semibold text-gray-700 mb-2">
+    {t("late_notification")}
+  </label>
+  <select
+    name="late_notification"
+    id="late_notification"
+    value={specialFormData.late_notification}
+    onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+    required
+  >
+    <option value={t('reminder_method.1')}>{t('reminder_method.1')}</option>
+    <option value={t('reminder_method.2')}>{t('reminder_method.2')}</option>
+    <option value={t('reminder_method.3')}>{t('reminder_method.3')}</option>
+    <option value={t('reminder_method.4')}>{t('reminder_method.4')}</option>
+  </select>
+</div>
+
+<div>
+  <label htmlFor="missed_deadline_notification" className="block text-sm font-semibold text-gray-700 mb-2">
+    {t("missed_deadline_notification.0")}
+  </label>
+  <select
+    name="missed_deadline_notification"
+    id="missed_deadline_notification"
+    value={specialFormData.missed_deadline_notification}
+    onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+    className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+    required
+  >
+    <option value={t('missed_deadline_notification.1')}>{t('missed_deadline_notification.1')}</option>
+    <option value={t('missed_deadline_notification.2')}>{t('missed_deadline_notification.2')}</option>
+    <option value={t('missed_deadline_notification.3')}>{t('missed_deadline_notification.3')}</option>
+  </select>
+</div>
+
 
           <button
             type="submit"
