@@ -16,7 +16,7 @@ router.get('/test', (req, res) => {
   res.status(200).json({ message: 'Test route working!' });
 });
 router.post('/memberships/register', upload.single('photo'), membershipController.register);
-router.post('/volunteers/register', register);
+router.post('/volunteers/register', upload.single('photo'), register);
 router.get('/volunteers', getVolunteers);
 router.get('/volunteers/:id', getVolunteerById);
 router.delete('/volunteers/:id', deleteVolunteer);

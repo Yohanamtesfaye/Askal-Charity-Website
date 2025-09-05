@@ -3,16 +3,37 @@ const db = require('../config/db');
 
 const register = async (req, res) => {
     console.log('Request Body:', req.body);
-    const { name, phoneNumber, age, educationLevel, address,photo, experience } = req.body;
+    console.log('Request File:', req.file);
+    const { name, phoneNumber, age, educationLevel, address, experience } = req.body;
+    const photo = req.file;
 
-    if (!name || !phoneNumber || !age || !educationLevel || !address||!photo) {
+    if (!name || !phoneNumber || !age || !educationLevel || !address) {
         return res.status(400).json({ message: 'All fields are required' });
     }
 
     try {
+        let photoPath = null;
+        if (photo) {
+            // Generate filename with timestamp
+            const filename = `${Date.now()}-${photo.originalname}`;
+            photoPath = `/uploads/${filename}`;
+            
+            // Save file to uploads directory
+            const fs = require('fs');
+            const path = require('path');
+            const uploadDir = path.join(__dirname, '../../uploads');
+            
+            // Create uploads directory if it doesn't exist
+            if (!fs.existsSync(uploadDir)) {
+                fs.mkdirSync(uploadDir, { recursive: true });
+            }
+            
+            fs.writeFileSync(path.join(uploadDir, filename), photo.buffer);
+        }
+
         const [result] = await db.query(
-            'INSERT INTO volunteers (name, phone_number, age, education_level, address, experience,photo) VALUES (?, ?, ?, ?, ?, ?,?)',
-            [name, phoneNumber, age, educationLevel, address, experience]
+            'INSERT INTO volunteers (name, phone_number, age, education_level, address, experience, photo) VALUES (?, ?, ?, ?, ?, ?, ?)',
+            [name, phoneNumber, age, educationLevel, address, experience, photoPath]
         );
         res.status(201).json({ message: 'Registration successful!', id: result.insertId });
     } catch (err) {
