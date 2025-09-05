@@ -3,15 +3,15 @@ const db = require('../config/db');
 
 const register = async (req, res) => {
     console.log('Request Body:', req.body);
-    const { name, phoneNumber, age, educationLevel, address, experience } = req.body;
+    const { name, phoneNumber, age, educationLevel, address,photo, experience } = req.body;
 
-    if (!name || !phoneNumber || !age || !educationLevel || !address) {
+    if (!name || !phoneNumber || !age || !educationLevel || !address||!photo) {
         return res.status(400).json({ message: 'All fields are required' });
     }
 
     try {
         const [result] = await db.query(
-            'INSERT INTO registrations (name, phone_number, age, education_level, address, experience) VALUES (?, ?, ?, ?, ?, ?)',
+            'INSERT INTO volunteers (name, phone_number, age, education_level, address, experience,photo) VALUES (?, ?, ?, ?, ?, ?,?)',
             [name, phoneNumber, age, educationLevel, address, experience]
         );
         res.status(201).json({ message: 'Registration successful!', id: result.insertId });
@@ -22,7 +22,7 @@ const register = async (req, res) => {
 };
 const getVolunteers = async (req, res) => {
     try {
-        const [volunteers] = await db.query('SELECT * FROM registrations');
+        const [volunteers] = await db.query('SELECT * FROM volunteers');
         if (!volunteers.length) {
             return res.status(200).json([]); // Return empty array if no data
         }
@@ -35,7 +35,7 @@ const getVolunteers = async (req, res) => {
 const deleteVolunteer = async (req, res) => {
     const { id } = req.params;
     try {
-        const [result] = await db.query('DELETE FROM registrations WHERE id = ?', [id]);
+        const [result] = await db.query('DELETE FROM volunteers WHERE id = ?', [id]);
         if (result.affectedRows === 0) {
             return res.status(404).json({ message: 'Volunteer not found' });
         }
@@ -48,7 +48,7 @@ const deleteVolunteer = async (req, res) => {
 const getVolunteerById = async (req, res) => {
   const { id } = req.params;
   try {
-    const [volunteers] = await db.query('SELECT * FROM registrations WHERE id = ?', [id]);
+    const [volunteers] = await db.query('SELECT * FROM volunteers WHERE id = ?', [id]);
     if (volunteers.length === 0) {
       return res.status(404).json({ message: 'Volunteer not found' });
     }

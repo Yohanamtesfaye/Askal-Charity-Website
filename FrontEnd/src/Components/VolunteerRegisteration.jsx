@@ -10,6 +10,7 @@ function RegistrationForm() {
     age: '',
     educationLevel: '',
     address: '',
+    photo: null,
     experience: ''
   });
 
@@ -22,6 +23,13 @@ function RegistrationForm() {
       [name]: value
     }));
   };
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFormData(prevState => ({
+      ...prevState,
+      photo: file
+    }));
+  }
 
   const validateForm = () => {
     let tempErrors = {};
@@ -30,6 +38,10 @@ function RegistrationForm() {
     if (!formData.age) tempErrors.age = 'Age is required';
     if (!formData.educationLevel) tempErrors.educationLevel = 'Education level is required';
     if (!formData.address) tempErrors.address = 'Address is required';
+    if (!formData.photo) tempErrors.photo = 'Photo is required';
+    if (formData.age && (formData.age < 16 || formData.age > 100)) {
+      tempErrors.age = 'Age must be between 16 and above';
+    }
     return tempErrors;
   };
 
@@ -148,6 +160,16 @@ function RegistrationForm() {
                  className='px-2'
               />
               {errors.address && <span className="error">{errors.address}</span>}
+            </div>
+            <div className="form-group">
+              <label>{t('photo')}</label>
+              <input
+                type="file"
+                name="photo"
+                onChange={handleFileChange}
+                className='p-2'
+              />
+              {errors.photo && <span className="error">{errors.photo}</span>}
             </div>
 
             <div className="form-group">

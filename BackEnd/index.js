@@ -12,8 +12,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'Uploads'), {
     res.set('Cache-Control', 'public, max-age=31536000');
   }
 }));
-
-// Consolidated CORS configuration
 app.use(cors({
   origin: 'http://localhost:5173', // Frontend origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
