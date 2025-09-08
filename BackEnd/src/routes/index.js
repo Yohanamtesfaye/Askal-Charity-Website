@@ -5,6 +5,8 @@ const adminController = require('../controllers/adminController');
 const adminAuthController = require('../controllers/adminAuthController');
 const { register, getVolunteers,deleteVolunteer,getVolunteerById } = require('../controllers/VolunteerregistrationController');
 const { updatePaymentStatus } = require('../controllers/PaymentController');
+const specialMemberController = require('../controllers/specialMemberController');
+const franchiseController = require('../controllers/franchiseController');
 
 const multer = require('multer');
 
@@ -20,6 +22,20 @@ router.post('/volunteers/register', upload.single('photo'), register);
 router.get('/volunteers', getVolunteers);
 router.get('/volunteers/:id', getVolunteerById);
 router.delete('/volunteers/:id', deleteVolunteer);
+
+// Special Members CRUD
+router.post('/special-members', upload.single('photo'), specialMemberController.createSpecialMember);
+router.get('/special-members', specialMemberController.getSpecialMembers);
+router.get('/special-members/:id', specialMemberController.getSpecialMemberById);
+router.put('/special-members/:id', upload.single('photo'), specialMemberController.updateSpecialMember);
+router.delete('/special-members/:id', specialMemberController.deleteSpecialMember);
+
+// Franchises CRUD
+router.post('/franchises', upload.single('photo'), franchiseController.createFranchise);
+router.get('/franchises', franchiseController.getFranchises);
+router.get('/franchises/:id', franchiseController.getFranchiseById);
+router.put('/franchises/:id', upload.single('photo'), franchiseController.updateFranchise);
+router.delete('/franchises/:id', franchiseController.deleteFranchise);
 router.get('/admin/memberships', adminController.getAllMemberships);
 router.get('/admin/memberships/:id', adminController.getMembershipById); 
 router.delete('/admin/memberships/:id', adminController.deleteMembership);

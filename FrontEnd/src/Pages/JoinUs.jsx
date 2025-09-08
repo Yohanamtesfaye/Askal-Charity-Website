@@ -17,12 +17,31 @@ const JoinUs = () => {
   const [showFranchiseFormModal, setShowFranchiseFormModal] = useState(false)
 
   const [specialFormData, setSpecialFormData] = useState({
-    name: "",
-    age: "",
-    phoneNumber: "",
-    address: "",
-    reason: "",
     membershipType: "specialmember",
+    // Basic info
+    name: "",
+    email: "",
+    phone: "",
+    phoneNumber: "",
+    age: "",
+    // Location & identity
+    gender: "",
+    nationality: "",
+    Countryresidence: "",
+    addressresidence: "",
+    address: "",
+    // Donation preferences
+    moneyamount: "",
+    moneyamountschedule: "",
+    donation_duration: "",
+    start_donation: "",
+    donation_option: "",
+    reminder_preference: "",
+    reminder_method: "",
+    late_notification: "",
+    missed_deadline_notification: "",
+    // Other
+    reason: "",
   })
 
   const [franchiseFormData, setFranchiseFormData] = useState({
@@ -41,12 +60,38 @@ const JoinUs = () => {
     e.preventDefault()
 
     try {
-      const response = await fetch("http://localhost:5000/api/membership", {
+      let url = "";
+      let payload = {};
+      let isMultipart = false;
+
+      if (formData.membershipType === "specialmember") {
+        url = "http://localhost:5000/api/special-members";
+        payload = {
+          name: formData.name,
+          phoneNumber: formData.phone || formData.phoneNumber,
+          age: formData.age,
+          address: formData.addressresidence || formData.address,
+          title: "Special Member",
+          description: formData.reason
+        };
+      } else if (formData.membershipType === "franchise") {
+        url = "http://localhost:5000/api/franchises";
+        payload = {
+          name: formData.name,
+          phoneNumber: formData.phoneNumber,
+          address: formData.address,
+          city: formData.city,
+          country: formData.country,
+          description: formData.reason
+        };
+      }
+
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       })
 
       const data = await response.json()
@@ -71,11 +116,12 @@ const JoinUs = () => {
     }
   }
 
-  const handleChange = (e, setFormData, formData) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
+  const handleChange = (e, setFormData, _formData) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
   }
 
   const cards = [
