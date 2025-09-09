@@ -4,6 +4,10 @@ import Slideshow from '../Components/Slideshow'
 import Gallery from '../Components/Gallery'
 import { FaGraduationCap, FaHandHoldingHeart, FaUsers, FaSeedling } from 'react-icons/fa'
 import us from '../assets/Images/us.jpeg'
+import member2 from '../assets/Images/BM_abelgizaw.jpg'
+import member1 from '../assets/Images/BM_belayniguse.jpg'
+import member4 from '../assets/Images/BM_hamelmalmekuria.jpg'
+import member3 from '../assets/Images/BM_zeynebashifa.jpg'
 import { useTranslation } from 'react-i18next';
 const AboutUs = () => {
   const {t}= useTranslation();
@@ -100,6 +104,72 @@ const AboutUs = () => {
             ))}
           </div>
         </motion.div>
+
+                {/* Board Members Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <h2 className="text-3xl font-bold text-[#399918] mb-12 text-center">
+            {t('board_members')}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                name: t('BM_name.0'),
+                role: t('BM_role.0'),
+                email: "belobelay@gmail.com",
+                img: member1
+              },
+              {
+                name: t('BM_name.1'),
+                role: t('BM_role.1'),
+                email: "abelgizaw600@gmail.com",
+                img: member2
+              },
+              {
+                name: t('BM_name.2'),
+                role: t('BM_role.2'),
+                email: "zeynebashi.10@gmail.com",
+                img: member3
+              },
+              {
+                name: t('BM_name.3'),
+                role: t('BM_role.3'),
+                email: "hemimekuria88@gmail.com",
+                img: member4
+              },
+            ].map((member, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center p-6"
+              >
+                <div className="w-32 h-32 rounded-full overflow-hidden mb-4 border-4 border-[#399918]/30">
+                  <img
+                    src={member.img}
+                    alt={member.name}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-[#399918]">{member.name}</h3>
+                <p className="text-gray-600 mb-4">{member.role}</p>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="mt-auto inline-block px-4 py-2 rounded-xl bg-[#399918] text-white font-medium hover:bg-[#2d7512] transition-colors"
+                >
+                  {t('contact_us')}
+                </a>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
 
         {/* Gallery Section */}
         <motion.div

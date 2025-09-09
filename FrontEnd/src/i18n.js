@@ -54,7 +54,7 @@ i18n
           "daily_meals":"Daily Meals",
           "programs":"Programs",
           "locations":"Locations",
-          "visitor_message":"Message from Visitors",
+          "visitor_message":"Testimonials",
           "contact_us":"Contact Us",
           "footer_des":"Empowering communities through compassion and action",
           "find_us":"Find Us",
@@ -258,6 +258,22 @@ i18n
         "If I passed the donation deadline by 1 day",
         "If I passed the donation deadline by 3 days",
         "If I passed the donation deadline by 1 week"
+    ],
+
+    "board_members":"Board members",
+
+    "BM_name": [
+        "Belay Niguse",
+        "Abel Gizaw",
+        "Zeyneb Ashifa",
+        "Hamelmal Mekuria"
+    ],
+
+    "BM_role": [
+        "Founder and CEO",
+        "Board Director",
+        "General Assembly ChairPerson",
+        "Chief Secretary of the General Assembly"
     ],
         }
       },
@@ -512,6 +528,21 @@ i18n
         "አንድ ቀን ካሳለፍኩ",
         "ሦስት ቀን ካሳለፍኩ",
         "አንድ ሳምንት ከሞላኝ"
+    ],
+
+    "board_members":"የቦርድ አባላት",
+    "BM_name": [
+        "በላይ ንጉሴ",
+        "አቤል ግዛው",
+        "ዘይነባ ሽፋ",
+        "ሐመልማል መኩሪያ"
+    ],
+
+    "BM_role": [ 
+        "መስራች እና ዋና ስራ አስኪያጅ",
+        "የቦርድ ዳይሬክተር",
+        "የጠቅላላ ጉባዔ ዋና ሰብሳቢ",
+        "የጠቅላላ ጉባዔ ዋና ጸሐፊ"
     ],
         }
       },
