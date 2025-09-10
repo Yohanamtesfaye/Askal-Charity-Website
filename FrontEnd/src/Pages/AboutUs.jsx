@@ -104,13 +104,24 @@ const AboutUs = () => {
             ))}
           </div>
         </motion.div>
+        {/* Gallery Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl font-bold text-[#399918] mb-12 text-center">
+            {t('our_gallery')}
+          </h2>
+          <Gallery />
+        </motion.div>
 
                 {/* Board Members Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="mb-24 mt-16"
         >
           <h2 className="text-3xl font-bold text-[#399918] mb-12 text-center">
             {t('board_members')}
@@ -171,17 +182,7 @@ const AboutUs = () => {
         </motion.div>
 
 
-        {/* Gallery Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-3xl font-bold text-[#399918] mb-12 text-center">
-            {t('our_gallery')}
-          </h2>
-          <Gallery />
-        </motion.div>
+        
       </div>
     </div>
   )
