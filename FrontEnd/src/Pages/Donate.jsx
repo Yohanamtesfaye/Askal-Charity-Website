@@ -1,157 +1,189 @@
-import React, { useEffect, useRef } from 'react'
-import Slides from '../Components/Slides'
-import { FaYoutube,FaUserPlus, FaChild, FaChalkboardTeacher, FaDonate , FaTelegramPlane, FaTiktok, FaFacebookF } from 'react-icons/fa';
-import { FaHeart } from 'react-icons/fa';
-import "../App.css"
-import CountUp from 'react-countup';
-import { useTranslation } from 'react-i18next';
-
+"use client"
+import { useEffect, useRef } from "react"
+import { FaDonate } from "react-icons/fa"
+import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next"
 import hand from "../assets/Images/trip.jpeg"
 import bag from "../assets/Images/teach.png"
-import donation from "../assets/Images/donation.png"
-import lifetraining from "../assets/Images/lifetraining.png"
+import { Link } from "react-router-dom"
+import Slideshow from "../Components/Slideshow"
+import { useGSAP } from "@gsap/react"
+import gsap from "gsap"
 
-import { Link } from 'react-router-dom';
-import VisitorMessage from '../Components/VisitorMessage';
-import Slideshow from '../Components/Slideshow';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
+const Donate = () => {
+  const { t } = useTranslation()
+  const fadeRefs = useRef([])
 
-
-const Donate = () => { 
-   const { t } = useTranslation();
-  const fadeRefs = useRef([]);
-  
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries, observer) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            entry.target.classList.remove('fade-in-enter');
-            observer.unobserve(entry.target);
+            entry.target.classList.add("fade-in")
+            entry.target.classList.remove("fade-in-enter")
+            observer.unobserve(entry.target)
           }
-        });
+        })
       },
-      { threshold: 0.2 }
-    );
+      { threshold: 0.2 },
+    )
 
-    fadeRefs.current.forEach(ref => {
-      if (ref) observer.observe(ref);
-    });
+    fadeRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref)
+    })
 
     return () => {
-      fadeRefs.current.forEach(ref => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
-  const t1 = gsap.timeline();
-  useGSAP(()=>{
-    t1.fromTo(".box",{
-      y:100,
-      opacity:0
-    },
-  {
-    y:-20,
-    opacity:1,
-    duration:1,
-    delay:1.5,
-    ease:'power1.inOut',
-    stagger: {
-      amount: 1,
-      from: "start",
-      grid:[0,1],
-      ease:'power1.inOut'
-      
+      fadeRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref)
+      })
     }
-  },
-  
-)
-  },
+  }, [])
 
- 
-  [])
+  useGSAP(() => {
+    gsap.fromTo(
+      ".box",
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        delay: 0.5,
+        ease: "power2.out",
+        stagger: {
+          amount: 0.5,
+          from: "start",
+        },
+      },
+    )
+  }, [])
+
   return (
-    <div className='bg-white'> 
-      <Slideshow  num={2}/>
-      <div className='lg:flex justify-center lg:mx-16 space-y-5 lg:space-y-0 box text-white'>
-  {/* Visit Us Section */}
-  <div className='bg-[#399918]  box flex flex-col items-center justify-center px-10 py-20 w-full lg:w-1/3 mx-4 rounded-lg shadow-md  text-center cursor-pointer transition-transform  duration-700 ease-in-out transform  hover:-translate-y-3'>
-  <FaDonate size={50} className='mb-5' />
-    <h1 className='text-xl font-bold text-center mb-4'>{t('daily_expense')}</h1>
-    <p className='text-center mb-7'>$2/{t('person')}</p>
-    <p className='text-center mb-7'>{t('daily_des')}</p>
-    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>{t('register')}</Link>
-  </div>
+    <div className="bg-white">
+      <div className="h-[60vh] overflow-hidden">
+        <Slideshow num={2} />
+      </div>
 
-  {/* Join Us Section */}
-  <div className='bg-[#FCCD2A] box flex flex-col items-center justify-center px-10 py-20 w-full lg:w-1/3 mx-4 rounded-lg shadow-md  text-center cursor-pointer transition-transform  duration-700 ease-in-out transform  hover:-translate-y-3'>
-  <FaDonate size={50} className='mb-5' />
-    <h1 className='text-xl font-bold text-center mb-4'>{t('monthly_expense')}</h1>
-    <p className='text-center mb-7'>$80/{t('person')}</p>
-    <p className='text-center mb-7'>{t('monthly_expense')}</p>  
-    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>{t('register')}</Link>
-  </div>
+      <div className="container mx-auto px-4 -mt-16 relative z-10">
+        <div className="grid lg:grid-cols-3 gap-6">
+          <motion.div
+            className="box bg-green-600 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="p-6 text-center">
+              <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                <FaDonate className="text-2xl" />
+              </div>
+              <h1 className="text-xl font-bold mb-3">{t("daily_expense")}</h1>
+              <p className="text-lg font-semibold mb-2">$2/{t("person")}</p>
+              <p className="text-sm mb-4 text-white/90">{t("daily_des")}</p>
+              <Link
+                to="/register"
+                className="inline-block border-2 border-white hover:bg-white hover:text-green-600 font-semibold px-4 py-2 rounded-full text-sm transition-all duration-300"
+              >
+                {t("register")}
+              </Link>
+            </div>
+          </motion.div>
 
-  {/* Donate Section */}
-  <div className='bg-[#EB8317] box flex flex-col items-center justify-center px-10 py-20 w-full lg:w-1/3 mx-4 rounded-lg shadow-md  text-center cursor-pointer transition-transform  duration-700 ease-in-out transform  hover:-translate-y-3'>
-    <FaDonate size={50} className='mb-5' />
-    <h1 className='text-xl font-bold text-center mb-4'>{t('yearly_expense')}</h1>
-    <p className='text-center mb-7'>$100/{t('person')}</p>
-    <p className='text-center mb-7'>{t('yearly_expense')}</p>    
-    <Link to='/register' className='border-2 hover:bg-white hover:text-[#55AD9B] font-bold text-center px-5 py-2 text-white rounded-sm'>{t('register')}</Link>
+          <motion.div
+            className="box bg-yellow-500 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="p-6 text-center">
+              <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                <FaDonate className="text-2xl" />
+              </div>
+              <h1 className="text-xl font-bold mb-3">{t("monthly_expense")}</h1>
+              <p className="text-lg font-semibold mb-2">$80/{t("person")}</p>
+              <p className="text-sm mb-4 text-white/90">{t("monthly_expense")}</p>
+              <Link
+                to="/register"
+                className="inline-block border-2 border-white hover:bg-white hover:text-yellow-600 font-semibold px-4 py-2 rounded-full text-sm transition-all duration-300"
+              >
+                {t("register")}
+              </Link>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="box bg-orange-600 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+            whileHover={{ scale: 1.02 }}
+          >
+            <div className="p-6 text-center">
+              <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+                <FaDonate className="text-2xl" />
+              </div>
+              <h1 className="text-xl font-bold mb-3">{t("yearly_expense")}</h1>
+              <p className="text-lg font-semibold mb-2">$100/{t("person")}</p>
+              <p className="text-sm mb-4 text-white/90">{t("yearly_expense")}</p>
+              <Link
+                to="/register"
+                className="inline-block border-2 border-white hover:bg-white hover:text-orange-600 font-semibold px-4 py-2 rounded-full text-sm transition-all duration-300"
+              >
+                {t("register")}
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <div ref={(el) => (fadeRefs.current[2] = el)} className="bg-gray-50 py-12 mt-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-green-600 mb-3">{t("contribute")}</h2>
+            <div className="w-20 h-1 bg-green-600 mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+            >
+              <img src={bag || "/placeholder.svg"} className="w-full h-48 object-cover" alt="Educational support" />
+              <div className="p-6">
+                <div className="bg-gray-200 rounded-full h-2 mb-4">
+                  <div className="bg-green-600 h-2 rounded-full w-3/4"></div>
+                </div>
+                <p className="text-gray-700 mb-4 text-sm leading-relaxed">{t("cause_des")}</p>
+                <div className="flex justify-end">
+                  <Link to="/register">
+                    <button className="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300">
+                      {t("donate")}
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300"
+            >
+              <img src={hand || "/placeholder.svg"} className="w-full h-48 object-cover" alt="Community support" />
+              <div className="p-6">
+                <div className="bg-gray-200 rounded-full h-2 mb-4">
+                  <div className="bg-green-600 h-2 rounded-full w-2/3"></div>
+                </div>
+                <p className="text-gray-700 mb-4 text-sm leading-relaxed">{t("cause_des")}</p>
+                <div className="flex justify-end">
+                  <Link to="/register">
+                    <button className="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300">
+                      {t("donate")}
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div ref={el => fadeRefs.current[2] = el} className="flex flex-col items-center bg-gray-100 py-10">
-            
-            <h2 className="text-green-600 text-3xl font-bold mb-8">{t('contribute')}</h2>
-
-           
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
-              
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                
-                <img src={bag} className="w-full h-48 object-cover"/>
-               
-                <div className="p-6">
-                  <div className="bg-gray-200 rounded-full h-2 mb-4"></div>
-                  <p className="text-gray-700 mb-4">
-                    {t('cause_des')}
-                  </p>
-                    <div className='flex justify-end '>
-                      <Link  to="/register"><button className="  bg-green-600  text-white px-8 py-2 rounded-lg  font-bold hover:bg-green-900 transition-all duration-300">
-                       {t('donate')}
-                                        </button></Link>
-                    </div>
-                 
-                  
-                </div>
-              </div>
-
-              
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src={hand} className="w-full h-48 object-cover" />
-          
-                <div className="p-6">
-                  <div className="bg-gray-200 rounded-full h-2 mb-4"></div>
-                  <p className="text-gray-700 mb-4">
-                    {t('cause_des')}
-                  </p>
-                  <div className='flex justify-end '>
-                    <Link  to="/register"><button className="  bg-green-600  text-white px-8 py-2 rounded-lg  font-bold hover:bg-green-900 transition-all duration-300">
-                                       {t('donate')}
-                                      </button></Link>
-                    </div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-
-    </div>
-    
-  );
-};
+  )
+}
 
 export default Donate
