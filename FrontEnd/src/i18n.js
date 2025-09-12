@@ -275,6 +275,32 @@ i18n
         "General Assembly ChairPerson",
         "Chief Secretary of the General Assembly"
     ],
+
+"Vision1": [
+        "Vision",
+        "To see all children with their physical health preserved, their intellectual capacity expanded with knowledge, their psychological strength developed, and their ability to continuously benefit the country.",
+        "Ensuring children's physical and mental health is protected",
+        "Reducing or eliminating the fear that parents (guardians) have in regards to the future survival of their children",
+        "To ensure that no child, no matter if he or she comes from a poor family, is left out of school or drops out of school due to family circumstances.",
+        "To develop students who are competitive and effective in their academic performance.",
+        "To enable children's potential and creative talent to be recognized globally"
+    ],
+     "Mission1": [
+        "Mission",
+        "To ensure that children are reached in a continuous manner by establishing an effective system to fill the accessibility gap in child support and by providing comprehensive support for the children."
+    ],
+    "Purpose1": [
+        "Purpose",
+        "To provide children, who are the future of the country, with comprehensive and multifaceted support, so that they can become capable citizens who will benefit not only themselves but also the country.",
+        "Ensuring that children eat sufficient and balanced meals three times a day",
+        "Providing students with learning materials and uniforms that are comparable to their peers, allowing them to fully focus on their studies without distractions.",
+        "To reduce the temporary and permanent harm caused by lack of medical care by prioritizing health care implementation and ensuring that children do not miss school due to illness and receive appropriate treatment.",
+        "Supporting students with diverse natural talents to develop their talents (if it leads to ownership rights) and encouraging their efforts by aligning with their dreams.",
+        "To work towards empowering those who cannot afford psychological and material support from their families until they reach adulthood."
+    ],
+
+    "Our_partners_T":"Our partners"
+
         }
       },
       am: {
@@ -544,6 +570,32 @@ i18n
         "የጠቅላላ ጉባዔ ዋና ሰብሳቢ",
         "የጠቅላላ ጉባዔ ዋና ጸሐፊ"
     ],
+
+    "Vision1": [
+        "ራዕይ",
+        "ሁሉም ህፃናት አካላዊ ጤናቸው ተጠብቆ ፣አእምሯዊ ምጥቀታቸው በእውቀት ሰፍቶ፣ስነ ልቦናዊ ጥንካሬያቸው ጎልብቶ በዘላቂነት ያለማቋረጥ ሃገርን ሲጠቅሙ ማየት፡፡",
+        "ህፃናቱ አካላዊና ስነ ልቦናዊ ጤናቸው የተጠበቀ እንዲሆን ማስቻል፡፡",
+        "በቀጥታም ሆነ በተዘዋዋሪ ወላጆች(አሳዳጊዎች) በህጻናቱ መፃዒ ህልውና ላይ የሚኖራቸውን ስጋት መቀነስ ብሎም ማጥፋት፡፡",
+        "የትኛውም ህጻን ከደሃ ቤተሰብቢገኝምእንኳን በቤተቦቹ ኑሮ ምክንያት የማይማር ልጅ እንዳይኖር ወይም ትምህርት የሚያቋርጥ እንዳይሆን ማስቻል፡፡",
+        "በትምህርት ደረጃቸው ተወዳዳሪና ውጤታማ ተማሪዎችንመቅረጽ፡፡",
+        "በዓለም ዓቀፍ ደረጃ የህፃናቱእምቅ የፈጠራ ክህሎታቸው ላቅ ያለ ተቀባይነትን እንዲያገኝ ማስቻል፡፡"
+    ],
+     "Mission1": [
+        "ተልዕኮ",
+        "በህፃናት እገዛ  ዙሪያ ያለውን የተደራሽነት ክፍተት ለመሙላት ብቃት ያለው አሰራር በመዘርጋትና  ከህፃናቱ ጎን በመሆን ሁሉን አቀፍ ድጋፍ ተደራሽ በማድረግ ቀጣይነቱ በማይነጥፍ መልኩ ለህፃናቱ መድረሱን ማረጋገጥ፡፡"
+    ],
+    "Purpose1": [
+        "ዓላማ",
+        "የነገ  ሃገር ተረካቢ የሆኑ ህጻናትን ዘርፈ ብዙ የሆነ  ሁሉን አቀፍ  ድጋፍ በመስጠት ከራሳቸው አልፎ  ለሃገር  የሚጠቅሙ ብቁ ዜጋ ማድረግ፡፡",
+        "ህጻናቱ በቂና ተመጣጣኝ ምግብ በቀን ሶስት ጊዜ እንዲመገቡ ማስቻል፡፡",
+        "ተማሪዎች ከእኩዮቻቸው ጋር ተመጣጣኝ የሆነ የመማሪያ ቁሳቁሶችንና የደንብ ልብስ(uniform) በማሟላት ያለመሳቀቅ ሙሉ ትኩረታቸውን ትምህርታቸው ላይ እንዲያረጉ ማስቻል፡፡",
+        "በህመም ምክንያት ከትምህርት ገበታቸው ላይ እንዳይቀሩ በቅድሚያ የጤና ክብካቤ አተገባበር  በመንደፍና ተገቢውን ህክምና እንዲያገኙ በማድረግ በህክምና እጦት  የሚመጣውን ጊዜያዊና ዘላቂ ጉዳቱን መቀነስ፡፡",
+        "የተለያዩ ተፈጥሯዊ ክህሎት(talent) ያላቸውን ተማሪዎች ተሰጧቸውን እንዲያዳብሩድጋፍ በማድረግ( የባለቤትነት መብት የሚያስገኝ ከሆነ) ከህልማቸው ጎን ተሰልፎ ውጥናቸውን ነፍስ መዝራት፡፡",
+        "ለአካለ መጠን እስኪደርሱ ድረስ ቤተሰብ ሊያሟላላቸው ያልቻላቸውን ስነልቦናዊና ቁሳዊ ድጋፍ በማድረግ የማብቃት ስራ መስራት፡፡"
+    ],
+
+    "Our_partners_T":"አብረውን የሚሰሩ ድርጅቶች"
+
         }
       },
       om: {

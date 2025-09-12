@@ -26,6 +26,7 @@ import VisitorMessage from "../Components/VisitorMessage"
 import Slideshow from "../Components/Slideshow"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import OurPartners from "../Components/OurPartners"
 import { useTranslation } from "react-i18next"
 
 const Home = () => {
@@ -379,6 +380,8 @@ const Home = () => {
           </div>
         </div>
       </div>
+      
+      <OurPartners />
       <VisitorMessage />
     </div>
   )

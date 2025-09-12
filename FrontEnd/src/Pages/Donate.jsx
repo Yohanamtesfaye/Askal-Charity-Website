@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useRef } from "react"
-import { FaDonate } from "react-icons/fa"
+// import { FaDonate } from "react-icons/fa"
 import { motion } from "framer-motion"
 import { useTranslation } from "react-i18next"
 import hand from "../assets/Images/trip.jpeg"
@@ -9,6 +9,9 @@ import { Link } from "react-router-dom"
 import Slideshow from "../Components/Slideshow"
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { FaLightbulb } from "react-icons/fa"; 
+import { FaBullseye } from "react-icons/fa"; 
+import { FaHandsHelping } from "react-icons/fa"; 
 
 const Donate = () => {
   const { t } = useTranslation()
@@ -65,65 +68,77 @@ const Donate = () => {
 
       <div className="container mx-auto px-4 -mt-16 relative z-10">
         <div className="grid lg:grid-cols-3 gap-6">
-          <motion.div
-            className="box bg-green-600 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="p-6 text-center">
-              <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                <FaDonate className="text-2xl" />
-              </div>
-              <h1 className="text-xl font-bold mb-3">{t("daily_expense")}</h1>
-              <p className="text-lg font-semibold mb-2">$2/{t("person")}</p>
-              <p className="text-sm mb-4 text-white/90">{t("daily_des")}</p>
-              <Link
-                to="/register"
-                className="inline-block border-2 border-white hover:bg-white hover:text-green-600 font-semibold px-4 py-2 rounded-full text-sm transition-all duration-300"
-              >
-                {t("register")}
-              </Link>
-            </div>
-          </motion.div>
 
           <motion.div
-            className="box bg-yellow-500 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="p-6 text-center">
-              <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                <FaDonate className="text-2xl" />
-              </div>
-              <h1 className="text-xl font-bold mb-3">{t("monthly_expense")}</h1>
-              <p className="text-lg font-semibold mb-2">$80/{t("person")}</p>
-              <p className="text-sm mb-4 text-white/90">{t("monthly_expense")}</p>
-              <Link
-                to="/register"
-                className="inline-block border-2 border-white hover:bg-white hover:text-yellow-600 font-semibold px-4 py-2 rounded-full text-sm transition-all duration-300"
-              >
-                {t("register")}
-              </Link>
-            </div>
-          </motion.div>
+  className="box bg-green-600 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+  whileHover={{ scale: 1.02 }}
+>
+  <div className="p-6 text-center">
+    <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+      <FaLightbulb className="text-2xl" /> {/* Vision icon */}
+    </div>
+
+    {/* Title */}
+    <h1 className="text-xl font-bold mb-4">{t("Vision1.0")}</h1>
+
+    {/* Bullet points */}
+    <ul className="list-disc list-inside space-y-2 text-sm text-white/90 text-left">
+      <li>{t("Vision1.1")}</li>
+      <li>{t("Vision1.2")}</li>
+      <li>{t("Vision1.3")}</li>
+      <li>{t("Vision1.4")}</li>
+      <li>{t("Vision1.5")}</li>
+      <li>{t("Vision1.6")}</li>
+    </ul>
+  </div>
+</motion.div>
+
+
+         <motion.div
+  className="box bg-yellow-500 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+  whileHover={{ scale: 1.02 }}
+>
+  <div className="p-6 text-center">
+    <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+      <FaBullseye className="text-2xl" /> {/* Mission icon */}
+    </div>
+
+    {/* Title */}
+    <h1 className="text-xl font-bold mb-4">{t("Mission1.0")}</h1>
+
+    {/* Bullet points */}
+    <ul className="list-disc list-inside space-y-2 text-sm text-white/90 text-left">
+      <li>{t("Mission1.1")}</li>
+    </ul>
+  </div>
+</motion.div>
+
 
           <motion.div
-            className="box bg-orange-600 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
-            whileHover={{ scale: 1.02 }}
-          >
-            <div className="p-6 text-center">
-              <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
-                <FaDonate className="text-2xl" />
-              </div>
-              <h1 className="text-xl font-bold mb-3">{t("yearly_expense")}</h1>
-              <p className="text-lg font-semibold mb-2">$100/{t("person")}</p>
-              <p className="text-sm mb-4 text-white/90">{t("yearly_expense")}</p>
-              <Link
-                to="/register"
-                className="inline-block border-2 border-white hover:bg-white hover:text-orange-600 font-semibold px-4 py-2 rounded-full text-sm transition-all duration-300"
-              >
-                {t("register")}
-              </Link>
-            </div>
-          </motion.div>
+  className="box bg-orange-600 rounded-xl shadow-lg overflow-hidden text-white cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+  whileHover={{ scale: 1.02 }}
+>
+  <div className="p-6 text-center">
+    <div className="bg-white/10 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4">
+      <FaHandsHelping className="text-2xl" /> {/* Purpose icon */}
+    </div>
+
+    {/* Title */}
+    <h1 className="text-xl font-bold mb-4">{t("Purpose1.0")}</h1>
+
+    {/* Bullet points */}
+    <ul className="list-disc list-inside space-y-2 text-sm text-white/90 text-left">
+      <li>{t("Purpose1.1")}</li>
+      <li>{t("Purpose1.2")}</li>
+      <li>{t("Purpose1.3")}</li>
+      <li>{t("Purpose1.4")}</li>
+      <li>{t("Purpose1.5")}</li>
+      <li>{t("Purpose1.6")}</li>
+    </ul>
+  </div>
+</motion.div>
+
+
         </div>
       </div>
 
