@@ -9,6 +9,8 @@ import member1 from '../assets/Images/BM_belayniguse.jpg'
 import member4 from '../assets/Images/BM_hamelmalmekuria.jpg'
 import member3 from '../assets/Images/BM_zeynebashifa.jpg'
 import { useTranslation } from 'react-i18next';
+import VisionMissionPurpose from "../Components/VisionMissionPurpose"
+
 const AboutUs = () => {
   const {t}= useTranslation();
   const helpingPoints = [
@@ -104,6 +106,10 @@ const AboutUs = () => {
             ))}
           </div>
         </motion.div>
+
+        {/* Vision, Mission, Purpose Section */}
+        <VisionMissionPurpose />
+        
         {/* Gallery Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
