@@ -1,4 +1,4 @@
-"use client"
+
 
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
@@ -18,16 +18,19 @@ const JoinUs = () => {
 
   const [specialFormData, setSpecialFormData] = useState({
     membershipType: "specialmember",
+    // Basic info
     name: "",
     email: "",
     phone: "",
     phoneNumber: "",
     age: "",
+    // Location & identity
     gender: "",
     nationality: "",
     Countryresidence: "",
     addressresidence: "",
     address: "",
+    // Donation preferences
     moneyamount: "",
     moneyamountschedule: "",
     donation_duration: "",
@@ -37,6 +40,7 @@ const JoinUs = () => {
     reminder_method: "",
     late_notification: "",
     missed_deadline_notification: "",
+    // Other
     reason: "",
   })
 
@@ -52,31 +56,34 @@ const JoinUs = () => {
     membershipType: "franchise",
   })
 
-  const handleSubmit = async (formData, setFormData) => {
+  const handleSubmit = async (e, formData, setFormData) => {
+    e.preventDefault()
+
     try {
-      let url = ""
-      let payload = {}
+      let url = "";
+      let payload = {};
+      let isMultipart = false;
 
       if (formData.membershipType === "specialmember") {
-        url = "http://localhost:5000/api/special-members"
+        url = "http://localhost:5000/api/special-members";
         payload = {
           name: formData.name,
           phoneNumber: formData.phone || formData.phoneNumber,
           age: formData.age,
           address: formData.addressresidence || formData.address,
           title: "Special Member",
-          description: formData.reason,
-        }
+          description: formData.reason
+        };
       } else if (formData.membershipType === "franchise") {
-        url = "http://localhost:5000/api/franchises"
+        url = "http://localhost:5000/api/franchises";
         payload = {
           name: formData.name,
           phoneNumber: formData.phoneNumber,
           address: formData.address,
           city: formData.city,
           country: formData.country,
-          description: formData.reason,
-        }
+          description: formData.reason
+        };
       }
 
       const response = await fetch(url, {
@@ -91,6 +98,7 @@ const JoinUs = () => {
 
       if (response.ok) {
         console.log("Registration successful!", data)
+        // Reset form and close modal
         const emptiedForm = Object.fromEntries(
           Object.keys(formData).map((key) => [key, key === "membershipType" ? formData.membershipType : ""]),
         )
@@ -106,6 +114,14 @@ const JoinUs = () => {
     } catch (error) {
       console.error("Error:", error)
     }
+  }
+
+  const handleChange = (e, setFormData, _formData) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
   }
 
   const cards = [
@@ -174,129 +190,134 @@ const JoinUs = () => {
   }
 
   return (
-    <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-        className="min-h-screen py-12 px-4 sm:px-6 lg:px-8"
-      >
-        <div className="max-w-6xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.3 }}
+      className="min-h-screen  py-16 px-4 sm:px-6 lg:px-8"
+    >
+      <div className="max-w-7xl mx-auto">
+        {/* Hero Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-center mb-16 text-green-600"
+        >
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-center mb-12 text-green-600"
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-5xl font-bold   mb-6"
           >
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-4xl font-bold mb-4"
-            >
-              {t("join_community")}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              className="text-lg text-gray-700 max-w-2xl mx-auto text-balance leading-relaxed"
-            >
-              {t("community_message")}
-            </motion.p>
-            <motion.div
-              initial={{ width: 0 }}
-              animate={{ width: "5rem" }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="mt-4 h-1 bg-green-600 mx-auto rounded-full"
-            />
-          </motion.div>
+            {t("join_community")}
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="text-xl text-gray-700 max-w-3xl mx-auto text-balance leading-relaxed"
+          >
+            {t("community_message")}
+          </motion.p>
+          <motion.hr
+            initial={{ width: 0 }}
+            animate={{ width: "16rem" }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-4 border border-t-8 border-red-500 w-64 mx-auto rounded-lg"
+          />
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {cards.map((card, index) => (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 1 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
+          {cards.map((card, index) => (
+            <motion.div
+              key={card.type}
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{
+                duration: 0.5,
+                delay: 1.2 + index * 0.1,
+                type: "spring",
+                damping: 20,
+                stiffness: 300,
+              }}
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+                transition: { duration: 0.2 },
+              }}
+              whileTap={{ scale: 0.98 }}
+              className="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform overflow-hidden"
+              onClick={card.onClick}
+            >
               <motion.div
-                key={card.type}
-                initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: 1.2 + index * 0.1,
-                  type: "spring",
-                  damping: 20,
-                  stiffness: 300,
-                }}
-                whileHover={{
-                  y: -6,
-                  scale: 1.02,
-                  transition: { duration: 0.2 },
-                }}
-                whileTap={{ scale: 0.98 }}
-                className="group bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer transform overflow-hidden"
-                onClick={card.onClick}
+                className={`bg-gradient-to-r ${card.gradient} h-32 flex items-center justify-center relative overflow-hidden`}
               >
                 <motion.div
-                  className={`bg-gradient-to-r ${card.gradient} h-24 flex items-center justify-center relative overflow-hidden`}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                  className="text-4xl mb-2"
                 >
-                  <motion.div
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-3xl mb-2"
-                  >
-                    {card.icon}
-                  </motion.div>
+                  {card.icon}
                 </motion.div>
-                <div className="p-5">
-                  <motion.h3
-                    whileHover={{ x: 3 }}
-                    transition={{ duration: 0.2 }}
-                    className="text-lg font-bold text-gray-900 mb-3 group-hover:text-green-600 transition-colors"
-                  >
-                    {card.type}
-                  </motion.h3>
-                  <ul className="text-gray-600 leading-relaxed text-sm space-y-1 mb-3">
-                    {card.description.map((item, itemIndex) => (
-                      <motion.li
-                        key={itemIndex}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.4 + index * 0.1 + itemIndex * 0.05 }}
-                        className="flex items-start"
-                      >
-                        <span className="text-green-500 mr-2 mt-1 text-xs">•</span>
-                        <span>{item}</span>
-                      </motion.li>
-                    ))}
-                  </ul>
-                  <motion.div
-                    whileHover={{ x: 3 }}
-                    transition={{ duration: 0.2 }}
-                    className="mt-3 flex items-center text-green-600 font-medium text-sm group-hover:text-green-700"
-                  >
-                    {t("learn")}
-                    <motion.span whileHover={{ x: 3 }} transition={{ duration: 0.2 }} className="ml-2">
-                      →
-                    </motion.span>
-                  </motion.div>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 bg-white/10 backdrop-blur-sm"
+                />
               </motion.div>
-            ))}
-          </motion.div>
+              <div className="p-6">
+                <motion.h3
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                  className="text-xl font-bold text-gray-900 mb-4 group-hover:text-green-600 transition-colors"
+                >
+                  {card.type}
+                </motion.h3>
+                <ul className="text-gray-600 leading-relaxed text-sm space-y-2 mb-4">
+                  {card.description.map((item, itemIndex) => (
+                    <motion.li
+                      key={itemIndex}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 1.4 + index * 0.1 + itemIndex * 0.05 }}
+                      className="flex items-start"
+                    >
+                      <span className="text-green-500 mr-2 mt-1 text-xs">•</span>
+                      <span>{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+                <motion.div
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                  className="mt-4 flex items-center text-green-600 font-medium text-sm group-hover:text-green-700"
+                >
+                  {t("learn")}
+                  <motion.span whileHover={{ x: 5 }} transition={{ duration: 0.2 }} className="ml-2">
+                    →
+                  </motion.span>
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.8 }}
-            className="mt-16"
-          >
-            <ContactUs />
-          </motion.div>
-        </div>
-      </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 1.8 }}
+          className="mt-20"
+        >
+          <ContactUs />
+        </motion.div>
+      </div>
 
       {/* Member Notification Modal */}
       <Modal isOpen={showMemberModal} onClose={() => setShowMemberModal(false)}>
@@ -367,316 +388,397 @@ const JoinUs = () => {
           <h2 className="text-2xl font-bold text-gray-900">{t("register_as_special_member")}</h2>
           <p className="text-gray-600 mt-2">{t("join_global_community")}</p>
         </motion.div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault()
-            handleSubmit(specialFormData, setSpecialFormData)
-          }}
+        <motion.form
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          onSubmit={(e) => handleSubmit(e, specialFormData, setSpecialFormData)}
+          className="space-y-6"
         >
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="space-y-6"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
-            <div key="name-field">
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("full_name")}
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={specialFormData.name}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, name: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="email-field">
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("email")}
-              </label>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                value={specialFormData.email}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, email: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="phone-field">
-              <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("phone")}
-              </label>
-              <input
-                type="tel"
-                name="phone"
-                id="phone"
-                value={specialFormData.phone}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, phone: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="gender-field">
-              <label htmlFor="gender" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("gender")}
-              </label>
-              <input
-                type="text"
-                name="gender"
-                id="gender"
-                value={specialFormData.gender}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, gender: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="nationality-field">
-              <label htmlFor="nationality" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("nationality")}
-              </label>
-              <input
-                type="text"
-                name="nationality"
-                id="nationality"
-                value={specialFormData.nationality}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, nationality: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="countryresidence-field">
-              <label htmlFor="Countryresidence" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("Countryresidence")}
-              </label>
-              <input
-                type="text"
-                name="Countryresidence"
-                id="Countryresidence"
-                value={specialFormData.Countryresidence}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, Countryresidence: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="addressresidence-field">
-              <label htmlFor="addressresidence" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("addressresidence")}
-              </label>
-              <input
-                type="text"
-                name="addressresidence"
-                id="addressresidence"
-                value={specialFormData.addressresidence}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, addressresidence: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="moneyamount-field">
-              <label htmlFor="moneyamount" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("moneyamount")}
-              </label>
-              <select
-                name="moneyamount"
-                id="moneyamount"
-                value={specialFormData.moneyamount}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, moneyamount: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              >
-                <option value="op-1">50 {t("birr")}</option>
-                <option value="op-2">100 {t("birr")}</option>
-                <option value="op-3">500 {t("birr")}</option>
-                <option value="op-4">1000 {t("birr")}</option>
-                <option value="op-5">5,000 {t("birr")}</option>
-                <option value="op-6">10,000 {t("birr")}</option>
-                <option value="op-7">30,000 {t("birr")}</option>
-                <option value="op-8">50,000 {t("birr")}</option>
-              </select>
-            </div>
-
-            <div key="moneyamountschedule-field">
-              <label htmlFor="moneyamountschedule" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("moneyamountschedule")}
-              </label>
-              <select
-                name="moneyamountschedule"
-                id="moneyamountschedule"
-                value={specialFormData.moneyamountschedule}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, moneyamountschedule: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              >
-                {[0, 1, 2, 3, 4, 5].map((i) => (
-                  <option key={i} value={t(`donation_frequency.${i}`)}>
-                    {t(`donation_frequency.${i}`)}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div key="donation_duration-field">
-              <label htmlFor="donation_duration" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("donation_duration.0")}
-              </label>
-              <select
-                name="donation_duration"
-                id="donation_duration"
-                value={specialFormData.donation_duration}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, donation_duration: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              >
-                {[1, 2, 3, 4].map((i) => (
-                  <option key={i} value={t(`donation_duration.${i}`)}>
-                    {t(`donation_duration.${i}`)}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div key="start_donation-field">
-              <label htmlFor="start_donation" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("start_donation")}
-              </label>
-              <input
-                type="date"
-                name="start_donation"
-                id="start_donation"
-                value={specialFormData.start_donation}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, start_donation: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="donation_option-field">
-              <label htmlFor="donation_option" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("donation_option.0")}
-              </label>
-              <select
-                name="donation_option"
-                id="donation_option"
-                value={specialFormData.donation_option}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, donation_option: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              >
-                {[1, 2, 3, 4].map((i) => (
-                  <option key={i} value={t(`donation_option.${i}`)}>
-                    {t(`donation_option.${i}`)}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div key="reminder_preference-field">
-              <label htmlFor="reminder_preference" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("reminder_preference.0")}
-              </label>
-              <select
-                name="reminder_preference"
-                id="reminder_preference"
-                value={specialFormData.reminder_preference}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, reminder_preference: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              >
-                {[1, 2].map((i) => (
-                  <option key={i} value={t(`reminder_preference.${i}`)}>
-                    {t(`reminder_preference.${i}`)}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div key="reminder_method-field">
-              <label htmlFor="reminder_method" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("reminder_method.0")}
-              </label>
-              <select
-                name="reminder_method"
-                id="reminder_method"
-                value={specialFormData.reminder_method}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, reminder_method: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              >
-                {[1, 2, 3, 4].map((i) => (
-                  <option key={i} value={t(`reminder_method.${i}`)}>
-                    {t(`reminder_method.${i}`)}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div key="late_notification-field">
-              <label htmlFor="late_notification" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("late_notification")}
-              </label>
-              <select
-                name="late_notification"
-                id="late_notification"
-                value={specialFormData.late_notification}
-                onChange={(e) => setSpecialFormData((prev) => ({ ...prev, late_notification: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              >
-                {[1, 2, 3, 4].map((i) => (
-                  <option key={i} value={t(`reminder_method.${i}`)}>
-                    {t(`reminder_method.${i}`)}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <div key="missed_deadline_notification-field">
-              <label htmlFor="missed_deadline_notification" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("missed_deadline_notification.0")}
-              </label>
-              <select
-                name="missed_deadline_notification"
-                id="missed_deadline_notification"
-                value={specialFormData.missed_deadline_notification}
-                onChange={(e) =>
-                  setSpecialFormData((prev) => ({ ...prev, missed_deadline_notification: e.target.value }))
-                }
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
-                required
-              >
-                {[1, 2, 3].map((i) => (
-                  <option key={i} value={t(`missed_deadline_notification.${i}`)}>
-                    {t(`missed_deadline_notification.${i}`)}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            <motion.button
-              type="submit"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 1.9 }}
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-3 px-6 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform"
-            >
-              {t("submit_register")}
-            </motion.button>
+            <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("full_name")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="text"
+              name="name"
+              id="name"
+              value={specialFormData.name}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            />
           </motion.div>
-        </form>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+          >
+            <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("email")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="text"
+              name="email"
+              id="email"
+              value={specialFormData.email}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+          >
+            <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("phone")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="tel"
+              name="phone"
+              id="phone"
+              value={specialFormData.phone}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.6 }}
+          >
+            <label htmlFor="gender" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("gender")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="text"
+              name="gender"
+              id="gender"
+              value={specialFormData.gender}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.7 }}
+          >
+            <label htmlFor="nationality" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("nationality")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="text"
+              name="nationality"
+              id="nationality"
+              value={specialFormData.nationality}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
+          >
+            <label htmlFor="Countryresidence" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("Countryresidence")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="text"
+              name="Countryresidence"
+              id="Countryresidence"
+              value={specialFormData.Countryresidence}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.9 }}
+          >
+            <label htmlFor="addressresidence" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("addressresidence")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="text"
+              name="addressresidence"
+              id="addressresidence"
+              value={specialFormData.addressresidence}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.0 }}
+          >
+            <label htmlFor="moneyamount" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("moneyamount")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="moneyamount"
+              id="moneyamount"
+              value={specialFormData.moneyamount}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value="op-1"> 50 {t("birr")}</option>
+              <option value="op-2">100 {t("birr")}</option>
+              <option value="op-3">500 {t("birr")}</option>
+              <option value="op-4">1000 {t("birr")}</option>
+              <option value="op-1">5,000 {t("birr")}</option>
+              <option value="op-2">10,000 {t("birr")}</option>
+              <option value="op-3">30,000 {t("birr")}</option>
+              <option value="op-4">50,000 {t("birr")}</option>
+            </motion.select>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.1 }}
+          >
+            <label htmlFor="moneyamountschedule" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("moneyamountschedule")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="moneyamountschedule"
+              id="moneyamountschedule"
+              value={specialFormData.moneyamountschedule}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value={t("donation_frequency.0")}>{t("donation_frequency.0")}</option>
+              <option value={t("donation_frequency.1")}>{t("donation_frequency.1")}</option>
+              <option value={t("donation_frequency.2")}>{t("donation_frequency.2")}</option>
+              <option value={t("donation_frequency.3")}>{t("donation_frequency.3")}</option>
+              <option value={t("donation_frequency.4")}>{t("donation_frequency.4")}</option>
+              <option value={t("donation_frequency.5")}>{t("donation_frequency.5")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.2 }}
+          >
+            <label htmlFor="donation_duration" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("donation_duration.0")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="donation_duration"
+              id="donation_duration"
+              value={specialFormData.donation_duration}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value={t("donation_duration.1")}>{t("donation_duration.1")}</option>
+              <option value={t("donation_duration.2")}>{t("donation_duration.2")}</option>
+              <option value={t("donation_duration.3")}>{t("donation_duration.3")}</option>
+              <option value={t("donation_duration.4")}>{t("donation_duration.4")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.3 }}
+          >
+            <label htmlFor="start_donation" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("start_donation")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="date"
+              name="start_donation"
+              id="start_donation"
+              value={specialFormData.start_donation}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.4 }}
+          >
+            <label htmlFor="donation_option" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("donation_option.0")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="donation_option"
+              id="donation_option"
+              value={specialFormData.donation_option}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value={t("donation_option.1")}>{t("donation_option.1")}</option>
+              <option value={t("donation_option.2")}>{t("donation_option.2")}</option>
+              <option value={t("donation_option.3")}>{t("donation_option.3")}</option>
+              <option value={t("donation_option.4")}>{t("donation_option.4")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.5 }}
+          >
+            <label htmlFor="reminder_preference" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("reminder_preference.0")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="reminder_preference"
+              id="reminder_preference"
+              value={specialFormData.reminder_preference}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value={t("reminder_preference.1")}>{t("reminder_preference.1")}</option>
+              <option value={t("reminder_preference.2")}>{t("reminder_preference.2")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.6 }}
+          >
+            <label htmlFor="reminder_method" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("reminder_method.0")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="reminder_method"
+              id="reminder_method"
+              value={specialFormData.reminder_method}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value={t("reminder_method.1")}>{t("reminder_method.1")}</option>
+              <option value={t("reminder_method.2")}>{t("reminder_method.2")}</option>
+              <option value={t("reminder_method.3")}>{t("reminder_method.3")}</option>
+              <option value={t("reminder_method.4")}>{t("reminder_method.4")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.7 }}
+          >
+            <label htmlFor="reminder_method" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("late_notification")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="late_notification"
+              id="late_notification"
+              value={specialFormData.late_notification}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value={t("reminder_method.1")}>{t("reminder_method.1")}</option>
+              <option value={t("reminder_method.2")}>{t("reminder_method.2")}</option>
+              <option value={t("reminder_method.3")}>{t("reminder_method.3")}</option>
+              <option value={t("reminder_method.4")}>{t("reminder_method.4")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.8 }}
+          >
+            <label htmlFor="missed_deadline_notification" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("missed_deadline_notification.0")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="missed_deadline_notification"
+              id="missed_deadline_notification"
+              value={specialFormData.missed_deadline_notification}
+              onChange={(e) => handleChange(e, setSpecialFormData, specialFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-red-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value={t("missed_deadline_notification.1")}>{t("missed_deadline_notification.1")}</option>
+              <option value={t("missed_deadline_notification.2")}>{t("missed_deadline_notification.2")}</option>
+              <option value={t("missed_deadline_notification.3")}>{t("missed_deadline_notification.3")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 1.9 }}
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            type="submit"
+            className="w-full py-3 px-6 bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl hover:from-red-600 hover:to-red-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform"
+          >
+            {t("submit_register")}
+          </motion.button>
+        </motion.form>
       </Modal>
 
       {/* Franchise Form Modal */}
@@ -700,164 +802,206 @@ const JoinUs = () => {
           <h2 className="text-2xl font-bold text-gray-900">{t("register_as_franchise")}</h2>
           <p className="text-gray-600 mt-2">{t("represent_askal")}</p>
         </motion.div>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault()
-            handleSubmit(franchiseFormData, setFranchiseFormData)
-          }}
+        <motion.form
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          onSubmit={(e) => handleSubmit(e, franchiseFormData, setFranchiseFormData)}
+          className="space-y-6"
         >
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.2 }}
-            className="space-y-6"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
           >
-            <div key="name-field">
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("full_name")}
-              </label>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                value={franchiseFormData.name}
-                onChange={(e) => setFranchiseFormData((prev) => ({ ...prev, name: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="age-field">
-              <label htmlFor="age" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("age")}
-              </label>
-              <input
-                type="number"
-                name="age"
-                id="age"
-                value={franchiseFormData.age}
-                onChange={(e) => setFranchiseFormData((prev) => ({ ...prev, age: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="phoneNumber-field">
-              <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("phone_number")}
-              </label>
-              <input
-                type="tel"
-                name="phoneNumber"
-                id="phoneNumber"
-                value={franchiseFormData.phoneNumber}
-                onChange={(e) => setFranchiseFormData((prev) => ({ ...prev, phoneNumber: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="address-field">
-              <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("addr")}
-              </label>
-              <textarea
-                name="address"
-                id="address"
-                value={franchiseFormData.address}
-                onChange={(e) => setFranchiseFormData((prev) => ({ ...prev, address: e.target.value }))}
-                rows={2}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors resize-none"
-                required
-              />
-            </div>
-
-            <div key="country-field">
-              <label htmlFor="country" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("country")}
-              </label>
-              <input
-                type="text"
-                name="country"
-                id="country"
-                value={franchiseFormData.country}
-                onChange={(e) => setFranchiseFormData((prev) => ({ ...prev, country: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
-                required
-              />
-            </div>
-
-            <div key="academicLevel-field">
-              <label htmlFor="academicLevel" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("academic_level")}
-              </label>
-              <select
-                name="academicLevel"
-                id="academicLevel"
-                value={franchiseFormData.academicLevel}
-                onChange={(e) => setFranchiseFormData((prev) => ({ ...prev, academicLevel: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
-                required
-              >
-                <option value="">{t("select_option")}</option>
-                <option value="high_school">{t("level_high_school")}</option>
-                <option value="diploma">{t("level_diploma")}</option>
-                <option value="bachelor">{t("level_bachelor")}</option>
-                <option value="master">{t("level_master")}</option>
-                <option value="phd">{t("level_phd")}</option>
-              </select>
-            </div>
-
-            <div key="maritalStatus-field">
-              <label htmlFor="maritalStatus" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("marital_status")}
-              </label>
-              <select
-                name="maritalStatus"
-                id="maritalStatus"
-                value={franchiseFormData.maritalStatus}
-                onChange={(e) => setFranchiseFormData((prev) => ({ ...prev, maritalStatus: e.target.value }))}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
-                required
-              >
-                <option value="">{t("select_option")}</option>
-                <option value="single">{t("single")}</option>
-                <option value="married">{t("married")}</option>
-                <option value="divorced">{t("divorced")}</option>
-                <option value="widowed">{t("widowed")}</option>
-              </select>
-            </div>
-
-            <div key="reason-field">
-              <label htmlFor="reason" className="block text-sm font-semibold text-gray-700 mb-2">
-                {t("join_reason")}
-              </label>
-              <textarea
-                name="reason"
-                id="reason"
-                value={franchiseFormData.reason}
-                onChange={(e) => setFranchiseFormData((prev) => ({ ...prev, reason: e.target.value }))}
-                rows={2}
-                className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors resize-none"
-                required
-              />
-            </div>
-
-            <motion.button
-              type="submit"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 1.1 }}
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="w-full py-3 px-6 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform"
-            >
-              {t("submit_register")}
-            </motion.button>
+            <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("full_name")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="text"
+              name="name"
+              id="name"
+              value={franchiseFormData.name}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            />
           </motion.div>
-        </form>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.4 }}
+          >
+            <label htmlFor="age" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("age")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="number"
+              name="age"
+              id="age"
+              value={franchiseFormData.age}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.5 }}
+          >
+            <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("phone_number")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="tel"
+              name="phoneNumber"
+              id="phoneNumber"
+              value={franchiseFormData.phoneNumber}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.6 }}
+          >
+            <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("addr")}
+            </label>
+            <motion.textarea
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="address"
+              id="address"
+              value={franchiseFormData.address}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              rows={2}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.7 }}
+          >
+            <label htmlFor="country" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("country")}
+            </label>
+            <motion.input
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              type="text"
+              name="country"
+              id="country"
+              value={franchiseFormData.country}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.8 }}
+          >
+            <label htmlFor="academicLevel" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("academic_level")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="academicLevel"
+              id="academicLevel"
+              value={franchiseFormData.academicLevel}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value="">{t("select_option")}</option>
+              <option value="high_school">{t("level_high_school")}</option>
+              <option value="diploma">{t("level_diploma")}</option>
+              <option value="bachelor">{t("level_bachelor")}</option>
+              <option value="master">{t("level_master")}</option>
+              <option value="phd">{t("level_phd")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 0.9 }}
+          >
+            <label htmlFor="maritalStatus" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("marital_status")}
+            </label>
+            <motion.select
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="maritalStatus"
+              id="maritalStatus"
+              value={franchiseFormData.maritalStatus}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors"
+              required
+            >
+              <option value="">{t("select_option")}</option>
+              <option value="single">{t("single")}</option>
+              <option value="married">{t("married")}</option>
+              <option value="divorced">{t("divorced")}</option>
+              <option value="widowed">{t("widowed")}</option>
+            </motion.select>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.3, delay: 1.0 }}
+          >
+            <label htmlFor="reason" className="block text-sm font-semibold text-gray-700 mb-2">
+              {t("join_reason")}
+            </label>
+            <motion.textarea
+              whileFocus={{ scale: 1.02 }}
+              transition={{ duration: 0.2 }}
+              name="reason"
+              id="reason"
+              value={franchiseFormData.reason}
+              onChange={(e) => handleChange(e, setFranchiseFormData, franchiseFormData)}
+              rows={3}
+              className="w-full p-3 rounded-xl border-2 border-gray-200 focus:border-green-400 focus:ring-0 transition-colors resize-none"
+              required
+            />
+          </motion.div>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 1.1 }}
+            whileHover={{ scale: 1.02, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            type="submit"
+            className="w-full py-3 px-6 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-xl transform"
+          >
+            {t("submit_register")}
+          </motion.button>
+        </motion.form>
       </Modal>
-    </>
+    </motion.div>
   )
 }
 

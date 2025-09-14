@@ -1,4 +1,4 @@
-"use client"
+import React from "react"
 import { motion } from "framer-motion"
 import { Link } from "react-router-dom"
 import teach from "../assets/Images/teach.png"
@@ -6,64 +6,64 @@ import gift from "../assets/Images/gift.jpg"
 import lifetraining from "../assets/Images/training.jpg"
 import art from "../assets/Images/art.jpg"
 import trip from "../assets/Images/triip.jpg"
-import byye from "../assets/Images/byye.jpg"
-import { useTranslation } from "react-i18next"
+import byye from '../assets/Images/byye.jpg'
+import { useTranslation } from 'react-i18next';
 
 const Gallery = () => {
-  const { t } = useTranslation()
+  const {t}= useTranslation();
   const galleryItems = [
     {
       src: teach,
-      alt: t("educational_programs"),
-      title: t("educational_programs"),
-      description: t("edu_des"),
+      alt: t('educational_programs'),
+      title:t('educational_programs'),
+      description: t('edu_des'),
       prop: 1,
-      category: t("educational_programs"),
+      category: t('educational_programs'),
     },
     {
       src: gift,
-      alt: t("community_support"),
-      title: t("community_support"),
-      description: t("comm_des"),
+      alt: t('community_support'),
+      title: t('community_support'),
+      description: t('comm_des'),
       prop: 2,
-      category: t("community_support"),
+      category: t('community_support'),
     },
     {
       src: art,
-      alt: t("extra_curric"),
-      title: t("extra_curric"),
-      description: t("extra_des"),
+      alt: t('extra_curric'),
+      title: t('extra_curric'),  
+      description: t('extra_des'),
       prop: 3,
-      category: t("extra_curric"),
+      category: t('extra_curric'),
     },
     {
       src: trip,
-      alt: t("fun"),
-      title: t("fun"),
-      description: t("fun_des"),
+      alt: t('fun'),
+      title: t('fun'),
+      description: t('fun_des'),
       prop: 4,
-      category: t("fun"),
+      category: t('fun'),
     },
     {
       src: byye,
-      alt: t("emotional"),
-      title: t("emotional"),
-      description: t("emotional_des"),
+      alt: t('emotional'),
+      title: t('emotional'),
+      description: t('emotional_des'),
       prop: 5,
-      category: t("emotional"),
+      category: t('emotional'),
     },
     {
       src: lifetraining,
-      alt: t("parent_edu"),
-      title: t("parent_edu"),
-      description: t("parent_des"),
+      alt: t('parent_edu'),
+      title: t('parent_edu'),
+      description: t('parent_des'),
       prop: 6,
-      category: t("parent_edu"),
+      category: t('parent_edu'),
     },
   ]
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {galleryItems.map((item, index) => (
         <motion.div
           key={index}
@@ -71,22 +71,23 @@ const Gallery = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: index * 0.1 }}
-          whileHover={{ y: -4 }}
         >
           <Link to={`/more/${item.prop}`} className="block group">
-            <div className="relative rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 h-64">
-              <img
-                src={item.src || "/placeholder.svg"}
-                alt={item.alt}
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent">
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <span className="inline-block px-2 py-1 bg-green-600 text-xs font-semibold text-white rounded-full mb-2">
+            <div className="relative rounded-xl overflow-hidden shadow-lg">
+              <div className="aspect-w-16 aspect-h-12">
+                <img
+                  src={item.src || "/placeholder.svg"}
+                  alt={item.alt}
+                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <span className="inline-block px-3 py-1 bg-[#FCCD2A] text-sm font-semibold text-gray-800 rounded-full mb-2">
                     {item.category}
                   </span>
-                  <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
-                  <p className="text-white/90 text-sm line-clamp-2">{item.description}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-white/80 text-sm">{item.description}</p>
                 </div>
               </div>
             </div>
@@ -98,3 +99,4 @@ const Gallery = () => {
 }
 
 export default Gallery
+
