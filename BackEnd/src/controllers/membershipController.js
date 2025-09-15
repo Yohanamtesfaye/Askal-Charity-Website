@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const { promisify } = require('util');
 const writeFile = promisify(fs.writeFile);
+const { insertPreviousMember } = require('./previousMembersController');
 
 const register = async (req, res) => {
   const { name, gender, phoneNumber, age, address, membershipType, donationAmount } = req.body;
@@ -87,5 +88,36 @@ const register = async (req, res) => {
     });
   }
 };
+const deleteMembership = async (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    // Get the member before deleting
+    const [rows] = await db.query('SELECT * FROM memberships WHERE id = ?', [id]);
+    if (!rows.length) return res.status(404).json({ message: 'Not found' });
+    
+    const member = rows[0];
+    
+    // Insert into previous_members
+    await insertPreviousMember({
+      removedFrom: 'members',
+      originalId: member.id,
+      name: member.name,
+      phoneNumber: member.phone_number,
+      address: member.address,
+      email: null, // members don't have email in your schema
+      extra: member
+    });
+    
+    // Soft delete by setting status
+    const [result] = await db.query('UPDATE memberships SET status = ?, deleted_at = NOW() WHERE id = ?', ['previous_member', id]);
+    if (result.affectedRows === 0) return res.status(404).json({ message: 'Not found' });
+    
+    return res.status(200).json({ message: 'Moved to recycle bin' });
+  } catch (err) {
+    console.error('Delete Membership Error:', err);
+    return res.status(500).json({ message: 'Server Error' });
+  }
+};
 
-module.exports = { register };
+module.exports = { register, deleteMembership };

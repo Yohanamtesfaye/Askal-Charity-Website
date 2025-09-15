@@ -1,6 +1,8 @@
 const db = require('../config/db');
 const path = require('path');
 const fs = require('fs');
+const { insertPreviousMember } = require('./previousMembersController');
+
 
 // Create Special Member
 const createSpecialMember = async (req, res) => {
@@ -102,10 +104,10 @@ const createSpecialMember = async (req, res) => {
     }
 };
 
-// Get all Special Members
+// Get all Special Members (exclude soft-deleted)
 const getSpecialMembers = async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT * FROM special_members ORDER BY id DESC');
+        const [rows] = await db.query('SELECT * FROM special_members WHERE COALESCE(status, "active") != "previous_member" ORDER BY id DESC');
         
         // Map the database columns to more readable field names
         const members = rows.map(row => ({
@@ -259,14 +261,70 @@ const updateSpecialMember = async (req, res) => {
     }
 };
 
-// Delete Special Member
+// Soft Delete Special Member
 const deleteSpecialMember = async (req, res) => {
     try {
         const { id } = req.params;
-        await db.query('DELETE FROM special_members WHERE id = ?', [id]);
-        return res.status(200).json({ message: 'Deleted successfully' });
+        
+        // Get the special member before deleting
+        const [rows] = await db.query('SELECT * FROM special_members WHERE id = ?', [id]);
+        if (!rows.length) return res.status(404).json({ message: 'Not found' });
+        
+        const specialMember = rows[0];
+        
+        // Insert into previous_members
+        await insertPreviousMember({
+            removedFrom: 'specialMembers',
+            originalId: specialMember.id,
+            name: specialMember.name,
+            phoneNumber: specialMember.phoneNumber,
+            address: specialMember.addressresidence,
+            email: specialMember.email,
+            extra: specialMember
+        });
+        
+        const [result] = await db.query('UPDATE special_members SET status = ?, deleted_at = NOW() WHERE id = ?', ['previous_member', id]);
+        if (result.affectedRows === 0) return res.status(404).json({ message: 'Not found' });
+        return res.status(200).json({ message: 'Moved to recycle bin' });
     } catch (err) {
         console.error('Delete Special Member Error:', err);
+        return res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// List soft-deleted special members
+const getDeletedSpecialMembers = async (req, res) => {
+    try {
+        const [rows] = await db.query('SELECT * FROM special_members WHERE status = "previous_member" ORDER BY id DESC');
+        return res.status(200).json(rows);
+    } catch (err) {
+        console.error('Get Deleted Special Members Error:', err);
+        return res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// Restore soft-deleted special member
+const restoreSpecialMember = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const [result] = await db.query('UPDATE special_members SET status = NULL, deleted_at = NULL WHERE id = ? AND status = "previous_member"', [id]);
+        if (result.affectedRows === 0) return res.status(404).json({ message: 'Not found or not deleted' });
+        return res.status(200).json({ message: 'Restored successfully' });
+    } catch (err) {
+        console.error('Restore Special Member Error:', err);
+        return res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// Hard delete special member
+const hardDeleteSpecialMember = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const [result] = await db.query('DELETE FROM special_members WHERE id = ?', [id]);
+        if (result.affectedRows === 0) return res.status(404).json({ message: 'Not found' });
+        return res.status(200).json({ message: 'Permanently deleted' });
+    } catch (err) {
+        console.error('Hard Delete Special Member Error:', err);
         return res.status(500).json({ message: 'Server Error' });
     }
 };
@@ -276,5 +334,8 @@ module.exports = {
     getSpecialMembers,
     getSpecialMemberById,
     updateSpecialMember,
-    deleteSpecialMember
+    deleteSpecialMember,
+    getDeletedSpecialMembers,
+    restoreSpecialMember,
+    hardDeleteSpecialMember
 };

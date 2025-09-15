@@ -1,6 +1,8 @@
 const db = require('../config/db');
 const path = require('path');
 const fs = require('fs');
+const { insertPreviousMember } = require('./previousMembersController');
+
 
 // Create Franchise
 const createFranchise = async (req, res) => {
@@ -76,10 +78,10 @@ const createFranchise = async (req, res) => {
 };
 
 
-// List Franchises
+// List Franchises (exclude soft-deleted)
 const getFranchises = async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT * FROM franchises ORDER BY id DESC');
+        const [rows] = await db.query('SELECT * FROM franchises WHERE COALESCE(status, "active") != "previous_franchise" ORDER BY id DESC');
         return res.status(200).json(rows);
     } catch (err) {
         console.error('Get Franchises Error:', err);
@@ -159,14 +161,70 @@ const updateFranchise = async (req, res) => {
     }
 };
 
-// Delete Franchise
+// Soft Delete Franchise
 const deleteFranchise = async (req, res) => {
     try {
         const { id } = req.params;
-        await db.query('DELETE FROM franchises WHERE id = ?', [id]);
-        return res.status(200).json({ message: 'Deleted successfully' });
+        
+        // Get the franchise before deleting
+        const [rows] = await db.query('SELECT * FROM franchises WHERE id = ?', [id]);
+        if (!rows.length) return res.status(404).json({ message: 'Not found' });
+        
+        const franchise = rows[0];
+        
+        // Insert into previous_members
+        await insertPreviousMember({
+            removedFrom: 'franchise',
+            originalId: franchise.id,
+            name: franchise.fullName,
+            phoneNumber: franchise.phoneNumber,
+            address: franchise.address,
+            email: null,
+            extra: franchise
+        });
+        
+        const [result] = await db.query('UPDATE franchises SET status = ?, deleted_at = NOW() WHERE id = ?', ['previous_franchise', id]);
+        if (result.affectedRows === 0) return res.status(404).json({ message: 'Not found' });
+        return res.status(200).json({ message: 'Moved to recycle bin' });
     } catch (err) {
         console.error('Delete Franchise Error:', err);
+        return res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// List soft-deleted franchises
+const getDeletedFranchises = async (req, res) => {
+    try {
+        const [rows] = await db.query('SELECT * FROM franchises WHERE status = "previous_franchise" ORDER BY id DESC');
+        return res.status(200).json(rows);
+    } catch (err) {
+        console.error('Get Deleted Franchises Error:', err);
+        return res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// Restore soft-deleted franchise
+const restoreFranchise = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const [result] = await db.query('UPDATE franchises SET status = NULL, deleted_at = NULL WHERE id = ? AND status = "previous_franchise"', [id]);
+        if (result.affectedRows === 0) return res.status(404).json({ message: 'Not found or not deleted' });
+        return res.status(200).json({ message: 'Restored successfully' });
+    } catch (err) {
+        console.error('Restore Franchise Error:', err);
+        return res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+// Hard delete franchise
+const hardDeleteFranchise = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const [result] = await db.query('DELETE FROM franchises WHERE id = ?', [id]);
+        if (result.affectedRows === 0) return res.status(404).json({ message: 'Not found' });
+        return res.status(200).json({ message: 'Permanently deleted' });
+    } catch (err) {
+        console.error('Hard Delete Franchise Error:', err);
         return res.status(500).json({ message: 'Server Error' });
     }
 };
@@ -176,5 +234,8 @@ module.exports = {
     getFranchises,
     getFranchiseById,
     updateFranchise,
-    deleteFranchise
+    deleteFranchise,
+    getDeletedFranchises,
+    restoreFranchise,
+    hardDeleteFranchise
 };
