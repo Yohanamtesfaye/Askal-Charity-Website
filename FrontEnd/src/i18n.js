@@ -171,10 +171,8 @@ i18n
     "community_message": "Choose your preferred way to work with us and become part of something bigger. Together, we can make a real difference in our community.",
      "volunteer1": [
         "Choose to be seasonal or lifetime volunteer",
-        "Seasonal: volunteer on specific tasks like teaching students during summer",
-        "Help on different tasks seasonally as needed",
+        "Seasonal: Help on different tasks seasonally",
         "Fulltime volunteers are always available when needed",
-        "Volunteer"
     ],
 "member_option1": [
         "Participate in every task when needed",
@@ -299,7 +297,7 @@ i18n
         "To work towards empowering those who cannot afford psychological and material support from their families until they reach adulthood."
     ],
 
-    "Our_partners_T":"Our partners"
+    "Our_partners_T":"Our Partners"
 
         }
       },

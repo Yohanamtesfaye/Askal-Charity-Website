@@ -176,7 +176,7 @@ const Donate = () => {
             </div>
           </div>
 
-    </div>
+
     
   );
 };

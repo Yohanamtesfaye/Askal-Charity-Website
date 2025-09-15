@@ -32,14 +32,14 @@ const OurPartners = () => {
     const { t } = useTranslation();  
 
   return (
-    <div className="bg-gradient-to-b from-gray-50 to-white py-12">
+    <div className="bg-gradient-to-b from-gray-50 to-white  pb-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-3">{t("Our_partners_T")}</h2>
-          <div className="w-20 h-1 bg-green-600 mx-auto rounded-full"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-8">{t("Our_partners_T")}</h2>
+          <div className="w-20 h-1 bg-yellow-400 mx-auto rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-8 justify-items-center">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-8 justify-items-center py-6">
           {partners.map((partner, index) => (
             <div key={index}>
               {partner.link ? (
@@ -51,7 +51,7 @@ const OurPartners = () => {
                   <img
                     src={partner.logo}
                     alt={`Partner ${index + 1}`}
-                    className="h-16 w-auto object-contain grayscale hover:grayscale-0 hover:scale-110 transition-all duration-300 cursor-pointer"
+                    className="h-16 w-auto object-contain hover:grayscale grayscale-0 hover:scale-110 transition-all duration-300 cursor-pointer"
                   />
                 </a>
               ) : (

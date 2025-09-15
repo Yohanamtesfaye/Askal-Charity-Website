@@ -7,6 +7,7 @@ const { register, getVolunteers,deleteVolunteer,getVolunteerById } = require('..
 const { updatePaymentStatus } = require('../controllers/PaymentController');
 const specialMemberController = require('../controllers/specialMemberController');
 const franchiseController = require('../controllers/franchiseController');
+const contactController = require('../controllers/contactController');
 
 const multer = require('multer');
 
@@ -36,6 +37,15 @@ router.get('/franchises', franchiseController.getFranchises);
 router.get('/franchises/:id', franchiseController.getFranchiseById);
 router.put('/franchises/:id', upload.single('photo'), franchiseController.updateFranchise);
 router.delete('/franchises/:id', franchiseController.deleteFranchise);
+
+// Contact routes
+router.post('/contacts', contactController.createContact);
+router.get('/contacts', contactController.getContacts);
+router.get('/contacts/stats', contactController.getContactStats);
+router.get('/contacts/:id', contactController.getContactById);
+router.put('/contacts/:id/status', contactController.updateContactStatus);
+router.delete('/contacts/:id', contactController.deleteContact);
+
 router.get('/admin/memberships', adminController.getAllMemberships);
 router.get('/admin/memberships/:id', adminController.getMembershipById); 
 router.delete('/admin/memberships/:id', adminController.deleteMembership);

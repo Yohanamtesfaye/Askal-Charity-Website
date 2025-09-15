@@ -32,7 +32,7 @@ const Navbar = () => {
           </div>
           <div className="hidden sm:flex sm:space-x-8 items-center">
             <NavLink to="/">{t("home")}</NavLink>
-            <NavLink to="/donate">{t("donate")}</NavLink>
+            {/* <NavLink to="/donate">{t("donate")}</NavLink> */}
             <NavLink to="/about-us">{t("aboutUs")}</NavLink>
             <NavLink to="/join-us">{t("joinUs")}</NavLink>
             <select
@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="sm:hidden">
           <div className="pt-2 pb-3 space-y-1">
             <MobileNavLink to="/">{t("home")}</MobileNavLink>
-            <MobileNavLink to="/donate">{t("donate")}</MobileNavLink>
+            {/* <MobileNavLink to="/donate">{t("donate")}</MobileNavLink> */}
             <MobileNavLink to="/about-us">{t("aboutUs")}</MobileNavLink>
             <MobileNavLink to="/join-us">{t("joinUs")}</MobileNavLink>
             <div className="px-4 py-2">

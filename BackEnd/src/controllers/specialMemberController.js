@@ -4,11 +4,29 @@ const fs = require('fs');
 
 // Create Special Member
 const createSpecialMember = async (req, res) => {
-    const { name, phoneNumber, age, address, title, description } = req.body;
+    const {
+        fullName,
+        email,
+        phoneNumber,
+        gender,
+        nationality,
+        countryOfResidence,
+        residentialAddress,
+        donationAmount,
+        donationFrequency,
+        donationDuration,
+        donationStartDate,
+        paymentMethod,
+        remindDonationDate,
+        reminderMethod,
+        lateNotificationMethod,
+        lateNotificationTiming
+    } = req.body;
+
     const photo = req.file;
 
-    if (!name || !phoneNumber) {
-        return res.status(400).json({ message: 'Required fields: name, phoneNumber' });
+    if (!fullName || !phoneNumber) {
+        return res.status(400).json({ message: 'Required fields: fullName, phoneNumber' });
     }
 
     try {
@@ -27,23 +45,55 @@ const createSpecialMember = async (req, res) => {
             fs.writeFileSync(path.join(uploadDir, filename), photo.buffer);
         }
 
+        // Insert data directly into the appropriate columns
         const [result] = await db.query(
-            'INSERT INTO special_members (name, phone_number, age, address, title, description, photo_path) VALUES (?, ?, ?, ?, ?, ?, ?)',
-            [name, phoneNumber, age || null, address || null, title || 'Special Member', description || null, photoPath]
+            `INSERT INTO special_members (
+                name, email, phoneNumber, gender, nationality, Countryresidence, 
+                addressresidence, moneyamount, moneyamountschedule, donation_duration, 
+                start_donation, donation_option, reminder_preference, reminder_method, 
+                late_notification, missed_deadline_notification
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+            [
+                fullName,
+                email,
+                phoneNumber,
+                gender,
+                nationality,
+                countryOfResidence,
+                residentialAddress,
+                donationAmount,
+                donationFrequency,
+                donationDuration,
+                donationStartDate,
+                paymentMethod,
+                remindDonationDate,
+                reminderMethod,
+                lateNotificationMethod,
+                lateNotificationTiming
+            ]
         );
 
         return res.status(201).json({
-            message: 'Special member created',
+            message: 'Special member registered successfully',
             id: result.insertId,
             member: {
                 id: result.insertId,
-                name,
-                phone_number: phoneNumber,
-                age,
-                address,
-                title,
-                description: description || null,
-                photo_path: photoUrl
+                name: fullName,
+                email: email,
+                phoneNumber: phoneNumber,
+                gender: gender,
+                nationality: nationality,
+                countryOfResidence: countryOfResidence,
+                residentialAddress: residentialAddress,
+                donationAmount: donationAmount,
+                donationFrequency: donationFrequency,
+                donationDuration: donationDuration,
+                donationStartDate: donationStartDate,
+                paymentMethod: paymentMethod,
+                remindDonationDate: remindDonationDate,
+                reminderMethod: reminderMethod,
+                lateNotificationMethod: lateNotificationMethod,
+                lateNotificationTiming: lateNotificationTiming
             }
         });
     } catch (err) {
@@ -56,7 +106,30 @@ const createSpecialMember = async (req, res) => {
 const getSpecialMembers = async (req, res) => {
     try {
         const [rows] = await db.query('SELECT * FROM special_members ORDER BY id DESC');
-        return res.status(200).json(rows);
+        
+        // Map the database columns to more readable field names
+        const members = rows.map(row => ({
+            id: row.id,
+            fullName: row.name,
+            email: row.email,
+            phoneNumber: row.phoneNumber,
+            gender: row.gender,
+            nationality: row.nationality,
+            countryOfResidence: row.Countryresidence,
+            residentialAddress: row.addressresidence,
+            donationAmount: row.moneyamount,
+            donationFrequency: row.moneyamountschedule,
+            donationDuration: row.donation_duration,
+            donationStartDate: row.start_donation,
+            paymentMethod: row.donation_option,
+            remindDonationDate: row.reminder_preference,
+            reminderMethod: row.reminder_method,
+            lateNotificationMethod: row.late_notification,
+            lateNotificationTiming: row.missed_deadline_notification,
+            createdAt: row.created_at
+        }));
+
+        return res.status(200).json(members);
     } catch (err) {
         console.error('Get Special Members Error:', err);
         return res.status(500).json({ message: 'Server Error' });
@@ -68,8 +141,32 @@ const getSpecialMemberById = async (req, res) => {
     try {
         const { id } = req.params;
         const [rows] = await db.query('SELECT * FROM special_members WHERE id = ?', [id]);
+        
         if (!rows.length) return res.status(404).json({ message: 'Not found' });
-        return res.status(200).json(rows[0]);
+        
+        const row = rows[0];
+        const memberData = {
+            id: row.id,
+            fullName: row.name,
+            email: row.email,
+            phoneNumber: row.phoneNumber,
+            gender: row.gender,
+            nationality: row.nationality,
+            countryOfResidence: row.Countryresidence,
+            residentialAddress: row.addressresidence,
+            donationAmount: row.moneyamount,
+            donationFrequency: row.moneyamountschedule,
+            donationDuration: row.donation_duration,
+            donationStartDate: row.start_donation,
+            paymentMethod: row.donation_option,
+            remindDonationDate: row.reminder_preference,
+            reminderMethod: row.reminder_method,
+            lateNotificationMethod: row.late_notification,
+            lateNotificationTiming: row.missed_deadline_notification,
+            createdAt: row.created_at
+        };
+
+        return res.status(200).json(memberData);
     } catch (err) {
         console.error('Get Special Member Error:', err);
         return res.status(500).json({ message: 'Server Error' });
@@ -79,45 +176,83 @@ const getSpecialMemberById = async (req, res) => {
 // Update Special Member
 const updateSpecialMember = async (req, res) => {
     const { id } = req.params;
-    const { name, phoneNumber, age, address, title, description } = req.body;
-    const photo = req.file;
+    const {
+        fullName,
+        email,
+        phoneNumber,
+        gender,
+        nationality,
+        countryOfResidence,
+        residentialAddress,
+        donationAmount,
+        donationFrequency,
+        donationDuration,
+        donationStartDate,
+        paymentMethod,
+        remindDonationDate,
+        reminderMethod,
+        lateNotificationMethod,
+        lateNotificationTiming
+    } = req.body;
 
     try {
-        // Get existing row to manage photo replacement
+        // Get existing member
         const [existingRows] = await db.query('SELECT * FROM special_members WHERE id = ?', [id]);
         if (!existingRows.length) return res.status(404).json({ message: 'Not found' });
+        
         const existing = existingRows[0];
 
-        let photoPath = existing.photo_path; // stored as 'uploads/...' in DB
-        let photoUrl = existing.photo_path ? `/${existing.photo_path}`.replace(/\\/g, '/') : null;
-
-        if (photo) {
-            const uploadDir = path.join(__dirname, '../../uploads');
-            if (!fs.existsSync(uploadDir)) {
-                fs.mkdirSync(uploadDir, { recursive: true });
-            }
-            const cleanName = photo.originalname.replace(/[^a-zA-Z0-9.]/g, '_');
-            const filename = `${Date.now()}-${cleanName}`;
-            photoPath = path.join('uploads', filename);
-            photoUrl = `/uploads/${filename}`;
-            fs.writeFileSync(path.join(uploadDir, filename), photo.buffer);
-        }
-
         await db.query(
-            'UPDATE special_members SET name = ?, phone_number = ?, age = ?, address = ?, title = ?, description = ?, photo_path = ? WHERE id = ?',
+            `UPDATE special_members SET 
+                name = ?, email = ?, phoneNumber = ?, gender = ?, nationality = ?, 
+                Countryresidence = ?, addressresidence = ?, moneyamount = ?, 
+                moneyamountschedule = ?, donation_duration = ?, start_donation = ?, 
+                donation_option = ?, reminder_preference = ?, reminder_method = ?, 
+                late_notification = ?, missed_deadline_notification = ?
+            WHERE id = ?`,
             [
-                name ?? existing.name,
-                phoneNumber ?? existing.phone_number,
-                age ?? existing.age,
-                address ?? existing.address,
-                title ?? existing.title,
-                description ?? existing.description,
-                photoPath,
+                fullName || existing.name,
+                email || existing.email,
+                phoneNumber || existing.phoneNumber,
+                gender || existing.gender,
+                nationality || existing.nationality,
+                countryOfResidence || existing.Countryresidence,
+                residentialAddress || existing.addressresidence,
+                donationAmount || existing.moneyamount,
+                donationFrequency || existing.moneyamountschedule,
+                donationDuration || existing.donation_duration,
+                donationStartDate || existing.start_donation,
+                paymentMethod || existing.donation_option,
+                remindDonationDate || existing.reminder_preference,
+                reminderMethod || existing.reminder_method,
+                lateNotificationMethod || existing.late_notification,
+                lateNotificationTiming || existing.missed_deadline_notification,
                 id
             ]
         );
 
-        return res.status(200).json({ message: 'Updated', photo_url: photoUrl });
+        return res.status(200).json({ 
+            message: 'Updated successfully',
+            member: {
+                id: parseInt(id),
+                fullName: fullName || existing.name,
+                email: email || existing.email,
+                phoneNumber: phoneNumber || existing.phoneNumber,
+                gender: gender || existing.gender,
+                nationality: nationality || existing.nationality,
+                countryOfResidence: countryOfResidence || existing.Countryresidence,
+                residentialAddress: residentialAddress || existing.addressresidence,
+                donationAmount: donationAmount || existing.moneyamount,
+                donationFrequency: donationFrequency || existing.moneyamountschedule,
+                donationDuration: donationDuration || existing.donation_duration,
+                donationStartDate: donationStartDate || existing.start_donation,
+                paymentMethod: paymentMethod || existing.donation_option,
+                remindDonationDate: remindDonationDate || existing.reminder_preference,
+                reminderMethod: reminderMethod || existing.reminder_method,
+                lateNotificationMethod: lateNotificationMethod || existing.late_notification,
+                lateNotificationTiming: lateNotificationTiming || existing.missed_deadline_notification
+            }
+        });
     } catch (err) {
         console.error('Update Special Member Error:', err);
         return res.status(500).json({ message: 'Server Error' });
@@ -129,7 +264,7 @@ const deleteSpecialMember = async (req, res) => {
     try {
         const { id } = req.params;
         await db.query('DELETE FROM special_members WHERE id = ?', [id]);
-        return res.status(200).json({ message: 'Deleted' });
+        return res.status(200).json({ message: 'Deleted successfully' });
     } catch (err) {
         console.error('Delete Special Member Error:', err);
         return res.status(500).json({ message: 'Server Error' });
@@ -143,5 +278,3 @@ module.exports = {
     updateSpecialMember,
     deleteSpecialMember
 };
-
-
