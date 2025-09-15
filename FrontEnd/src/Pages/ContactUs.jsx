@@ -74,7 +74,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <p className="text-xl font-bold mb-2">{t('email_us')}</p>
-                    <p className="text-yellow-300 font-medium hover:text-yellow-200 transition-colors duration-300">
+                    <p className="text-yellow-300 font-medium text-xs lg:text-sm hover:text-yellow-200 transition-colors duration-300">
                       askalcharityassociation@gmail.com
                     </p>
                   </div>
@@ -86,7 +86,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <p className="text-xl font-bold mb-2">{t('address1')}</p>
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-white leading-relaxed">
                       {t('address_detail')}
                     </p>
                   </div>
@@ -110,7 +110,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <p className="text-xl font-bold mb-2">{t('office_hours')}</p>
-                    <p className="text-gray-300">{t('office_hours_detail')}</p>
+                    <p className="text-white">{t('office_hours_detail')}</p>
                   </div>
                 </div>
               </div>

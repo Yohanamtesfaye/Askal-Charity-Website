@@ -51,7 +51,7 @@ i18n
           "language":"Language",
           "children":"Children Helped",
           "volunteers":"Volunteers",
-          "daily_meals":"Daily Meals",
+          "daily_meals":"Members",
           "programs":"Programs",
           "locations":"Locations",
           "visitor_message":"Testimonials",

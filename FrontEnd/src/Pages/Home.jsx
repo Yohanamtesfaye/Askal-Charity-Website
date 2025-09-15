@@ -27,11 +27,10 @@ const Home = () => {
   };
   const { t } = useTranslation()
   const statsData = [ 
-    { end: 1000, label: t('children') },
-    { end: 500, label: t("volunteers") }, 
-    { end: 200, label: t("daily_meals") },
-    { end: 50, label: t("programs") },
-    { end: 20, label: t("locations") }, ];
+    { end: 1500, label: t('children') },
+    { end: 210, label: t("volunteers") }, 
+    { end: 45, label: t("daily_meals") },
+    { end: 10, label: t("locations") }, ];
 
   
   const fadeRefs = useRef([])
@@ -271,7 +270,7 @@ const Home = () => {
       </div>
     </section>
   {/* Stats Section */}
-  <div className='container mx-auto px-4 py-16'>
+  <div className='container mx-auto lg:pl-64 py-16'>
         <div className='grid grid-cols-2 md:grid-cols-5 gap-8'>
           {statsData.map((stat, index) => (
             <motion.div
@@ -284,7 +283,7 @@ const Home = () => {
             >
               <CountUp
                 end={stat.end}
-                duration={2.5}
+                duration={3.5}
                 className='text-5xl font-bold text-[#399918]'
               />
               <p className='text-gray-600 mt-2'>{stat.label}</p>
