@@ -47,14 +47,17 @@ const createSpecialMember = async (req, res) => {
             fs.writeFileSync(path.join(uploadDir, filename), photo.buffer);
         }
 
+        // default payments array (6 periods)
+        const defaultPayments = Array(6).fill(false);
+
         // Insert data directly into the appropriate columns
         const [result] = await db.query(
             `INSERT INTO special_members (
                 name, email, phoneNumber, gender, nationality, Countryresidence, 
                 addressresidence, moneyamount, moneyamountschedule, donation_duration, 
                 start_donation, donation_option, reminder_preference, reminder_method, 
-                late_notification, missed_deadline_notification
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+                late_notification, missed_deadline_notification, payments
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
             [
                 fullName,
                 email,
@@ -71,7 +74,8 @@ const createSpecialMember = async (req, res) => {
                 remindDonationDate,
                 reminderMethod,
                 lateNotificationMethod,
-                lateNotificationTiming
+                lateNotificationTiming,
+                JSON.stringify(defaultPayments)
             ]
         );
 
@@ -95,7 +99,8 @@ const createSpecialMember = async (req, res) => {
                 remindDonationDate: remindDonationDate,
                 reminderMethod: reminderMethod,
                 lateNotificationMethod: lateNotificationMethod,
-                lateNotificationTiming: lateNotificationTiming
+                lateNotificationTiming: lateNotificationTiming,
+                payments: defaultPayments
             }
         });
     } catch (err) {
@@ -128,6 +133,7 @@ const getSpecialMembers = async (req, res) => {
             reminderMethod: row.reminder_method,
             lateNotificationMethod: row.late_notification,
             lateNotificationTiming: row.missed_deadline_notification,
+            payments: row.payments && typeof row.payments === 'string' ? JSON.parse(row.payments) : (row.payments || Array(6).fill(false)),
             createdAt: row.created_at
         }));
 
@@ -165,6 +171,7 @@ const getSpecialMemberById = async (req, res) => {
             reminderMethod: row.reminder_method,
             lateNotificationMethod: row.late_notification,
             lateNotificationTiming: row.missed_deadline_notification,
+            payments: row.payments && typeof row.payments === 'string' ? JSON.parse(row.payments) : (row.payments || Array(6).fill(false)),
             createdAt: row.created_at
         };
 
@@ -194,7 +201,8 @@ const updateSpecialMember = async (req, res) => {
         remindDonationDate,
         reminderMethod,
         lateNotificationMethod,
-        lateNotificationTiming
+        lateNotificationTiming,
+        payments
     } = req.body;
 
     try {
@@ -210,7 +218,7 @@ const updateSpecialMember = async (req, res) => {
                 Countryresidence = ?, addressresidence = ?, moneyamount = ?, 
                 moneyamountschedule = ?, donation_duration = ?, start_donation = ?, 
                 donation_option = ?, reminder_preference = ?, reminder_method = ?, 
-                late_notification = ?, missed_deadline_notification = ?
+                late_notification = ?, missed_deadline_notification = ?, payments = ?
             WHERE id = ?`,
             [
                 fullName || existing.name,
@@ -229,6 +237,7 @@ const updateSpecialMember = async (req, res) => {
                 reminderMethod || existing.reminder_method,
                 lateNotificationMethod || existing.late_notification,
                 lateNotificationTiming || existing.missed_deadline_notification,
+                payments ? JSON.stringify(payments) : (existing.payments || JSON.stringify(Array(6).fill(false))),
                 id
             ]
         );
@@ -252,7 +261,8 @@ const updateSpecialMember = async (req, res) => {
                 remindDonationDate: remindDonationDate || existing.reminder_preference,
                 reminderMethod: reminderMethod || existing.reminder_method,
                 lateNotificationMethod: lateNotificationMethod || existing.late_notification,
-                lateNotificationTiming: lateNotificationTiming || existing.missed_deadline_notification
+                lateNotificationTiming: lateNotificationTiming || existing.missed_deadline_notification,
+                payments: payments || (existing.payments && typeof existing.payments === 'string' ? JSON.parse(existing.payments) : (existing.payments || Array(6).fill(false)))
             }
         });
     } catch (err) {
@@ -339,3 +349,41 @@ module.exports = {
     restoreSpecialMember,
     hardDeleteSpecialMember
 };
+
+// Toggle a specific payment index for a special member
+// POST body: { memberId: number, paymentIndex: number }
+const updateSpecialMemberPayment = async (req, res) => {
+    try {
+        const { memberId, paymentIndex } = req.body;
+        if (
+            memberId === undefined || memberId === null ||
+            paymentIndex === undefined || paymentIndex === null
+        ) {
+            return res.status(400).json({ message: 'memberId and paymentIndex are required' });
+        }
+        if (paymentIndex < 0 || paymentIndex > 5) {
+            return res.status(400).json({ message: 'paymentIndex must be between 0 and 5' });
+        }
+
+        const [rows] = await db.query('SELECT payments FROM special_members WHERE id = ?', [memberId]);
+        if (!rows.length) return res.status(404).json({ message: 'Special member not found' });
+
+        let payments = rows[0].payments;
+        if (typeof payments === 'string') {
+            try { payments = JSON.parse(payments); } catch (_) { payments = null; }
+        }
+        if (!Array.isArray(payments) || payments.length !== 6) {
+            payments = Array(6).fill(false);
+        }
+
+        payments[paymentIndex] = !payments[paymentIndex];
+
+        await db.query('UPDATE special_members SET payments = ? WHERE id = ?', [JSON.stringify(payments), memberId]);
+        return res.status(200).json({ payments });
+    } catch (err) {
+        console.error('Update Special Member Payment Error:', err);
+        return res.status(500).json({ message: 'Server Error' });
+    }
+};
+
+module.exports.updateSpecialMemberPayment = updateSpecialMemberPayment;

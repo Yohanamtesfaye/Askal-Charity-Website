@@ -6,11 +6,11 @@ const writeFile = promisify(fs.writeFile);
 const { insertPreviousMember } = require('./previousMembersController');
 
 const register = async (req, res) => {
-  const { name, gender, phoneNumber, age, address, membershipType, donationAmount } = req.body;
+  const { name, gender, phoneNumber, age, address, donationAmount } = req.body;
   const photo = req.file;
 
   // Validation
-  if (!name || !gender || !phoneNumber || !age || !address || !membershipType) {
+  if (!name || !gender || !phoneNumber || !age || !address) {
     return res.status(400).json({ message: 'All fields except photo and donation are required' });
   }
 
@@ -39,15 +39,12 @@ const register = async (req, res) => {
       );
     }
 
-    const finalMembershipType = membershipType || 
-      (donationAmount && donationAmount !== '0' ? `Premium (${donationAmount})` : 'Basic');
-
     // Set default reason for admin registrations
     const defaultReason = "Registered by Admin";
 
     const [result] = await db.query(
       `INSERT INTO memberships 
-       (name, gender, phone_number, age, address, membership_type, photo_path, payments, reason) 
+       (name, gender, phone_number, age, address, donation_amount, photo_path, payments, reason) 
        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         name,
@@ -55,7 +52,7 @@ const register = async (req, res) => {
         phoneNumber,
         age,
         address,
-        finalMembershipType,
+        donationAmount || null,
         photoPath,
         JSON.stringify(Array(6).fill(false)),
         defaultReason  // Always using the default reason for admin registrations
@@ -73,7 +70,7 @@ const register = async (req, res) => {
         phone_number: phoneNumber,
         age,
         address,
-        membership_type: finalMembershipType,
+        donation_amount: donationAmount || null,
         photo_path: photoUrl,
         payments: Array(6).fill(false),
         reason: defaultReason

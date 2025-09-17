@@ -4,9 +4,15 @@
 -- Add status and deleted_at columns to existing tables
 ALTER TABLE memberships ADD COLUMN status VARCHAR(64) NULL;
 ALTER TABLE memberships ADD COLUMN deleted_at DATETIME NULL;
+-- Add donation_amount column and remove membership_type dependency
+ALTER TABLE memberships ADD COLUMN donation_amount DECIMAL(10,2) NULL;
+-- Note: If you want to remove membership_type column entirely, uncomment the next line:
+-- ALTER TABLE memberships DROP COLUMN membership_type;
 
 ALTER TABLE special_members ADD COLUMN status VARCHAR(64) NULL;
 ALTER TABLE special_members ADD COLUMN deleted_at DATETIME NULL;
+-- Add payments JSON array for special members (6 periods, default all false)
+ALTER TABLE special_members ADD COLUMN payments JSON NULL DEFAULT (json_array(false,false,false,false,false,false));
 
 ALTER TABLE volunteers ADD COLUMN status VARCHAR(64) NULL;
 ALTER TABLE volunteers ADD COLUMN deleted_at DATETIME NULL;
@@ -35,3 +41,14 @@ CREATE INDEX idx_memberships_status ON memberships(status);
 CREATE INDEX idx_special_members_status ON special_members(status);
 CREATE INDEX idx_volunteers_status ON volunteers(status);
 CREATE INDEX idx_franchises_status ON franchises(status);
+
+-- Experiences table to store multiple experiences per entity
+CREATE TABLE IF NOT EXISTS experiences (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    entity_type ENUM('members','special_members','volunteers','franchises') NOT NULL,
+    entity_id INT NOT NULL,
+    content TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_entity (entity_type, entity_id),
+    INDEX idx_created_at_exp (created_at)
+);

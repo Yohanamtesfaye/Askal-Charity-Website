@@ -9,6 +9,7 @@ const specialMemberController = require('../controllers/specialMemberController'
 const franchiseController = require('../controllers/franchiseController');
 const contactController = require('../controllers/contactController');
 const previousMembersController = require('../controllers/previousMembersController');
+const experienceController = require('../controllers/experienceController');
 
 const multer = require('multer');
 
@@ -39,6 +40,8 @@ router.delete('/special-members/:id', specialMemberController.deleteSpecialMembe
 router.get('/special-members-deleted', specialMemberController.getDeletedSpecialMembers);
 router.post('/special-members/:id/restore', specialMemberController.restoreSpecialMember);
 router.delete('/special-members/:id/hard', specialMemberController.hardDeleteSpecialMember);
+// Special Members payments update
+router.post('/special-members/update-payment', specialMemberController.updateSpecialMemberPayment);
 
 // Franchises CRUD
 router.post('/franchises', upload.single('photo'), franchiseController.createFranchise);
@@ -62,23 +65,29 @@ router.delete('/contacts/:id', contactController.deleteContact);
 router.get('/admin/memberships', adminController.getAllMemberships);
 router.get('/admin/memberships/:id', adminController.getMembershipById); 
 router.delete('/admin/memberships/:id', adminController.deleteMembership);
-// Memberships recycle bin
+
 router.get('/admin/memberships-deleted', adminController.getDeletedMemberships);
 router.post('/admin/memberships/:id/restore', adminController.restoreMembership);
 router.delete('/admin/memberships/:id/hard', adminController.hardDeleteMembership);
-// Previous members (recycle bin) routes
+
 router.get('/previous-members', previousMembersController.listPreviousMembers);
+router.get('/previous-members/:id', previousMembersController.getPreviousMemberById);
+router.post('/previous-members/:id/restore', previousMembersController.restorePreviousMember);
+
+// Experiences routes
+router.get('/experiences/:entity/:id', experienceController.listExperiences);
+router.post('/experiences/:entity/:id', experienceController.addExperience);
 
 
 
 // Admin Auth Routes
 
-router.post('/admin/signup', adminAuthController.signup);        // POST /api/admin/signup
+router.post('/admin/signup', adminAuthController.signup);        
 router.post('/admin/login', adminAuthController.login);
 router.post('/admin/forgot-password', adminAuthController.forgotPassword);
 router.post('/admin/logout', adminAuthController.logout);
-router.get('/admin', adminAuthController.getAllAdmins); // GET /api/admin
-router.get('/admin/:id', adminAuthController.getAdminById); // GET /api
-router.post('/update-payment', updatePaymentStatus);// POST /api/admin/payments/update
+router.get('/admin', adminAuthController.getAllAdmins); 
+router.get('/admin/:id', adminAuthController.getAdminById); 
+router.post('/update-payment', updatePaymentStatus);
 
 module.exports = router;
