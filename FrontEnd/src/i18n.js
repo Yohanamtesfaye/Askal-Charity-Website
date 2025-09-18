@@ -173,6 +173,7 @@ i18n
         "Choose to be seasonal or lifetime volunteer",
         "Seasonal: Help on different tasks seasonally",
         "Fulltime volunteers are always available when needed",
+        "Volunteer",
     ],
 "member_option1": [
         "Participate in every task when needed",
@@ -297,7 +298,23 @@ i18n
         "To work towards empowering those who cannot afford psychological and material support from their families until they reach adulthood."
     ],
 
-    "Our_partners_T":"Our Partners"
+    "Our_partners_T":"Our Partners",
+
+    "academicLevel": [
+        "Academic Level",
+        "high school",
+        "diploma",
+        "bachelor",
+        "master",
+          "PhD"
+    ],
+    "maritalStatus": [
+        "Marital Status",
+        "single",
+        "married",
+        "divorced",
+        "widowed"
+    ],
 
         }
       },
@@ -466,7 +483,6 @@ i18n
     "volunteer1": [
         "ወቅታዊ ወይም የህይወት ጊዜ በጎ ፈቃደኝነትን ይምረጡ",
         "ወቅታዊ፡ በበጋ ወቅት ተማሪዎችን በማስተማር ላይ ባሉ ልዩ ተግባራት ላይ የበጎ ፈቃድ አገልግሎት",
-        "እንደ አስፈላጊነቱ በየወቅቱ በተለያዩ ሥራዎች ላይ እገዛ ያድርጉ",
         "የሙሉ ጊዜ በጎ ፈቃደኞች ሁል ጊዜ አስፈላጊ ሲሆኑ ይገኛሉ",
         "በጎ ፈቃደኛ"
     ],      
@@ -592,7 +608,23 @@ i18n
         "ለአካለ መጠን እስኪደርሱ ድረስ ቤተሰብ ሊያሟላላቸው ያልቻላቸውን ስነልቦናዊና ቁሳዊ ድጋፍ በማድረግ የማብቃት ስራ መስራት፡፡"
     ],
 
-    "Our_partners_T":"አብረውን የሚሰሩ ድርጅቶች"
+    "Our_partners_T":"አብረውን የሚሰሩ ድርጅቶች",
+
+     "academicLevel": [
+        "የትምህርት ደረጃ",
+        "ሁለተኛ ደረጃ ትምህርት",
+        "ዲፕሎማ",
+        "ባችለር",
+        "ማስተርስ",
+        "ፒ ኤች ዲ"
+    ],
+    "maritalStatus": [
+      "የጋብቻ ሁኔታ",
+        "ያላገባ",
+        "ባለትዳር",
+        "የተፋታ",
+        "ባለቤት የሞተበት"
+    ],
 
         }
       },
