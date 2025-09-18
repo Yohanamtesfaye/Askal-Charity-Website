@@ -1,6 +1,5 @@
 const db = require('../config/db');
 
-// Create Contact
 const createContact = async (req, res) => {
     const { fullName, phoneNumber, email, message } = req.body;
 
@@ -31,12 +30,9 @@ const createContact = async (req, res) => {
     }
 };
 
-// Get all Contacts
 const getContacts = async (req, res) => {
     try {
         const [rows] = await db.query('SELECT * FROM contacts ORDER BY created_at DESC');
-        
-        // Map database fields to frontend field names
         const contacts = rows.map(row => ({
             id: row.id,
             fullName: row.name,
@@ -54,7 +50,6 @@ const getContacts = async (req, res) => {
     }
 };
 
-// Get Contact by ID
 const getContactById = async (req, res) => {
     try {
         const { id } = req.params;
@@ -79,7 +74,6 @@ const getContactById = async (req, res) => {
     }
 };
 
-// Update Contact Status
 const updateContactStatus = async (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
@@ -108,7 +102,6 @@ const updateContactStatus = async (req, res) => {
     }
 };
 
-// Delete Contact
 const deleteContact = async (req, res) => {
     try {
         const { id } = req.params;
@@ -125,7 +118,6 @@ const deleteContact = async (req, res) => {
     }
 };
 
-// Get Contact Statistics
 const getContactStats = async (req, res) => {
     try {
         const [stats] = await db.query(`

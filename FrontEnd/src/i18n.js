@@ -297,7 +297,18 @@ i18n
         "To work towards empowering those who cannot afford psychological and material support from their families until they reach adulthood."
     ],
 
-    "Our_partners_T":"Our Partners"
+    "Our_partners_T":"Our Partners",
+    "country":"Country",
+    "single":"Single",
+    "married":"Married",
+    "divorced":"Divorced",
+    "widowed":"Widowed",
+    "level_high_school":"High School",
+    "level_diploma":"Diploma",
+    "level_bachelor":"Bachelor's",
+    "level_master":"Master's",
+    "level_phd":"P.h.D",
+
 
         }
       },
@@ -592,8 +603,18 @@ i18n
         "ለአካለ መጠን እስኪደርሱ ድረስ ቤተሰብ ሊያሟላላቸው ያልቻላቸውን ስነልቦናዊና ቁሳዊ ድጋፍ በማድረግ የማብቃት ስራ መስራት፡፡"
     ],
 
-    "Our_partners_T":"አብረውን የሚሰሩ ድርጅቶች"
+    "Our_partners_T":"አብረውን የሚሰሩ ድርጅቶች",
 
+"country":"አገር",
+    "single":"ያላገባ/ያላገባች",
+    "married":"ባለትዳር",
+    "divorced":"የተፋታ",
+    "widowed":"የትዳር አጋሩ በሞት የተለየ",
+    "level_high_school":"2ትኛ ደረጃ",
+    "level_diploma":"ዲፕሎማ",
+    "level_bachelor":"ዲግሪ",
+    "level_master":"ማስተርስ",
+    "level_phd":"ፒኤችዲ",
         }
       },
       om: {

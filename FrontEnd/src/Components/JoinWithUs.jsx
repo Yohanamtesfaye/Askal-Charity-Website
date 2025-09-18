@@ -41,8 +41,8 @@ const JoinWithUs = () => {
     phoneNumber: '',
     address: '',
     country: '',
-    academicLevel: 'select_option',
-    maritalStatus: 'select_option',
+    academicLevel: '10+2',
+    maritalStatus: 'Single',
     reasonToJoin: '',
   });
 
@@ -667,12 +667,11 @@ const JoinWithUs = () => {
                   onChange={handleFranchiseInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-400 focus:ring-green-400 sm:text-sm p-2"
                 >
-                  <option value="">{t("select_option")}</option>
-              <option value="high_school">{t("level_high_school")}</option>
-              <option value="diploma">{t("level_diploma")}</option>
-              <option value="bachelor">{t("level_bachelor")}</option>
-              <option value="master">{t("level_master")}</option>
-              <option value="phd">{t("level_phd")}</option>
+              <option value={t("level_high_school")}>{t("level_high_school")}</option>
+              <option value={t("level_diploma")}>{t("level_diploma")}</option>
+              <option value={t("level_bachelor")}>{t("level_bachelor")}</option>
+              <option value={t("level_master")}>{t("level_master")}</option>
+              <option value={t("level_phd")}>{t("level_phd")}</option>
                 </select>
               </div>
               <div>
@@ -686,11 +685,10 @@ const JoinWithUs = () => {
                   onChange={handleFranchiseInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-400 focus:ring-green-400 sm:text-sm p-2"
                 >
-                  <option value="">{t("select_option")}</option>
-              <option value="single">{t("single")}</option>
-              <option value="married">{t("married")}</option>
-              <option value="divorced">{t("divorced")}</option>
-              <option value="widowed">{t("widowed")}</option>
+                  <option value={t("single")}>{t("single")}</option>
+              <option value={t("married")}>{t("married")}</option>
+              <option value={t("divorced")}>{t("divorced")}</option>
+              <option value={t("widowed")}>{t("widowed")}</option>
                 </select>
               </div>
               <div>
