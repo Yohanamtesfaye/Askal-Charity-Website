@@ -173,6 +173,7 @@ i18n
         "Choose to be seasonal or lifetime volunteer",
         "Seasonal: Help on different tasks seasonally",
         "Fulltime volunteers are always available when needed",
+        "Volunteer",
     ],
 "member_option1": [
         "Participate in every task when needed",
@@ -477,7 +478,6 @@ i18n
     "volunteer1": [
         "ወቅታዊ ወይም የህይወት ጊዜ በጎ ፈቃደኝነትን ይምረጡ",
         "ወቅታዊ፡ በበጋ ወቅት ተማሪዎችን በማስተማር ላይ ባሉ ልዩ ተግባራት ላይ የበጎ ፈቃድ አገልግሎት",
-        "እንደ አስፈላጊነቱ በየወቅቱ በተለያዩ ሥራዎች ላይ እገዛ ያድርጉ",
         "የሙሉ ጊዜ በጎ ፈቃደኞች ሁል ጊዜ አስፈላጊ ሲሆኑ ይገኛሉ",
         "በጎ ፈቃደኛ"
     ],      
