@@ -145,7 +145,7 @@ const JoinWithUs = () => {
               </div>
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="font-bold text-lg mb-3">{t("volunteer1.3")}</h3>
-                <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4 flex-1">
+                <ul className="list-disc list-inside list-green-600 text-gray-700 space-y-2 mb-4 flex-1">
                   <li>{t("volunteer1.0")}</li>
                   <li>{t("volunteer1.1")}</li>
                   <li>{t("volunteer1.2")}</li>
@@ -818,11 +818,11 @@ const JoinWithUs = () => {
                   onChange={handleFranchiseInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-400 focus:ring-green-400 sm:text-sm p-2"
                 >
-              <option value={t("level_high_school")}>{t("level_high_school")}</option>
-              <option value={t("level_diploma")}>{t("level_diploma")}</option>
-              <option value={t("level_bachelor")}>{t("level_bachelor")}</option>
-              <option value={t("level_master")}>{t("level_master")}</option>
-              <option value={t("level_phd")}>{t("level_phd")}</option>
+              <option value= {t("academicLevel.1")}> {t("academicLevel.1")}</option>
+              <option value={t("academicLevel.2")}>{t("academicLevel.2")}</option>
+              <option value={t("academicLevel.3")}>{t("academicLevel.3")}</option>
+              <option value={t("academicLevel.4")}>{t("academicLevel.4")}</option>
+              <option value={t("academicLevel.5")}>{t("academicLevel.5")}</option>
                 </select>
               </div>
 
@@ -840,10 +840,10 @@ const JoinWithUs = () => {
                   onChange={handleFranchiseInputChange}
                   className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-400 focus:ring-green-400 sm:text-sm p-2"
                 >
-                  <option value={t("single")}>{t("single")}</option>
-              <option value={t("married")}>{t("married")}</option>
-              <option value={t("divorced")}>{t("divorced")}</option>
-              <option value={t("widowed")}>{t("widowed")}</option>
+                  <option value={t("maritalStatus.1")}>{t("maritalStatus.1")}</option>
+              <option value={t("maritalStatus.2")}>{t("maritalStatus.2")}</option>
+              <option value={t("maritalStatus.3")}>{t("maritalStatus.3")}</option>
+              <option value={t("maritalStatus.4")}>{t("maritalStatus.4")}</option>
                 </select>
               </div>
 

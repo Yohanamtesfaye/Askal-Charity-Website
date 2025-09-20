@@ -1,8 +1,8 @@
 import React from "react";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import sente from "../assets/Images/sente.png";
-import pep2 from "../assets/Images/pep2.avif";
-import pep3 from "../assets/Images/pep3.png";
+import sente from "../assets/Images/testimony_1.jpg";
+import pep2 from "../assets/Images/testimony_2.jpg";
+import pep3 from "../assets/Images/testimony_3.jpg";
 import { useTranslation } from "react-i18next";
 
 const VisitorMessage = () => {
@@ -10,24 +10,24 @@ const VisitorMessage = () => {
 
   const visitors = [
     {
-      name: "Sentayehu Kefle",
-      title: "Comedian",
+      name: "ፅዮን መኮንን",
+      title: "በጎ ፈቃደኛ",
       message:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "መስጠት ያለንን ነው፤በተለይ የምንሰጠው ነገር ተቀባዩ ላይ አዎንታዊ ትጽእኖ ካለው። ብዙዎች ከማህበረሰቡ የተሻሉ ለመሆን ይለፋሉ፣ ጥቂቶች ግን የተሻለ ማህበረስብን ለመገንባት ይጥራሉ።",
       img: sente,
     },
     {
-      name: "Visitor 2",
-      title: "Musician",
+      name: "ትዝታ ተረፈ",
+      title: "የአስካል ተማሪ",
       message:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+        "በአስካል የክረምት ትምህርት መርሃ ግብር ለ 5 አመታት ተምሬአለው። ይህም በጨዋታ እና ፊልም በማየት ብቻ ክረምቴ እንዳይባክን፤ይልቁንም ለቀጣዪ የትምህርት ዘመን እንድዘጋጅ አግዞኛል።",
       img: pep2,
     },
     {
-      name: "Visitor 3",
-      title: "Actor",
+      name: "ናሆም ሰለሞን",
+      title: "የአስካል ፍሬ",
       message:
-        "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi.",
+        "በአስካል የክረምት ትምህርት መርሃ ግብር ለ 5 አመታት ተምሬአለው። አሁን እኔም በተራዬ አድጌ በአስካል ዉስጥ ማህበረሰቤን እያገለገልኩኝ እገኛለሁ። እናንተም እንድታገለግሉ እጋብዛለሁኝ።",
       img: pep3,
     },
   ];

@@ -153,7 +153,7 @@ const Home = () => {
               {t('telebirr')}: 0909090909
               </p>
               <Link 
-                to='/donate'
+                to='/'
                 className='inline-block px-6 py-3 border-2 border-white rounded-full
                          hover:bg-white hover:text-[#EB8317] transition-all duration-300'
               >
@@ -174,10 +174,10 @@ const Home = () => {
             </div>
             <div className='flex gap-6 mt-4 md:mt-0'>
               {[
-                { icon: FaYoutube, color: '#FF0000', link: 'https://youtube.com' },
-                { icon: FaTelegramPlane, color: '#0088cc', link: 'https://telegram.org' },
-                { icon: FaTiktok, color: '#000000', link: 'https://tiktok.com' },
-                { icon: FaFacebookF, color: '#1877F2', link: 'https://facebook.com' }
+                { icon: FaYoutube, color: '#FF0000', link: 'https://www.youtube.com/@askalcharityassociation9047' },
+                { icon: FaTelegramPlane, color: '#0088cc', link: 'https://t.me/Askal_Charity_volunteers' },
+                { icon: FaTiktok, color: '#000000', link: 'https://www.tiktok.com/@askal_charity?is_from_webapp=1&sender_device=pc' },
+                { icon: FaFacebookF, color: '#1877F2', link: 'https://www.facebook.com/share/p/1BSehcgnke/' }
               ].map((social, index) => (
                 <motion.a
                   key={index}

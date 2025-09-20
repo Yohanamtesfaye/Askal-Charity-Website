@@ -173,7 +173,7 @@ const More = () => {
           ))}
         </div>
 
-        {/* Modal */}
+        {/* Modal
         <AnimatePresence>
           {selectedMedia && (
             <motion.div
@@ -232,7 +232,7 @@ const More = () => {
               </motion.div>
             </motion.div>
           )}
-        </AnimatePresence>
+        </AnimatePresence> */}
       </div>
     </div>
   );

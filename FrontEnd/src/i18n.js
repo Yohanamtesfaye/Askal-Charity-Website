@@ -14,7 +14,7 @@ i18n
           "shape_des":"Provide educational resources and support to help children thrive",
           "support_kids":"Support Our Kids",
           "support_des":"Offering comprehensive care including food, shelter, and medical assistance",
-          "slide_1":"Even if we don't have it, we share what we have.",
+          "slide_1":"Even if we don't have enough, we share what we have.",
           "homeintro1": "There can be no keener revelation of a society\'s soul than the way in which it treats its children.",
           "slide_2":"Providing Basic Needs",
           "homeintro2":"We ensure children have access to food, shelter, and education.",
@@ -199,7 +199,7 @@ i18n
 
     "learn":"Learn More",
     "welcome_future_member": "Welcome, Future Member!",
-    "thank_you_message": "Thank you for deciding to be an Askal member. Please come to our office at Saris, Addis Ababa, around total gas station 'dawi' building 2nd floor, and bring a formal letter to be a member of Askal.",
+    "thank_you_message": "Thank you for deciding to be an Askal member. Please come to our office at Saris, Addis Ababa, around total gas station 'dawi' building 4th floor, and bring a formal letter to be a member of Askal.",
  
     "register_as_franchise": "Register as Franchise",
     "represent_askal": "Represent Askal in your location",
@@ -300,17 +300,21 @@ i18n
 
     "Our_partners_T":"Our Partners",
     "country":"Country",
-    "single":"Single",
-    "married":"Married",
-    "divorced":"Divorced",
-    "widowed":"Widowed",
-    "level_high_school":"High School",
-    "level_diploma":"Diploma",
-    "level_bachelor":"Bachelor's",
-    "level_master":"Master's",
-    "level_phd":"P.h.D",
-
-
+    "academicLevel": [
+        "Academic Level",
+        "High School",
+        "Diploma",
+        "Bachelor",
+        "Master",
+        "PhD"
+    ],
+    "maritalStatus": [
+        "Marital Status",
+        "Single",
+        "Married",
+        "Divorced",
+        "Widowed"
+    ],
         }
       },
       am: {

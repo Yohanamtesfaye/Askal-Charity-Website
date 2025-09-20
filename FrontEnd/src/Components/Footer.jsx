@@ -1,16 +1,16 @@
 import React from "react"
 import { motion } from "framer-motion"
 import { FaYoutube, FaTelegramPlane, FaTiktok, FaFacebookF, FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"
-import logo from "../assets/Images/askallogo.jpg"
+import logo from "../assets/Images/logo.jpg";
 import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
   const { t } = useTranslation();
   const socialLinks = [
-    { icon: FaYoutube, href: "https://youtube.com", color: "#FF0000" },
-    { icon: FaTelegramPlane, href: "https://telegram.org", color: "#0088cc" },
-    { icon: FaTiktok, href: "https://tiktok.com", color: "#ff0050" },
-    { icon: FaFacebookF, href: "https://facebook.com", color: "#1877F2" },
+    { icon: FaYoutube, href: "https://www.youtube.com/@askalcharityassociation9047", color: "#FF0000" },
+    { icon: FaTelegramPlane, href: "https://t.me/Askal_Charity_volunteers", color: "#0088cc" },
+    { icon: FaTiktok, href: "https://www.tiktok.com/@askal_charity?is_from_webapp=1&sender_device=pc", color: "#ff0050" },
+    { icon: FaFacebookF, href: "https://www.facebook.com/share/p/1BSehcgnke/", color: "#1877F2" },
   ]
 
   return (

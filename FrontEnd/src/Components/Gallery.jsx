@@ -52,14 +52,14 @@ const Gallery = () => {
       prop: 5,
       category: t('emotional'),
     },
-    {
-      src: lifetraining,
-      alt: t('parent_edu'),
-      title: t('parent_edu'),
-      description: t('parent_des'),
-      prop: 6,
-      category: t('parent_edu'),
-    },
+    // {
+    //   src: lifetraining,
+    //   alt: t('parent_edu'),
+    //   title: t('parent_edu'),
+    //   description: t('parent_des'),
+    //   prop: 6,
+    //   category: t('parent_edu'),
+    // },
   ]
 
   return (

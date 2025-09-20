@@ -3,8 +3,9 @@ import { useTranslation } from "react-i18next"
 
 
 const partners = [
+  {logo: "https://static.tildacdn.com/tild3034-6638-4039-a666-616139333436/Logo.svg", link:"https://rescue-child.com/"},
   { logo: "https://static.tildacdn.com/stor6561-3764-4431-b331-653133333835/44124735.svg", link: "https://ru.childrenmustlive.com/" },
-    { logo: "https://optim.tildacdn.com/stor6636-3736-4233-b534-663764326434/-/contain/273x180/center/center/-/format/webp/80101931.png.webp", link: "https://childrenmustlive.com/" },
+  { logo: "https://optim.tildacdn.com/stor6636-3736-4233-b534-663764326434/-/contain/273x180/center/center/-/format/webp/80101931.png.webp", link: "https://childrenmustlive.com/" },
   { logo: "https://static.tildacdn.com/stor6530-3330-4539-a439-353064643561/45155937.svg", link: "https://fond-zhizn-odna.ru/" },
   { logo: "https://optim.tildacdn.com/stor3335-6332-4162-a564-633932373934/-/contain/258x273/center//-/format/webp/25343419.png.webp", link: "https://heha.school/" },
   { logo: "https://static.tildacdn.com/stor6361-6239-4332-b636-386662376666/72767092.svg", link: "https://tabor.school/" },
