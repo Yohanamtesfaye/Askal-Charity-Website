@@ -74,7 +74,7 @@ router.get('/previous-members', previousMembersController.listPreviousMembers);
 router.get('/previous-members/:id', previousMembersController.getPreviousMemberById);
 router.post('/previous-members/:id/restore', previousMembersController.restorePreviousMember);
 
-// Experiences routes
+
 router.get('/experiences/:entity/:id', experienceController.listExperiences);
 router.post('/experiences/:entity/:id', experienceController.addExperience);
 

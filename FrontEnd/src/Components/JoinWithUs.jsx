@@ -270,7 +270,7 @@ const JoinWithUs = () => {
               onClick={closeMemberModal}
               className="bg-yellow-400 text-white font-semibold py-3 rounded w-full hover:bg-yellow-500 focus:outline-none"
             >
-              Got it!
+              {t("got_it")}
             </button>
           </div>
         </div>
