@@ -135,7 +135,7 @@ const JoinWithUs = () => {
         <hr className="my-6 mb-12 border border-t-8 border-red-500 w-64 mx-auto rounded-lg" />
         <div className="flex flex-col md:flex-row md:space-x-6 space-y-6 md:space-y-0 justify-center items-stretch">
           {/* Volunteer Card */}
-          <Link to="/volunteer" target="_blank" rel="noopener noreferrer">
+          <Link to="/volunteer">
             <button
               type="button"
               className="bg-white rounded-lg shadow-md w-full md:w-64 text-left focus:outline-none flex flex-col h-full transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer hover:bg-transparent"

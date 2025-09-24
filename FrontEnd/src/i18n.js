@@ -163,7 +163,7 @@ i18n
     "ready_to_make_difference": "Ready to make a difference? Reach out to us and let's work together to create positive change in our community.",
     "email_us": "Email us",
     "address1": "Address",
-    "address_detail": "Saris, Addis Ababa, around total gas station 'dawi' building 2nd floor, Addis Ababa, Ethiopia",
+    "address_detail": "Saris, Addis Ababa, around total gas station 'dawi' building 4th floor, Addis Ababa, Ethiopia",
     "call_us": "Call us",
     "office_hours": "Office hours",
     "office_hours_detail": "Monday to Sunday, 9:00 A.M. to 7:00 P.M.",
@@ -362,8 +362,8 @@ i18n
           "language":"ቋንቋ",
           "children":" ተማሪ ልጆች",
           "volunteers":"በጎ ፍቃደኛ",
-          "daily_meals":"ተመጋቢዎች በቀን",
-          "programs":"ፕሮግራሞች",
+          "daily_meals":"አባላት",
+          "programs":"አባላት",
           "locations":"ቦታዎች",
           "visitor_message":"ከጎብኚዎች አፍ",
           "contact_us":"አግኙን",
@@ -472,7 +472,7 @@ i18n
     "ready_to_make_difference": "ለውጥ ለማምጣት ዝግጁ ነዎት? አነጋግሩን እና በህብረተሰባችን ውስጥ አወንታዊ ለውጥ እንዲመጣ በጋራ እንስራ።",
     "email_us": "ኢሜይል ይላኩልን",
     "address1": "አድራሻ",
-    "address_detail": "ሳሪስ፣ አዲስ አበባ፣ ቶታል ነዳጅ ማደያ 'ዳዊ' ህንፃ 2ኛ ፎቅ፣ አዲስ አበባ፣ ኢትዮጵያ",
+    "address_detail": "ሳሪስ፣ አዲስ አበባ፣ ቶታል ነዳጅ ማደያ 'ዳዊ' ህንፃ 4ኛ ፎቅ፣ አዲስ አበባ፣ ኢትዮጵያ",
     "call_us": "ይደውሉልን",
     "office_hours": "የቢሮ ሰዓት",
     "office_hours_detail": "ከሰኞ እስከ እሁድ 9:00 ኤ.ኤም. እስከ 7፡00 ፒ.ኤም.",
@@ -507,7 +507,7 @@ i18n
 
     "learn":"ተጨማሪ ይወቁ",
     "welcome_future_member": "እንኳን ደህና መጡ!",
-    "thank_you_message": "የአስካል አባል ለመሆን ስለወሰኑ እናመሰግናለን። እባኮትን ሳሪስ አዲስ አበባ ቶታል ነዳጅ ማደያ 'ዳዊ' ህንፃ 2ኛ ፎቅ አካባቢ በሚገኘው ቢሮአችን በመምጣት አባል ለመሆን መደበኛ ደብዳቤ ይዘው ይምጡ",
+    "thank_you_message": "የአስካል አባል ለመሆን ስለወሰኑ እናመሰግናለን። እባኮትን ሳሪስ አዲስ አበባ ቶታል ነዳጅ ማደያ 'ዳዊ' ህንፃ 4ኛ ፎቅ አካባቢ በሚገኘው ቢሮአችን በመምጣት አባል ለመሆን መደበኛ ደብዳቤ ይዘው ይምጡ",
     
      "register_as_franchise": "እንደ ፍራንቻይስ ይመዝግቡ",
     "represent_askal": "አስካልን በየቦታችሁ ይወክሉ",
@@ -675,8 +675,7 @@ i18n
           "language":"Afaan",
           "children":"Daa’imman deeggaraman",
           "volunteers":"Tola oltoota",
-          "daily_meals":"Nyaata guyya guyyaa",
-          "programs":"Sagantaa",
+          "daily_meals":"Miseensota",
           "locations":"Teesso",
           "visitor_message":"Eergaa daawwatoota irra",
           "contact-us":"Nu qunnamaa",
@@ -769,6 +768,171 @@ i18n
         "login":"Seeni",
         "our_gallery":"Giddugala agarsiisa keenyaa",
         "description":"Ibsa",
+"send_msg":"ERGUU",
+        "msg":"ergaa",
+        "msg_ph":"Ergaa keessan galchaa",
+         "email1": "Email Address",
+    "email_ph": "Email kee galchi",
+    "phone": "Lakkoofsa Bilbilaa",
+    "phone_ph": "Lakkoofsa bilbilaa kee galchi",
+    "full_name1": "Maqaa Guutuu",
+    "full_name_ph": "Maqaa guutuu kee galchi",
+    "send_message": "Ergaa nuuf ergi",
+    "fill_out_form": "Formii armaan gadii guutuu fi nuti siif deebina.",
+    "contact_us1": "Nu Qunnamaa",
+    "hear_from_you": "Osoo isin irraa dhaga'uu ni jaallanna. Garee keenya waliin wal qunnamaa!",
+    "get_in_touch": "Nu Qunnamaa",
+    "ready_to_make_difference": "Baraaruuf qophii? Nu qunnamaa fi waliin hojjechuu jalqabuuf!",
+    "email_us": "Email nuuf ergi",
+    "address1": "Teessoo",
+    "address_detail": "Saris, Addis Ababa, naannoo gamoo waliigalaa buufata gaazaa 'dawi' gamoo 4ffaa, Addis Ababa, Ethiopia",
+    "call_us": "Nu bilbilaa",
+    "office_hours": "Sa'aa Ofiisaa",
+    "office_hours_detail": "Dilbata hanga Sanbata, 9:00 A.M. hanga 7:00 P.M.",
+    "join_community": "Hawaasa keenya keessatti hirmaadhu",
+    "community_message": "Filannoo keetiin nu waliin hojjechuu fi wanta guddaa ta'e keessatti hirmaachuuf carraa argachuuf.",
+     "volunteer1": [
+        "Tola ooltummaa waqtii ykn umurii guutuu ta'uu filadhu",
+        "Yeroo: Hojii adda addaa irratti waqtiidhaan gargaaruu",
+        "Tola ooltonni yeroo guutuu yeroo barbaachisu yeroo hunda ni argamu",
+        "Tola ooltummaa",
+    ],
+"member_option1": [
+        "Yeroo barbaachisutti hojii hunda irratti hirmaachuu",
+        "Walgahii waggaa irratti argamuun",
+        "Akka barbaachisummaa isaatti itti gaafatamummaa dabalataa fudhachuu",
+        "Miseensa Ta'i",
+    ],
+    "special_member1": [
+        "Warra Addis Ababa ykn Itoophiyaan ala jiraataniif mudaa hin qabu",
+        "Askal gargaaraa irra caalaa karaa arjooma",
+        "Eessa kamirraayyuu ergama keenya waliin walitti hidhamiinsa qabaadhaa",
+        "Miseensa Addaa",
+
+    ],
+    "franchise1": [
+        "Dhaabbata ykn bakka keessan keessatti Askal bakka bu'aa",
+        "Dhaqqabummaa fi dhiibbaa keenya babal'isaa",
+        "Hawaasa keessan keessatti tumsa ijaaraa",
+        "Firaankisaayizii", 
+    ],
+    "learn":"Caalaatti Baruuf",
+    "welcome_future_member": "Baga Nagaan Dhuftan Miseensa Fuulduraa!",
+    "thank_you_message": "Galatoomaa Askal miseensa ta'uu filataniif. Teessoo keenya Saris, Addis Ababa, naannoo gamoo waliigalaa buufata gaazaa 'dawi' gamoo 4ffaa, dhufaa fi xalayaa formal ta'e galchaa.",
+ 
+    "register_as_franchise": "Firaankisaayizii ta'uu galmaa'i",
+    "represent_askal": "Askal bakka keessanitti bakka bu'aa",
+    "register_as_special_member": "Miseensa Addaa ta'uu galmaa'i",
+    "join_global_community": "Hawaasa addunyaa keenya keessatti hirmaadhu",
+    "moneyamount":"Maallaqa hammam gumaachuu barbaadda?",
+    "gender":"Saala",
+    "countryresidence": "Biyya jiraachuu",
+    "nationality": "Nammummaa",
+    "moneyamountschedule": "Yeroo kamiin gumaacha kee gochuu barbaadda?",
+    "start_donation": "Yeroo kamiin gumaacha jalqabuuf qophii?",
+    "late_notification": "Sababoota garaagaraatiin gumaacha gochuu keessatti dheeraa taanaan akkamitti si beeksifna?",
+    "birr":"birrii",
+    "Countryresidence":"Biyya jiraachuu",
+    "addressresidence":"Teessoo - magaalaa/naannoo/zonii",
+    "donation_frequency": [
+        "Torban hunda",
+        "Guyyaa 15 hunda",
+        "Ji'a ji'aan",
+        "Ji'a sadii sadiin",
+        "Ji'a jaha jahaan",
+        "Waggaatti al tokko"
+    ],
+
+    "donation_duration": [
+      "Hanga yoomiitti maallaqa filatte arjoomuu dandeessa?",
+        "Ji'oota jahaaf walitti aansuun",
+        "Waggaa tokkoof",
+        "Waggaa sadiif",
+        "Ani hin dhaabu ture."],
+
+        "donation_option": [
+        "Filannoo kam arjooma keessan gochuu filattu?",
+        "Kallattiin herrega baankii Askal (CBE-1000448386377) keessa galchuudhaan",
+        "Maallaqa gara herrega Askalitti karaa bilbilaa (CBE-1000448386377) dabarsuudhaan",
+        "Waajjira Askal qaamaan daawwachuudhaan",
+        "Iddoo jirtanitti dhuftee fudhachuudhaan"
+    ],
+    
+     "reminder_preference": [
+      "Guyyaan arjooma keessanii yeroo dhihaatu akka isin yaadachiifnu barbaadduu?",
+        "Eeyyee",
+        "Lakki"
+    ],
+    "reminder_method": [
+        "Gaaffii kanaan duraatiif deebiin keessan 'eeyyee' yoo ta'e, mala akkamii fayyadamnee isin yaadachiisuu qabna?",
+        "Na waami",
+        "Ergaa barreeffamaa gabaabaa naaf ergaa",
+        "Fuula miidiyaa hawaasaa kootiin na qunnamaa",
+        "Qaamaan bakka ani jirutti koottaa na yaadadhu"
+    ],
+
+    "missed_deadline_notification": [
+        "Yeroon yeroo xumuraa arjooma sanaa yoo darbitan dafnee isin beeksisuu qabna?",
+        "Yeroon arjooma xumuraa guyyaa 1 yoon darbe",
+        "Yeroon arjooma xumuraa guyyaa 3n yoon darbe",
+        "Yeroon arjooma xumuraa torban 1 yoon darbe"
+    ],
+
+    "board_members":"Miseensota Boordii",
+
+    "BM_name": [
+        "Belay Niguse",
+        "Abel Gizaw",
+        "Zeyneb Ashifa",
+        "Hamelmal Mekuria"
+    ],
+
+    "BM_role": [
+       "Hundeessaa fi Hojii Gaggeessaa Olaanaa",
+        "Daayreektarri Boordii",
+        "Dura taa'aa Yaa'ii WaliigalaaNama",
+        "Barreessaa Olaanaa Yaa'ii Waliigalaa"
+    ],
+
+"Vision1": [
+        "Mul'ata",
+        "Daa'imman hundi fayyaa qaamaa isaanii eegamee, dandeettiin sammuu isaanii beekumsaan babal'atee, humni saayikoloojii isaanii guddate, dandeettiin isaanii itti fufiinsaan biyyattii fayyadamoo taasisuu arguuf.",
+        "Fayyaan qaamaa fi sammuu daa'immanii akka eegamu mirkaneessuu",
+        "Sodaa warri (guddistoonni) lubbuun jiraachuu ijoollee isaanii gara fuula duraa ilaalchisee qaban hir'isuu ykn dhabamsiisuu",
+        "Daa'imni kamiyyuu maatii hiyyeessaa irraa yoo ta'e, sababa haala maatiitiin barnoota irraa akka hin hafne ykn barnoota akka hin dhiisne mirkaneessuuf.",
+        "Barattoota dorgomtootaa fi ga'umsa barnootaa isaanii irratti bu'a qabeessa ta'an guddisuu.",
+        "Dandeettii fi dandeettiin kalaqaa daa'immanii akka addunyaatti beekamtii akka argatu gochuu"
+      ],
+     "Mission1": [
+        "Ergama",
+        "Qaawwa dhaqqabummaa deeggarsa daa'immanii keessatti mul'atu guutuuf sirna bu'a qabeessa ta'e diriirsuu fi deeggarsa bal'aa daa'immaniif kennuudhaan daa'imman haala itti fufiinsa qabuun akka dhaqqabaman gochuu."
+      ],
+    "Purpose1": [
+        "Dhimma",
+        "Daa'imman, egeree biyyattii ta'an, deeggarsa bal'aa fi roga hedduu ta'e kennuudhaan, akka isaan lammii dandeettii qaban ofii isaanii qofa osoo hin taane biyyattiis fayyadamoo ta'an akka ta'an gochuu.",
+        "Daa'imman guyyaatti al sadii nyaata gahaa fi madaalawaa akka nyaatan mirkaneessuu",
+        "Barattoonni meeshaalee barumsaa fi uffata hiriyoota isaanii wajjin wal madaalu kennuu, yaada isaanii osoo hin jeeqamin guutummaatti barnoota isaanii irratti akka xiyyeeffatan taasisuu.",
+        "Raawwii eegumsa fayyaa dursa kennuudhaan miidhaa yeroo fi dhaabbataa hanqina kunuunsa fayyaatiin dhufu hir'isuu fi daa'imman sababa dhukkubaan mana barumsaa akka hin hafnee fi yaala barbaachisaa akka argatan gochuu.",
+        "Barattoonni dandeettii uumamaa adda addaa qaban dandeettii isaanii akka guddifatan deeggaruun (yoo mirga abbummaatti nama geessu) abjuu isaanii waliin walsimsiisuun tattaaffii isaanii jajjabeessuu.",
+        "Namoota hanga ga'eessota ga'anitti maatii isaanii irraa deeggarsa saayikoloojii fi meeshaa argachuu hin dandeenye humneessuu irratti hojjechuu."  ],
+
+    "Our_partners_T":"Michoota Keenya",
+    "country":"Biyya",
+    "academicLevel": [
+        "Sadarkaa Barnootaa", 
+        "Mana Barumsaa Sadarkaa Lammaffaa",
+        "Dippiloomaa",
+        "Bachiloor",
+        "Maaster",
+        "PhD"
+    ],
+    "maritalStatus": [
+        "Haala Gaa'elaa", 
+        "Qeenxee",
+        "Kan fuudhe",
+        "Hiikaan", 
+        "Duwwitii abbaan manaa irraa du'e"
+    ],
         }
       },
        tg: {
@@ -816,8 +980,7 @@ i18n
           "language":"ቋንቋ",
           "children":"ሓገዝ ዝተገበረሎም ህፃናት",
           "volunteers":"ወለንታውያን",
-          "daily_meals":"መዓልታዊ መግቢ",
-          "programs":"ምድላዋት",
+          "daily_meals":"ኣባላት",
           "locations":"እንርከበሎም ቦታታት",
           "visitor_message":"መልእኽቲ ካብ በፃሕቲ",
           "contact-us":"ርኸቡና",
@@ -1080,9 +1243,7 @@ i18n
         "ምርዕው",
         "ተፋቲሑ",
         "መበለት"
-    ],
-
-        
+    ],        
 
 }
 },
@@ -1176,9 +1337,7 @@ ar: {
 
     "volunteers":"المتطوعون",
 
-    "daily_meals":"وجبات يومية",
-
-    "programs":"برامج",
+    "daily_meals":"وأعضاء",
 
     "locations":"مواقع",
 
@@ -1358,7 +1517,173 @@ ar: {
 
     "our_gallery":"معرضنا",
 
-    "description":"الوصف"
+    "description":"الوصف",
+    "send_msg":"إرسال رسالة",
+        "msg":"رسالة",
+        "msg_ph":"أدخل رسالتك",
+         "email1": "البريد الإلكتروني",
+    "email_ph": "أدخل بريدك الإلكتروني",
+    "phone": "رقم الهاتف",
+    "phone_ph": "أدخل رقم الهاتف",
+    "full_name1": "الاسم الكامل",
+    "full_name_ph": "أدخل اسمك الكامل",
+    "send_message": "أرسل لنا رسالة",
+    "fill_out_form": "املأ النموذج أدناه وسنعود إليك في أقرب وقت ممكن.",
+
+    "contact_us1": "تواصل معنا",
+    "hear_from_you": "نود أن نسمع منك. تواصل مع فريقنا!",
+    "get_in_touch": "تواصل معنا",
+    "ready_to_make_difference": "هل أنت مستعد لإحداث فرق؟ تواصل معنا ودعنا نعمل معًا لإحداث تغيير إيجابي في مجتمعنا.",
+    "email_us": "أرسل لنا بريدًا إلكترونيًا",
+    "address1": "العنوان",
+    "address_detail": "ساريس، أديس أبابا، حول محطة الغاز الكاملة 'داوي'، الطابق الرابع، أديس أبابا، إثيوبيا",
+    "call_us": "اتصل بنا",
+    "office_hours": "ساعات العمل",
+    "office_hours_detail": "من الاثنين إلى الأحد، من 9:00 صباحًا إلى 7:00 مساءً.",
+    "join_community": "انضم إلى مجتمعنا الرائع",
+    "community_message": "اختر الطريقة المفضلة لديك للعمل معنا وكن جزءًا من شيء أكبر. معًا، يمكننا إحداث فرق حقيقي في مجتمعنا.",
+    "volunteer1": [
+        "اختر أن تكون متطوعًا موسميًا أو مدى الحياة",
+        "موسمي: المساعدة في مهام مختلفة بشكل موسمي",
+        "المتطوعون بدوام كامل متاحون دائمًا عند الحاجة",
+        "متطوع",
+    ],
+"member_option1": [
+        "المشاركة في كل مهمة عند الحاجة",
+        "الحضور في الاجتماعات السنوية",
+        "تحمل مسؤوليات إضافية حسب الحاجة",
+        "كن عضوًا",
+    ],
+    "special_member1": [
+        "مثالي لأولئك الذين يعيشون خارج أديس أبابا أو إثيوبيا",
+        "مساعدة أسكال بشكل أساسي من خلال التبرعات",
+        "ابق على اتصال بمهمتنا من أي مكان",
+        "عضو مميز",
+    ],
+    "franchise1": [
+        "تمثيل أسكال في شركتك أو موقعك",
+        "توسيع نطاق تأثيرنا",
+        "بناء شراكات في مجتمعك",
+        "امتياز",
+    ],
+    "learn":"يتعلم أكثر",
+    "welcome_future_member": "مرحبًا بك، عضو المستقبل!",
+    "thank_you_message": "شكرًا لك على قرارك بأن تكون عضوًا في أسكال. يرجى الحضور إلى مكتبنا في ساريس، أديس أبابا، حول محطة الغاز الكاملة 'داوي'، الطابق الرابع، وإحضار خطاب رسمي لتكون عضوًا في أسكال.",
+
+    "register_as_franchise": "سجل كامتياز",
+    "represent_askal": "تمثيل أسكال في موقعك",
+    "register_as_special_member": "سجل كعضو مميز",
+    "join_global_community": "انضم إلى مجتمعنا العالمي من الداعمين",
+    "moneyamount":"كم من المال ترغب في التبرع به",
+    "gender":"الجنس",
+    "countryresidence": "بلد الإقامة",
+    "nationality": "الجنسية",
+    "moneyamountschedule": "كم مرة ستقوم بالتبرع؟",
+    "start_donation": "متى يمكنك البدء في التبرع؟",
+    "late_notification": "كيف سنخطرك إذا تأخرت في التبرع لأسباب مختلفة؟",
+    "birr":"بير",
+    "Countryresidence":"بلد الإقامة",
+    "addressresidence":"العنوان السكني - المدينة/المنطقة/المنطقة",
+    "donation_frequency": [
+        "كل أسبوع",
+        "كل 15 يوم",
+        "كل شهر",
+        "كل ثلاثة أشهر",
+        "كل ستة أشهر",
+        "مرة في السنة"
+    ],
+
+    "donation_duration": [
+      "إلى متى يمكنك التبرع بالمبلغ الذي تختاره؟",
+       "ستة أشهر متتالية",
+        "سنة واحدة",
+        "ثلاث سنوات",
+        "لن أتوقف"],
+
+        "donation_option": [
+        "ما هو الخيار الذي تفضله للتبرع؟",
+        "عن طريق الإيداع المباشر في حساب أسكال البنكي (CBE-1000448386377)",
+        "عن طريق تحويل الأموال إلى حساب أسكال عبر الهاتف (CBE-1000448386377)",
+        "عن طريق زيارة مكتب أسكال شخصيًا",
+        "عن طريق القدوم إلى موقعك واستلامه"
+    ],
+    
+     "reminder_preference": [
+      "هل ترغب في أن نذكرك عندما يقترب تاريخ التبرع الخاص بك؟",
+        "نعم",
+        "لا"
+    ],
+    "reminder_method": [
+        "إذا كانت إجابتك بنعم على السؤال السابق، ما هي الطريقة التي يجب أن نستخدمها لتذكيرك؟",
+        "اتصل بي",
+        "أرسل لي رسالة نصية قصيرة",
+        "تواصل معي من خلال صفحتي على وسائل التواصل الاجتماعي",
+        "تعال إلى موقعي شخصيًا وذكرني"
+    ],
+
+    "missed_deadline_notification": [
+        "كيف سنخطرك إذا تأخرت في التبرع لأسباب مختلفة؟",
+        "إذا مر يوم واحد على موعد التبرع",
+        "إذا مر ثلاثة أيام على موعد التبرع",
+        "إذا مر أسبوع واحد على موعد التبرع"
+    ],
+
+    "board_members":"أعضاء مجلس الإدارة",
+
+    "BM_name": [
+        "Belay Niguse",
+        "Abel Gizaw",
+        "Zeyneb Ashifa",
+        "Hamelmal Mekuria"
+    ],
+
+    "BM_role": [
+        "المؤسس والرئيس التنفيذي",
+        "مدير مجلس الإدارة",
+        "رئيس الجمعية العامة",
+        "السكرتير العام للجمعية العامة"
+    ],
+
+"Vision1": [
+        "الرؤية",
+        "لرؤية جميع الأطفال مع الحفاظ على صحتهم البدنية، وتوسيع قدرتهم الفكرية بالمعرفة، وتطوير قوتهم النفسية، وقدرتهم على الاستفادة المستمرة من البلاد.",
+        "ضمان حماية الصحة البدنية والعقلية للأطفال",
+        "تقليل أو القضاء على الخوف الذي يشعر به الآباء (الأوصياء) فيما يتعلق بالاستمرار في حياة أطفالهم في المستقبل",
+        "لضمان عدم ترك أي طفل، بغض النظر عما إذا كان من عائلة فقيرة، خارج المدرسة أو يتسرب من المدرسة بسبب ظروف عائلية.",
+        "لتطوير طلاب يتمتعون بالقدرة التنافسية والفعالية في أدائهم الأكاديمي.",
+        "لتمكين إمكانيات الأطفال ومواهبهم الإبداعية من أن تُعترف بها عالميًا"
+    ],
+     "Mission1": [
+        "المهمة",
+        "لضمان وصول الدعم للأطفال بشكل مستمر من خلال إنشاء نظام فعال لسد فجوة الوصول إلى دعم الأطفال وتقديم الدعم الشامل لهم."
+    ],
+    "Purpose1": [
+        "الهدف",
+        "لتوفير الدعم الشامل والمتعدد الأبعاد للأطفال، الذين هم مستقبل البلاد، حتى يصبحوا مواطنين قادرين على الاستفادة ليس فقط لأنفسهم ولكن أيضًا للبلاد.",
+        "ضمان حصول الأطفال على وجبات كافية ومتوازنة ثلاث مرات في اليوم",
+        "توفير المواد التعليمية والزي المدرسي للطلاب بما يتماشى مع أقرانهم، مما يسمح لهم بالتركيز الكامل على دراستهم دون أي تشتت.",
+        "للحد من الأضرار المؤقتة والدائمة الناجمة عن نقص الرعاية الطبية من خلال إعطاء الأولوية لتنفيذ الرعاية الصحية وضمان عدم تفويت الأطفال للمدرسة بسبب المرض وتلقي العلاج المناسب.",
+        "دعم الطلاب ذوي المواهب الطبيعية المتنوعة لتطوير مواهبهم (إذا كانت تؤدي إلى حقوق الملكية) وتشجيع جهودهم من خلال التوافق مع أحلامهم.",
+        "العمل على تمكين أولئك الذين لا يستطيعون تحمل الدعم النفسي والمادي من أسرهم حتى يصلوا إلى سن الرشد."
+    ],
+
+    "Our_partners_T":"شركاؤنا",
+    "country":"الدولة",
+    "academicLevel": [
+        "المستوى الأكاديمي",
+        "الثانوية العامة",
+        "دبلوم",
+        "بكالوريوس",
+        "ماجستير",
+        "دكتوراه"
+    ],
+    "maritalStatus": [
+        "الحالة الاجتماعية",
+        "أعزب",
+        "متزوج",
+        "مطلق",
+        "أرمل"
+    ],
 
   }
 
@@ -1366,7 +1691,7 @@ ar: {
  rs: {
         translation: {
           "protect_kids":"Защитите наших детей",
- "protect_des":"Мы стремимся обеспечить безопасную и благоприятную среду для детей Повсюду",
+          "protect_des":"Мы стремимся обеспечить безопасную и благоприятную среду для детей Повсюду",
           "shape_kids":"Формируем наших детей",
           "shape_des":"Предоставлять образовательные ресурсы и поддержку, чтобы помочь детям процветать.",
           "support_kids":"Поддержите наших детей",
@@ -1408,8 +1733,7 @@ ar: {
           "language":"Язык",
           "children":"Помогли детям",
           "volunteers":"Волонтёры",
-          "daily_meals":"Ежедневные блюда",
-          "programs":"Программы",
+          "daily_meals":"Члены",
           "locations":"Местоположения",
           "visitor_message":"Сообщение от посетителей",
           "contact-us":"Свяжитесь с нами",
@@ -1501,6 +1825,172 @@ ar: {
         "login":"Логин",
         "our_gallery":"Наша галерея",
         "description":"Описание",
+        "send_msg":"ОТПРАВИТЬ СООБЩЕНИЕ",
+        "msg":"Сообщение",
+        "msg_ph":"Введите ваше сообщение",
+         "email1": "Адрес электронной почты",
+    "email_ph": "Введите ваш адрес электронной почты",
+    "phone": "Номер телефона",
+    "phone_ph": "Введите номер телефона",
+    "full_name1": "Полное имя",
+    "full_name_ph": "Введите ваше полное имя",
+    "send_message": "Отправьте нам сообщение",
+    "fill_out_form": "Заполните форму ниже, и мы свяжемся с вами как можно скорее.",
+
+    "contact_us1": "Связаться с нами",
+    "hear_from_you": "Мы будем рады услышать от вас. Свяжитесь с нашей командой!",
+    "get_in_touch": "Связаться",
+    "ready_to_make_difference": "Готовы внести изменения? Свяжитесь с нами, и давайте работать вместе, чтобы создать положительные изменения в нашем сообществе.",
+    "email_us": "Напишите нам по электронной почте",
+    "address1": "Адрес",
+    "address_detail": "Saris, Addis Ababa, вокруг автозаправочной станции 'dawi' здание 4-й этаж, Аддис-Абеба, Эфиопия",
+    "call_us": "Позвоните нам",
+    "office_hours": "Часы работы",
+    "office_hours_detail": "С понедельника по воскресенье, с 9:00 до 19:00.",
+    "join_community": "Присоединяйтесь к нашему удивительному сообществу",
+    "community_message": "Выберите предпочитаемый способ работы с нами и станьте частью чего-то большего. Вместе мы можем внести реальные изменения в наше сообщество.",
+    "volunteer1": [
+        "Выберите быть сезонным или постоянным волонтером",
+        "Сезонный: помощь в различных задачах по сезонам",
+        "Постоянные волонтеры всегда доступны, когда это необходимо",
+        "Волонтер",
+    ],
+"member_option1": [
+        "Участвуйте в каждой задаче, когда это необходимо",
+        "Присутствуйте на ежегодных собраниях",
+        "Брать на себя дополнительные обязанности по мере необходимости",
+        "Стать участником",
+    ],
+    "special_member1": [
+        "Идеально подходит для тех, кто живет за пределами Аддис-Абебы или Эфиопии",
+        "Помогайте Askal в основном через пожертвования",
+        "Оставайтесь на связи с нашей миссией из любой точки мира",
+        "Специальный участник",
+
+    ],
+    "franchise1": [
+        "Представляйте Askal в вашей компании или местоположении",
+        "Расширьте наш охват и влияние",
+        "Создавайте партнерские отношения в вашем сообществе",
+        "Франшиза",
+    ],
+    "learn":"Узнать больше",
+    "welcome_future_member": "Добро пожаловать, будущий участник!",
+    "thank_you_message": "Спасибо за то, что решили стать членом Askal. Пожалуйста, приходите в наш офис по адресу: Saris, Addis Ababa, вокруг автозаправочной станции 'dawi' здание 4-й этаж, и принесите официальное письмо о вступлении в Askal.",
+    "register_as_franchise": "Зарегистрироваться как франшиза",
+    "represent_askal": "Представляйте Askal в вашем местоположении",
+    "register_as_special_member": "Зарегистрироваться как специальный участник",
+    "join_global_community": "Присоединиться к нашему глобальному сообществу сторонников",
+    "moneyamount":"Какую сумму вы хотели бы пожертвовать",
+    "gender":"Пол",
+    "countryresidence": "Страна проживания",
+    "nationality": "Национальность",
+    "moneyamountschedule": "Как часто вы делаете пожертвование?",
+    "start_donation": "Когда вы можете начать жертвовать?",
+    "late_notification": "Как мы будем уведомлять вас, если вы опоздаете с пожертвованием по различным причинам?",
+    "birr":"быр",
+    "Countryresidence":"Страна проживания",
+    "addressresidence":"Адрес проживания - город/регион/зона",
+    "donation_frequency": [
+        "Каждую неделю",
+        "Каждые 15 дней",
+        "Каждый месяц",
+        "Каждые три месяца",
+        "Каждые шесть месяцев",
+        "Раз в год"
+    ],
+
+    "donation_duration": [
+      "Как долго вы можете жертвовать выбранную вами сумму?",
+        "На протяжении шести месяцев подряд",
+        "На протяжении одного года",
+        "На протяжении трех лет",
+        "Я бы не останавливался."],
+
+        "donation_option": [
+        "Какой вариант пожертвования вы бы предпочли?",
+        "Путем прямого депозита на банковский счет Askal (CBE-1000448386377)",
+        "Путем перевода денег на счет Askal через телефон (CBE-1000448386377)",
+        "Посетив офис Askal лично",
+        "Приехав к вам на место и получив его"
+    ],
+    
+     "reminder_preference": [
+      "Хотите, чтобы мы напомнили вам, когда приближается дата вашего пожертвования?",
+        "Да",
+        "Нет"
+    ],
+    "reminder_method": [
+        "Если на предыдущий вопрос вы ответили «да», какой метод нам следует использовать, чтобы напомнить вам?",
+        "Позвоните мне",
+        "Отправьте мне короткое текстовое сообщение",
+        "Свяжитесь со мной через мою страницу в социальных сетях",
+        "Приходите ко мне на место и напомните мне"
+    ],
+
+    "missed_deadline_notification": [
+        "Как скоро мы должны уведомить вас, если вы пропустите срок пожертвования?",
+        "Если я пропустил срок пожертвования на 1 день",
+        "Если я пропущу срок сдачи крови на 3 дня",
+"Если я пропущу срок сдачи крови на 1 неделю"
+    ],
+
+    "board_members":"Члены правления",
+
+    "BM_name": [
+        "Belay Niguse",
+        "Abel Gizaw",
+        "Zeyneb Ashifa",
+        "Hamelmal Mekuria"
+    ],
+
+    "BM_role": [
+        "Основатель и генеральный директор",
+        "Член правления",
+        "Председатель общего собрания",
+        "Главный секретарь общего собрания"
+    ],
+
+"Vision1": [
+        "Зрение",
+        "Чтобы увидеть всех детей с сохраненным физическим здоровьем, расширенной интеллектуальной способностью, развитой психологической силой и способностью постоянно приносить пользу стране.",
+        "Обеспечение защиты физического и психического здоровья детей",
+        "Снижение или устранение страха, который родители (опекуны) испытывают в отношении будущего выживания своих детей",
+        "Чтобы гарантировать, что ни один ребенок, независимо от того, из бедной он семьи или нет, не будет исключен из школы или не бросит школу из-за семейных обстоятельств.",
+        "Чтобы развивать студентов, которые конкурентоспособны и эффективны в своей учебной деятельности.",
+        "Чтобы дать возможность детям раскрыть свой потенциал и творческие таланты на глобальном уровне."
+    ],
+     "Mission1": [
+        "Миссия",
+        "Чтобы гарантировать, что дети получают помощь непрерывно, создавая эффективную систему для устранения разрыва в доступности помощи детям и предоставляя комплексную поддержку детям."
+    ],
+    "Purpose1": [
+        "Цель",
+        "Обеспечить детей, которые являются будущим страны, комплексной и многосторонней поддержкой, чтобы они могли стать способными гражданами, которые принесут пользу не только себе, но и стране.",
+        "Обеспечение детей достаточным и сбалансированным питанием три раза в день",
+        "Обеспечение студентов учебными материалами и формой, которые сопоставимы с их сверстниками, позволяя им полностью сосредоточиться на учебе без отвлечений.",
+        "Снижение временного и постоянного вреда, вызванного отсутствием медицинской помощи, путем приоритизации реализации медицинской помощи и обеспечения того, чтобы дети не пропускали школу из-за болезни и получали соответствующее лечение.",
+        "Поддержка студентов с разнообразными природными талантами в их развитии (если это приводит к правам собственности) и поощрение их усилий в соответствии с их мечтами.",
+        "Работа над расширением прав и возможностей тех, кто не может позволить себе психологическую и материальную поддержку со стороны своих семей до достижения совершеннолетия."
+    ],
+
+    "Our_partners_T":"Наши партнеры",
+    "country":"Страна",
+    "academicLevel": [
+        "Уровень образования",
+        "Средняя школа",
+        "Диплом",
+        "Бакалавр",
+        "Магистр",
+        "Доктор философии"
+    ],
+    "maritalStatus": [
+        "Семейное положение",
+        "Не женат",
+        "Женат",
+        "Разведен",
+        "Вдовец"
+    ],
         }
       },
       gr:{
@@ -1642,6 +2132,176 @@ translation:{
 "login":"ግቦ",
 "our_gallery":"ይናኼ ፎቶ",
 "description":"ወባጀ",
+"send_msg":"SEND MESSAGE",
+        "msg":"Message",
+        "msg_ph":"Enter your message",
+         "email1": "Email Address",
+    "email_ph": "Enter your email address",
+    "phone": "Phone Number",
+    "phone_ph": "Enter your phone number",
+    "full_name1": "Full Name",
+    "full_name_ph": "Enter your full name",
+    "send_message": "Send us a message",
+    "fill_out_form": "Fill out the form below and we'll get back to you as soon as possible.",
+
+    "contact_us1": "Contact Us",
+    "hear_from_you": "We'd love to hear from you. Get in touch with our team!",
+    "get_in_touch": "Get in Touch",
+    "ready_to_make_difference": "Ready to make a difference? Reach out to us and let's work together to create positive change in our community.",
+    "email_us": "Email us",
+    "address1": "Address",
+    "address_detail": "Saris, Addis Ababa, around total gas station 'dawi' building 4th floor, Addis Ababa, Ethiopia",
+    "call_us": "Call us",
+    "office_hours": "Office hours",
+    "office_hours_detail": "Monday to Sunday, 9:00 A.M. to 7:00 P.M.",
+    "join_community": "Join Our Amazing Community",
+    "community_message": "Choose your preferred way to work with us and become part of something bigger. Together, we can make a real difference in our community.",
+     "volunteer1": [
+        "Choose to be seasonal or lifetime volunteer",
+        "Seasonal: Help on different tasks seasonally",
+        "Fulltime volunteers are always available when needed",
+        "Volunteer",
+    ],
+"member_option1": [
+        "Participate in every task when needed",
+        "Be present in annual meetings",
+        "Take on additional responsibilities as required",
+        "Become a Member",
+    ],
+    "special_member1": [
+        "Perfect for those living outside Addis Ababa or Ethiopia",
+        "Help Askal mainly through donations",
+        "Stay connected with our mission from anywhere",
+        "Special Member",
+        
+
+    ],
+    "franchise1": [
+        "Represent Askal in your company or location",
+        "Expand our reach and impact",
+        "Build partnerships in your community",
+        "Franchise",
+    ],
+
+
+    "learn":"Learn More",
+    "welcome_future_member": "Welcome, Future Member!",
+    "thank_you_message": "Thank you for deciding to be an Askal member. Please come to our office at Saris, Addis Ababa, around total gas station 'dawi' building 4th floor, and bring a formal letter to be a member of Askal.",
+ 
+    "register_as_franchise": "Register as Franchise",
+    "represent_askal": "Represent Askal in your location",
+    "register_as_special_member": "Register as Special Member",
+    "join_global_community": "Join our global community of supporters",
+    "moneyamount":"How much money would you like to donate",
+    "gender":"Gender",
+    "countryresidence": "Country of residence",
+    "nationality": "Nationality",
+    "moneyamountschedule": "How often do you make your donation?",
+    "start_donation": "When can you start donating?",
+    "late_notification": "How will we notify you if you are late in making the donation for various reasons?",
+    "birr":"birr",
+    "Countryresidence":"Country of residence",
+    "addressresidence":"Residential address - city/region/zone",
+    "donation_frequency": [
+        "Every week",
+        "Every 15 days",
+        "Every month",
+        "Every three months",
+        "Every six months",
+        "Once a year"
+    ],
+
+    "donation_duration": [
+      "How long can you donate the amount you choose?",
+        "For six consecutive months",
+        "For one year",
+        "For three years",
+        "I would not stop."],
+
+        "donation_option": [
+        "Which option would you prefer to make your donation?",
+        "By direct deposit into Askal's bank account (CBE-1000448386377)",
+        "By transferring money to Askal's account via phone (CBE-1000448386377)",
+        "By visiting Askal's office in person",
+        "By coming to your location and receiving it"
+    ],
+    
+     "reminder_preference": [
+      "Would you like us to remind you when your donation date is approaching?",
+        "Yes",
+        "NO"
+    ],
+    "reminder_method": [
+        "If your answer is 'yes' to the previous question, what method should we use to remind you?",
+        "Call me",
+        "Send me a short text message",
+        "Connect with me through my social media page",
+        "Come to my location in person and remember me"
+    ],
+
+    "missed_deadline_notification": [
+        "How soon should we notify you if you miss the deadline of the donation?",
+        "If I passed the donation deadline by 1 day",
+        "If I passed the donation deadline by 3 days",
+        "If I passed the donation deadline by 1 week"
+    ],
+
+    "board_members":"Board members",
+
+    "BM_name": [
+        "Belay Niguse",
+        "Abel Gizaw",
+        "Zeyneb Ashifa",
+        "Hamelmal Mekuria"
+    ],
+
+    "BM_role": [
+        "Founder and CEO",
+        "Board Director",
+        "General Assembly ChairPerson",
+        "Chief Secretary of the General Assembly"
+    ],
+
+"Vision1": [
+        "Vision",
+        "To see all children with their physical health preserved, their intellectual capacity expanded with knowledge, their psychological strength developed, and their ability to continuously benefit the country.",
+        "Ensuring children's physical and mental health is protected",
+        "Reducing or eliminating the fear that parents (guardians) have in regards to the future survival of their children",
+        "To ensure that no child, no matter if he or she comes from a poor family, is left out of school or drops out of school due to family circumstances.",
+        "To develop students who are competitive and effective in their academic performance.",
+        "To enable children's potential and creative talent to be recognized globally"
+    ],
+     "Mission1": [
+        "Mission",
+        "To ensure that children are reached in a continuous manner by establishing an effective system to fill the accessibility gap in child support and by providing comprehensive support for the children."
+    ],
+    "Purpose1": [
+        "Purpose",
+        "To provide children, who are the future of the country, with comprehensive and multifaceted support, so that they can become capable citizens who will benefit not only themselves but also the country.",
+        "Ensuring that children eat sufficient and balanced meals three times a day",
+        "Providing students with learning materials and uniforms that are comparable to their peers, allowing them to fully focus on their studies without distractions.",
+        "To reduce the temporary and permanent harm caused by lack of medical care by prioritizing health care implementation and ensuring that children do not miss school due to illness and receive appropriate treatment.",
+        "Supporting students with diverse natural talents to develop their talents (if it leads to ownership rights) and encouraging their efforts by aligning with their dreams.",
+        "To work towards empowering those who cannot afford psychological and material support from their families until they reach adulthood."
+    ],
+
+    "Our_partners_T":"Our Partners",
+    "country":"Country",
+    "academicLevel": [
+        "Academic Level",
+        "High School",
+        "Diploma",
+        "Bachelor",
+        "Master",
+        "PhD"
+    ],
+    "maritalStatus": [
+        "Marital Status",
+        "Single",
+        "Married",
+        "Divorced",
+        "Widowed"
+    ],
 }
 },
 sd: {
@@ -1782,7 +2442,177 @@ translation: {
 "register_message":"Uurrinshinke miila ikkatenna qaaqquullu heeshsho soorro kalaqate kaa’lattonke gede borreessami",
 "login":"Login",
 "our_gallery":"Misilenke",
-"description":"Xawishsha"
+"description":"Xawishsha",
+"send_msg":"SEND MESSAGE",
+        "msg":"Message",
+        "msg_ph":"Enter your message",
+         "email1": "Email Address",
+    "email_ph": "Enter your email address",
+    "phone": "Phone Number",
+    "phone_ph": "Enter your phone number",
+    "full_name1": "Full Name",
+    "full_name_ph": "Enter your full name",
+    "send_message": "Send us a message",
+    "fill_out_form": "Fill out the form below and we'll get back to you as soon as possible.",
+
+    "contact_us1": "Contact Us",
+    "hear_from_you": "We'd love to hear from you. Get in touch with our team!",
+    "get_in_touch": "Get in Touch",
+    "ready_to_make_difference": "Ready to make a difference? Reach out to us and let's work together to create positive change in our community.",
+    "email_us": "Email us",
+    "address1": "Address",
+    "address_detail": "Saris, Addis Ababa, around total gas station 'dawi' building 4th floor, Addis Ababa, Ethiopia",
+    "call_us": "Call us",
+    "office_hours": "Office hours",
+    "office_hours_detail": "Monday to Sunday, 9:00 A.M. to 7:00 P.M.",
+    "join_community": "Join Our Amazing Community",
+    "community_message": "Choose your preferred way to work with us and become part of something bigger. Together, we can make a real difference in our community.",
+     "volunteer1": [
+        "Choose to be seasonal or lifetime volunteer",
+        "Seasonal: Help on different tasks seasonally",
+        "Fulltime volunteers are always available when needed",
+        "Volunteer",
+    ],
+"member_option1": [
+        "Participate in every task when needed",
+        "Be present in annual meetings",
+        "Take on additional responsibilities as required",
+        "Become a Member",
+    ],
+    "special_member1": [
+        "Perfect for those living outside Addis Ababa or Ethiopia",
+        "Help Askal mainly through donations",
+        "Stay connected with our mission from anywhere",
+        "Special Member",
+        
+
+    ],
+    "franchise1": [
+        "Represent Askal in your company or location",
+        "Expand our reach and impact",
+        "Build partnerships in your community",
+        "Franchise",
+    ],
+
+
+    "learn":"Learn More",
+    "welcome_future_member": "Welcome, Future Member!",
+    "thank_you_message": "Thank you for deciding to be an Askal member. Please come to our office at Saris, Addis Ababa, around total gas station 'dawi' building 4th floor, and bring a formal letter to be a member of Askal.",
+ 
+    "register_as_franchise": "Register as Franchise",
+    "represent_askal": "Represent Askal in your location",
+    "register_as_special_member": "Register as Special Member",
+    "join_global_community": "Join our global community of supporters",
+    "moneyamount":"How much money would you like to donate",
+    "gender":"Gender",
+    "countryresidence": "Country of residence",
+    "nationality": "Nationality",
+    "moneyamountschedule": "How often do you make your donation?",
+    "start_donation": "When can you start donating?",
+    "late_notification": "How will we notify you if you are late in making the donation for various reasons?",
+    "birr":"birr",
+    "Countryresidence":"Country of residence",
+    "addressresidence":"Residential address - city/region/zone",
+    "donation_frequency": [
+        "Every week",
+        "Every 15 days",
+        "Every month",
+        "Every three months",
+        "Every six months",
+        "Once a year"
+    ],
+
+    "donation_duration": [
+      "How long can you donate the amount you choose?",
+        "For six consecutive months",
+        "For one year",
+        "For three years",
+        "I would not stop."],
+
+        "donation_option": [
+        "Which option would you prefer to make your donation?",
+        "By direct deposit into Askal's bank account (CBE-1000448386377)",
+        "By transferring money to Askal's account via phone (CBE-1000448386377)",
+        "By visiting Askal's office in person",
+        "By coming to your location and receiving it"
+    ],
+    
+     "reminder_preference": [
+      "Would you like us to remind you when your donation date is approaching?",
+        "Yes",
+        "NO"
+    ],
+    "reminder_method": [
+        "If your answer is 'yes' to the previous question, what method should we use to remind you?",
+        "Call me",
+        "Send me a short text message",
+        "Connect with me through my social media page",
+        "Come to my location in person and remember me"
+    ],
+
+    "missed_deadline_notification": [
+        "How soon should we notify you if you miss the deadline of the donation?",
+        "If I passed the donation deadline by 1 day",
+        "If I passed the donation deadline by 3 days",
+        "If I passed the donation deadline by 1 week"
+    ],
+
+    "board_members":"Board members",
+
+    "BM_name": [
+        "Belay Niguse",
+        "Abel Gizaw",
+        "Zeyneb Ashifa",
+        "Hamelmal Mekuria"
+    ],
+
+    "BM_role": [
+        "Founder and CEO",
+        "Board Director",
+        "General Assembly ChairPerson",
+        "Chief Secretary of the General Assembly"
+    ],
+
+"Vision1": [
+        "Vision",
+        "To see all children with their physical health preserved, their intellectual capacity expanded with knowledge, their psychological strength developed, and their ability to continuously benefit the country.",
+        "Ensuring children's physical and mental health is protected",
+        "Reducing or eliminating the fear that parents (guardians) have in regards to the future survival of their children",
+        "To ensure that no child, no matter if he or she comes from a poor family, is left out of school or drops out of school due to family circumstances.",
+        "To develop students who are competitive and effective in their academic performance.",
+        "To enable children's potential and creative talent to be recognized globally"
+    ],
+     "Mission1": [
+        "Mission",
+        "To ensure that children are reached in a continuous manner by establishing an effective system to fill the accessibility gap in child support and by providing comprehensive support for the children."
+    ],
+    "Purpose1": [
+        "Purpose",
+        "To provide children, who are the future of the country, with comprehensive and multifaceted support, so that they can become capable citizens who will benefit not only themselves but also the country.",
+        "Ensuring that children eat sufficient and balanced meals three times a day",
+        "Providing students with learning materials and uniforms that are comparable to their peers, allowing them to fully focus on their studies without distractions.",
+        "To reduce the temporary and permanent harm caused by lack of medical care by prioritizing health care implementation and ensuring that children do not miss school due to illness and receive appropriate treatment.",
+        "Supporting students with diverse natural talents to develop their talents (if it leads to ownership rights) and encouraging their efforts by aligning with their dreams.",
+        "To work towards empowering those who cannot afford psychological and material support from their families until they reach adulthood."
+    ],
+
+    "Our_partners_T":"Our Partners",
+    "country":"Country",
+    "academicLevel": [
+        "Academic Level",
+        "High School",
+        "Diploma",
+        "Bachelor",
+        "Master",
+        "PhD"
+    ],
+    "maritalStatus": [
+        "Marital Status",
+        "Single",
+        "Married",
+        "Divorced",
+        "Widowed"
+    ],
 }
 },
       // Add more languages here

@@ -30,7 +30,7 @@ const Home = () => {
     { end: 1500, label: t('children') },
     { end: 210, label: t("volunteers") }, 
     { end: 45, label: t("daily_meals") },
-    { end: 10, label: t("locations") }, ];
+    { end: 1, label: t("locations") }, ];
 
   
   const fadeRefs = useRef([])
