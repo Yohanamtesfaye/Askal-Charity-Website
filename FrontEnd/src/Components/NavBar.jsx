@@ -42,7 +42,7 @@ const Navbar = () => {
             >
               <option value="en">English</option>
               <option value="am">አማርኛ (Amharic)</option>
-              <option value="rs">Russian</option>
+              <option value="rs">Русский (Russian)</option>
               <option value="ar">العربية (Arabic)</option>
               <option value="om">Afaan Oromoo</option>
               <option value="tg">ትግርኛ</option>
@@ -83,7 +83,7 @@ const Navbar = () => {
                 <option value="en">English</option>
                 <option value="am">አማርኛ</option>
                 <option value="ar">العربية</option> 
-                <option value="rs">Rassian</option>
+                <option value="rs">Русский (Russian)</option>
                 <option value="om">Afaan Oromoo</option>
                 <option value="tg">ትግርኛ</option>
                 <option value="gr">ጉራግኛ</option>
