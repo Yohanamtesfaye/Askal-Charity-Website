@@ -13,13 +13,13 @@ const experienceController = require('../controllers/experienceController');
 
 const multer = require('multer');
 
-// Configure multer for file uploads
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 router.get('/test', (req, res) => {
   res.status(200).json({ message: 'Test route working!' });
 });
+
 router.post('/memberships/register', upload.single('photo'), membershipController.register);
 router.post('/volunteers/register', upload.single('photo'), register);
 router.get('/volunteers', getVolunteers);

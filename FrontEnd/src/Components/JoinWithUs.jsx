@@ -75,7 +75,7 @@ const JoinWithUs = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "http://localhost:5000/api/special-members",
+        "https://askalcharityassociation.org/apis/api/special-members",
         {
           method: "POST",
           headers: {
@@ -101,7 +101,7 @@ const JoinWithUs = () => {
   const handleFranchiseSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:5000/api/franchises", {
+      const response = await fetch("https://askalcharityassociation.org/apis/api/franchises", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

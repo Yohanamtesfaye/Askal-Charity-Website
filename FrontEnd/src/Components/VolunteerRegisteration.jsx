@@ -62,12 +62,11 @@ const handleSubmit = async (e) => {
         data.append('photo', formData.photo);
       }
 
-      // Log FormData contents for debugging
       for (let [key, value] of data.entries()) {
         console.log(`${key}:`, value);
       }
 
-      const response = await fetch('http://localhost:5000/api/volunteers/register', {
+      const response = await fetch('https://askalcharityassociation.org/apis/api/volunteers/register', {
         method: 'POST',
         body: data,
       });

@@ -44,9 +44,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'Uploads'), {
 
 app.use(cors({
    origin: ['https://www.askalcharityassociation.org', 'https://admin.askalcharityassociation.org'],
+  // allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 app.use((req, res, next) => {
@@ -57,7 +56,7 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 // Routes
-app.use('/api', routes);
+app.use('/apis/api', routes);
 
 // Make upload middleware available to routes
 app.set('upload', upload);
