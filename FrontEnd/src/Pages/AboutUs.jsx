@@ -6,7 +6,7 @@ import { FaGraduationCap, FaHandHoldingHeart, FaUsers, FaSeedling } from 'react-
 import us from '../assets/Images/us.jpeg'
 import member2 from '../assets/Images/BM_abelgizaw.jpg'
 import member1 from '../assets/Images/BM_belayniguse.jpg'
-import member4 from '../assets/Images/BM_hamelmalmekuria.jpg'
+import member4 from '../assets/Images/BM_biniam.jpg'
 import member3 from '../assets/Images/BM_zeynebashifa.jpg'
 import { useTranslation } from 'react-i18next';
 import VisionMissionPurpose from "../Components/VisionMissionPurpose"

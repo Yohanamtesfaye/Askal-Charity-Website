@@ -265,7 +265,7 @@ i18n
         "Belay Niguse",
         "Abel Gizaw",
         "Zeyneb Ashifa",
-        "Hamelmal Mekuria"
+        "Biniam Tagel"
     ],
 
     "BM_role": [
@@ -574,7 +574,7 @@ i18n
         "በላይ ንጉሴ",
         "አቤል ግዛው",
         "ዘይነባ ሽፋ",
-        "ሐመልማል መኩሪያ"
+        "ቢንያም ታገል"
     ],
 
     "BM_role": [ 
@@ -1073,177 +1073,177 @@ i18n
         "login":"መእተዊ",
         "our_gallery":"ጋለሪ",
         "description":"መግለፂ",
-         "send_msg":"ይላእኹ",
-        
-  "email1": "ኢሜይል አድራሻ",
-    "email_ph": "ኢሜልኹም አእትዉ",
-    "phone": "ቁጽሪ ስልኪ",
-    "phone_ph": "ቁጽሪ ስልኪ አእትዉ",
+       "send_msg":"መልእኽቲ ይልኣኹ።",
+        "msg":"መልእኽቲ",
+        "msg_ph":"መልእኽቶም የእትው። ",
+         "email1": "ኢ-ሜይል ኣድራሻ",
+    "email_ph": "ኢ-ሜይል ኣድራሻ የእትው።",
+    "phone": "ስልኪ ቑፅሪ",
+    "phone_ph": "ስልኪ ቑፅሮም የእትው።",
     "full_name1": "ሙሉእ ሽም",
-    "full_name_ph": "ሙሉእ ሽም አእትዉ",
-    "msg": "መልእኽቲ",
-    "msg_ph": "መልእኽቲ አእትዉ",
-    "send_message": "መልእኽትኹም  አእትዉ",
-    "fill_out_form": "አብትሕቲ ዚ ዘሎ ቅጽ አእትዉ። ብዝተኽአለ መልክዕ መልሲ ክንህበኩም ኢና።",
-    "contact_us1": "ርዅቡና",
-    "hear_from_you": "ከእርስዎ መስማት እንፈልጋለን። ከአባሎቻችን ጋር ይገናኙ!",
-    "get_in_touch": "ርዅቡና",
-    "ready_to_make_difference": "ለውጢ ንምምጻ ድሉው ድዮም?  ለውጢ ንምምጻእ ሓብሪና ንስራሕ ",
-    "email_us": "ኢሜልኹም አእትዉ",
-    "address1": "አድራሻ",
-    "address_detail": "ሳሪስ፣ አዲስ አበባ፣ ቶታል ነዳጅ ማደያ 'ዳዊ' ህንፃ 4ኛ ፎቅ፣ አዲስ አበባ፣ ኢትዮጵያ",
-    "call_us": "ደውሉልና",
-    "office_hours": "ናይ ቢሮሰዓት",
-    "office_hours_detail": "ካብ ሶኒ እስካብ ሰንበት 3:00 ኤ.ኤም. እስከ 10፡00 ፒ.ኤም.",
-    "join_community": "ሓቢርና ንስራሕ",
-    "community_message": "ሓምሳና ክትሰርሑን ኣካል ናይ ዝዓበየ ነገር ክትኮኑን ዝመረጽኩሞ መንገዲ ምረጹ። ብሓባር ኣብ ሕብረተሰብና ናይ ብሓቂ ለውጢ ከምጽእ ንኽእል ኢና።",
-        
-    "volunteer1": [
-        "ወቕታዊ ወይ ናይ ዕድመ ምሉእ ወለንተኛ ክትከውን ምረጽ",
-        "ወቕታዊ፦ ኣብ ዝተፈላለየ ዕማማት ብወቕቲ ምሕጋዝ",
+    "full_name_ph": "ሙሉእ ሽሞም የእትው።",
+    "send_message": "መልእኽቲ ይልኣኹልና",
+    "fill_out_form": " እዚ ኣብ ታሕቲ ዘሎ ቅጥዒ ይምልኡ እሞ ብዝተኽኣለ መጠን ቀልጢፍና ክንምለሶም ኢና።",
+
+    "contact_us1": "ይርከቡና",
+    "hear_from_you": "ካብኦም ሓሳብ ክንቅበል ንደሊ ኢናምሳና ርክብ ይሃልዎም!",
+    "get_in_touch": "ርክብ ይሃልዎም",
+    "ready_to_make_difference": "ለውጢ ንምምፃእ ድልው ድዮም? ንዓና ይርከቡና እሞ ኣብ ከባቢና ኣወንታዊ ለውጢ ንምፍጣር ሓቢርና ንስራሕ።",
+    "email_us": "ኢ-ሜይል ይግበሩልና!",
+
+
+    "address1": "ኣድራሻ",
+    "address_detail": "ሳሪስ, ኣዲስ ኣበባ, ከባቢ ቶታል መዐደሊ ነዳዲ 'ዳዊ' ህንፃ 2ይ ደብሪ, ኣዲስ ኣበባ, ኢትዮጵያ",
+    "call_us": "ይደውሉልና",
+    "office_hours_detail": "ካብ ሰኑይ ክሳብ ሰንበት, 3:00 ንጉሆ ክሳብ 1:00 ምሸት.",
+    "join_community": "ናብ ኣገራሚ ማሕበረሰብና ይጸንበሩ",
+    "community_message": "ምሳና ንምስራሕ ዝደለዩዎ መንገዲ ብምምራፅ ናይ ሓደ ዓብዪ ነገር ኣካል ይኹኑ። ብሓባር ኮይንና ኣብ ከባቢና ርኡይ ለውጢ ክነምፅእ ንኽእል ኢና።",
+     "volunteer1": [
+        "ወቕታዊ ወይ ናይ ዕድመ ምሉእ ወለንተኛ ንክኾኑ ይምረፁ",
+        "Seasonal: በብ ወቕቱ ኣብ ዝተፈላለዩ ንጥፈታት ይሓግዙ ",
         "ናይ ምሉእ ግዜ ወለንተኛታት ኣብ ዘድልየሉ እዋን ኩሉ ግዜ ድሉዋት እዮም።",
-        "ግዱስ"
-    ],      
+        "ወለንታዊ",
+    ],
 "member_option1": [
-        "ኣብ ዘድልየሉ እዋን ኣብ ነፍሲ ወከፍ ዕማም ተሳተፍ",
-        "ኣብ ዓመታዊ ኣኼባታት ተረኺብኩም ኩኑ",
-        "ከም ኣድላይነቱ ተወሳኺ ሓላፍነት ምውሳድ",
-        "ኣባል ኩን",
+        "ኣብ ዝደለናዮም ሰዓት ኣብ ሕድሕድ ዕዮ ይሳተፉ",
+        "ኣብ ዓመታዊ ኣኼባታት ይረኸቡ",
+        "ከከም ዘድሊዮ ተወሰኽቲ ሓላፍነታት ይውሰዱ",
+        "ኣባል ይኹኑ",
     ],
     "special_member1": [
-        "ካብ ኣዲስ ኣበባ ወይ ኢትዮጵያ ወጻኢ ንዝነብሩ ፍጹም",
-        "ኣስካል ብቐንዱ ብወፈያታት ሓግዙዋ",
-        "ካብ ዝኾነ ቦታ ምስ ተልእኾና ርክብ ንኹን",
-        "ልዩ አባል"
+        "ነቶም ካብ ኣዲስ ኣበባ ወይ ካብ ኢትዮጵያ ወፃኢ ዘለው ምቹው",
+        "ብዋናነት ልገሳ ብምግባር ንኣስካል ይሓግዙ",
+        "ኣብ ዝኾነ ይኹን ቦታ ምስ ተልእኾና ርክብ ይሃልዎም",
+        "ፍሉይ ኣባል",
+        
 
     ],
     "franchise1": [
-        "ኣብ ትካልኩም ወይ ኣብ ቦታኹም ንኣስካል ወኪልኩም ውሰዱ",
-        "ተበፃሕነትናን ፅልዋናን ኣስፍሕ",
-        "ኣብ ማሕበረሰብካ ሽርክነት ምህናጽ",
-        "ፍራንቻይዝ"
+        "ኣብ ትካሎም ወይ እውን ኣብ ዝርከብሉ ከባቢ ንኣስካል ይወክሉ",
+        "ዝርገሐናን ጽልዋናን የስፍሑ",
+        "ኣብ ከባቢኦም ምሕዝነታት ይህነፁ",
+        "ፍሉይ ፍቓድ(ፍራንቻይዝ)",
     ],
 
-    "learn":"ተወሳኺ ፍለጥ",
-    "welcome_future_member": "እንቋዕ ብደሓን መጻእኩም መጻኢ ኣባል!",
-    "thank_you_message": "ኣባል ኣስካል ክትከውን ስለ ዝወሰንካ የቐንየልና። ኣብ ሳሪስ ኣዲስ ኣበባ ኣብ ከባቢ ጠቕላላ መዐደሊ ነዳዲ 'ዳዊ' ህንጻ 4ይ ደርቢ ናብ ዝርከብ ቤት ጽሕፈትና ብምምጻእ፡ ኣባል ኣስካል ንምዃን ወግዓዊ ደብዳቤ ሒዝኩም ምጹ።",
-    
-     "register_as_franchise": "ከም ፍራንቻይዝ ተመዝገቡ።",
-    "represent_askal": "ኣብ ዘለኻዮ ቦታ ንኣስካል ወከል",
-    "register_as_special_member": "ከም ፍሉይ ኣባል ተመዝገቡ።",
-    "join_global_community": "ዓለምለኻዊ ማሕበረሰብ ደገፍትና ተጸንበሩ",
-    "moneyamount":"ክንደይ ገንዘብ ከተወፍዩ ትደልዩ",
-    "gender":"ጾታ",
-     "countryresidence": "ነባሪ ሃገር",
+    "learn":"ተወሳኺ ይመሃሩ",
+    "welcome_future_member": "እንኳዕ ብደሓን መፁ, ናይ መፃኢ ኣባል!",
+    "thank_you_message": "ናይ ኣስካል ኣባል ንምዃን ስለ ዝወሰኑ ነመስግን። ናይ ኣስካል ኣባል ንምዃን በይዘኦም ሕጋዊ ደብዳበ ብምሓዝ ናብ ኣብ ሳሪስ፣ ኣዲስ ኣበባ፣ ከባቢ ቶታል መዐደሊ ነዳዲ 'ዳዊ' ህንፃ 2ይ ደብሪ ዝርከብ ቢሮና ይምፅኡ።",
+ 
+    "register_as_franchise": "ከም ፍሉይ ፈቓድ(ፍራንቻይዝ) ዘለዎ ኣባል ይመዝገቡ",
+    "represent_askal": "ኣብ ዝርከቡሉ ቦታ ንኣስካል ይወክሉ",
+    "register_as_special_member": "ፍሉይ ኣባል ኮይናም ይመዝገቡ",
+    "join_global_community": "ዓለምለኻዊ ማሕበረሰብ ደገፍትና ይጸንበሩ",
+    "moneyamount":"ክንደይ ዝኣክል ገንዘብ ከወፍዩ ይደልዩ",
+    "gender":"ፆታ",
+    "countryresidence": "ዝነብሩሉ ሃገር",
     "nationality": "ዜግነት",
-    "moneyamountschedule": "ክንደይ ግዜ ወፈያኻ ትገብር?",
-    "start_donation": " መዓስ ኢኻ ወፈያ ክትጅምር እትኽእል፧",
-    "late_notification": "ብዝተፈላለየ ምኽንያታት ነቲ ወፈያ ክትገብሩ እንተደንጉኹም ብኸመይ ከነፍልጠኩም?",
+    "moneyamountschedule": "በቢ ክንደይ ግዘ እዮም ወፈያኦም ክገብሩ??",
+    "start_donation": "ወፈያ መዓዝ ክጅምሩ ይኽእሉ?",
+    "late_notification": "ብዝተፈላለዩ ምኽንያታት ወፈያ ንምግባር እንድሕር ዘንጊዖም; ብምንታይ ክነዘኻኽሮም?",
     "birr":"ብር",
-    "Countryresidence":"መንበሪ ሃገር",
-    "addressresidence":"መንበሪ ኣድራሻ - ከተማ/ዞባ/ዞባ",
-
+    "Countryresidence":"ዝነብሩሉ ሃገር",
+    "addressresidence":"ናይ መንበሪ ኣድራሻ - ከተማ/ክልል/ዞባ",
     "donation_frequency": [
-        "ኣብ ነፍሲ ወከፍ ሰሙን",
-        "ኣብ ነፍሲ ወከፍ 15 መዓልቲ",
-        "ኣብ ነፍሲ ወከፍ ወርሒ",
-        "ኣብ ነፍሲ ወከፍ ሰለስተ ወርሒ",
-        "ኣብ ነፍሲ ወከፍ ሽዱሽተ ወርሒ",
-        "ኣብ ዓመት ሓደ ግዜ"
-    ],
-     "donation_duration": [
-      "እቲ ዝመረጽካዮ መጠን ገንዘብ ክሳብ መዓስ ክትልግስ ትኽእል?",
-        "ንተኸታተልቲ ሽዱሽተ ኣዋርሕ",
-        "ንሓደ ዓመት",
-        "ንሰለስተ ዓመት",
-        "ኣነ ደው ኣይምበልኩን"
+        "በቢ ሰሙን",
+        "በቢ 15መዓልቲ",
+        "በቢ ወርሒ",
+        "በቢ 3 ወርሒ",
+        "በቢ 6 ወርሒ",
+        "ኣብ ዓመት ሓደ ግዘ"
     ],
 
-    "donation_option": [
-        "ኣየናይ ኣማራጺ ወፈያኹም ክትገብሩ ምመረጽኩም?",
-        "ቀጥታዊ ናብ ባንክ ሕሳብ ኣስካል (CBE-1000448386377) ብምእታው",
-        "ብስልኪ (CBE-1000448386377) ገንዘብ ናብ ሕሳብ ኣስካል ብምስግጋር",
-        "ኣብ ቤት ጽሕፈት ኣስካል ብኣካል ብምብጻሕ",
-        "ኣብ ዘለኻዮ ቦታ ብምምጻእን ብምቕባልን"
+    "donation_duration": [
+      "እቲ ዝመረፅዎ መጠን ንኽንደይ ግዘ ዝኣክል ከወፍዩ ይኽእሉ?",
+        "ን ተኸታተልቲ 6 ኣዋርሕ",
+        "ንሓደ ዓመት",
+        "ን 3 ዓመታት",
+        "ኣየቋርፅን።"],
+
+        "donation_option": [
+        "ወፈያ ንምግባር ኣየናይ ኣማራፂ ክጥቀሙ ይደልዮ?",
+        "ናብ ናይ ኣስካል ናይ ባንኪ ሒሳብ ቁፅሪ ብቐጥታ ኣታዊ ብምግባር (ሲቢኢ-1000448386377)",
+        "ናይ ሞባይል ስልኮም ብምጥቃም ናብ ናይ ኣስካል ሒሳብ ቁፅሪ ምትሕልላፍ (ሲቢኢአ-1000448386377)",
+        "ናብ ናይ ኣስካል ቢሮ ብኣካል ብምምፃእ",
+        "ንሕና ናብ ዘለውዎ ቦታ መፂእና ብምቕባል"
     ],
     
      "reminder_preference": [
-      "ዕለተ ወፈያኹም ምስ ቀረበ ከነዘኻኽረኩም ትደልዩ ዶ?",
+      "ናይ ወፈያኦም መዓልቲ ክበፅሕ ከሎ ክነዘኻኽሮም ይደልዩ ዶ?",
         "እወ",
-        "አይኮንን"
+        "ኣይደልን"
+    ],
+    "reminder_method": [
+        "ነቲ ቐዲሙ ዝነበረ ሕቶ መልሶም ''እወ'' እንተኾይ; ንኽነዘኻኽሮም እንታይ ዓይነት መንገዲ ክንጥቀም?",
+        "ይደውሉለይ",
+        "ሓፂር ናይ ፅሑፍ መልእኽቲ ይልኣኹለይ",
+        "ብናይ ማሕበራዊ ሚድያ ገፀይ ይርከቡኒ",
+        "ናብ ዘለኹዎ ቦታ ብኣካል ብምምፃእ የዘኻኽሩኒ"    ],
+
+    "missed_deadline_notification": [
+        "ናይ ወፈያ መዓልቶም እንድሕር ኣሕሊፎሞ ኣብ ክንደይ ግዚኡ ክነዘኻኽሮም?",
+        "ሓደ መዓልቲ እቲ ወፈያ እንድሕር ኣሕሊፈ",
+        "3 መዓልቲታት እቲ ወፈያ እንድሕር ኣሕሊፈ",
+        "ሓደ ሰሙን እቲ ወፈያ እንድሕር ኣሕሊፈ"
     ],
 
-     "reminder_method": [
-        "ነቲ ዝሓለፈ ሕቶ መልስኻ 'እወ' እንተኾይኑ፡ እንታይ ዓይነት ሜላ ክንጥቀም ኣለና ከነዘኻኽረካ? ",
-        "ደውለለይ",
-        "ሓጺር ናይ ጽሑፍ መልእኽቲ ስደደለይ",
-        "ብማሕበራዊ ሚድያ ገጸይ ኣቢልኩም ምሳይ ተራኸቡ",
-        "ብኣካል ናብቲ ዘለኹዎ ቦታ መጺእካ ዘክረኒ"
-    ],
-    
-      "missed_deadline_notification": [
-        "እቲ ወፈያ ዝግበረሉ ናይ መወዳእታ ግዜ እንተሓሊፍኩም ኣብ ክንደይ ቀልጢፍና ከነፍልጠኩም ይግባእ?",
-        "እቲ ናይ ወፈያ ግዜ ብ1 መዓልቲ እንተሓሊፈ",
-        "እቲ ናይ ወፈያ ግዜ ብ3 መዓልቲ እንተሓሊፈ",
-        "እቲ ናይ ወፈያ ግዜ ክሳብ 1 ሰሙን እንተሓሊፈ"
-    ],
+    "board_members":"ናይ ቦርድ ኣባላት",
 
-    "board_members":"ኣባላት ቦርድ",
     "BM_name": [
         "በላይ ንጉሴ",
-        "አቤል ግዛው",
-        "ዘይነባ ሽፋ",
-        "ሐመልማል መኩሪያ"
+        "ኣቤል ግዛው",
+        "ዘይነብ ኣሺፋ",
+        "ሃመልማል መኩሪያ"
     ],
 
-    "BM_role": [ 
-        "Fመስራትን ዋና ኣካያዲ ስራሕን",
-        "ዳይረክተር ቦርድ",
-        "ኣቦ መንበር ሓፈሻዊ ባይቶኣካል",
-        "ዋና ጸሓፊ ሓፈሻዊ ጉባኤ"
+    "BM_role": [
+        "መስራትን ዋና ኣካያዲ ስራሕን",
+        "ናይ ቦርድ ዳይሬክተር",
+        "ኣቦ መንበር ሓፈሻዊ ባይቶ",
+        "ዋና ጸሓፊ ሓፈሻዊ ባይቶ"
     ],
 
-    "Vision1": [
-        "ራዕይ",
-        "ኩሎም ህጻናት ኣካላዊ ጥዕንኦም ተዓቂቡ፡ ኣእምሮኣዊ ዓቕሞም ምስ ኣፍልጦ ክሰፍሕ፡ ስነ-ኣእምሮኣዊ ሓይሎም ክምዕብል፡ ንሃገር ብቐጻሊ ረብሓ ናይ ምግባር ዓቕሞም ምርኣይ።",
-        "ኣካላውን ኣእምሮኣውን ጥዕና ህጻናት ምርግጋጽ",
-        "ወለዲ (ኣላዪት) ብዛዕባ መጻኢ ህላወ ደቆም ዘለዎም ፍርሒ ምንካይ ወይ ምውጋድ",
-        "ዝኾነ ቆልዓ፡ ካብ ድኻ ስድራቤት ይመጽእ ብዘየገድስ፡ ብሰንኪ ኩነታት ስድራቤት ካብ ትምህርቲ ከይተርፍ ወይ ትምህርቲ ከይቋረጽ ንምርግጋጽ።",
-        "በኣብ ኣካዳሚያዊ ብቕዓቶም ተወዳደርትን ውፅኢታውያንን ተምሃሮ ንምምዕባል።",
-        "ዓቕምን ፈጠራዊ ተውህቦን ህጻናት ብዓለም ደረጃ ኣፍልጦ ክረክብ ምግባር"
+"Vision1": [
+        "ራእይ",
+        "ኩላቶም ህፃናት ኣካላዊ ጥዕንኦም ተዓቂቡ፣ ናይ ምሕሳብ ዓቕሞም ብፍልጠት ሰፊሑ፣ ስነ-ኣእምሮኣዊ ጥንካረኦም ማዕቢሉን ሃገሮም ብቐፃልነት ተረባሒት ንምዃን ዘለዎም ድልየት ዓብዩን ምርኣይ ",
+        " ህፃናት ኣካላውን ስነ ኣእምሮኣዊን ጥዕናኦም ከም ዝተሓለወ ምርግጋፅ",
+        "ናይ ወለዲ ወይ መዕበይቲ ብዛዕባ ናይ ደቆም ናይ ቐፃሊ ሃለዋት ዘለዎም ስግኣት ምቕናስ ወይ ምጥፋእ",
+        "ዝኾነ ህፃን ዋላ ካብ ድኻ ቤተሰብ ዝመፀ ይኹን ብናይ ቤተሰብ ኩነታት ካብ ትምህርቲ ዘይተረፈ ወይ እውን ዘየቋረፀ ምዃኑ ምርግጋፅ",
+        " ኣብ ትምህርቶም ተወዳደርትን ንጡፋትን ዝኾኑ ተምሃሮ ምፍራይ",
+        " ናይ ህፃናት ክእለትን ናይ ፈጠራ ውህብቶን ብዓለም ለኻዊ ደረጃ ንኽፍለጥ ምግባር"
     ],
      "Mission1": [
         "ተልእኾ",
-        "ኣብ ደገፍ ህጻናት ዘሎ ናይ ተበጻሕነት ክፍተት ንምምላእ ውጽኢታዊ ስርዓት ብምትካልን ንህጻናት ኩለመዳያዊ ደገፍ ብምሃብን ህጻናት ብቐጻሊ መንገዲ ከምዝበጽሑ ምርግጋጽ።",
+        "ህፃናት ቐፃልነት ብዘለዎ መንገዲ ሓገዝ ምእንቲ ክረኽቡ ናይ ተበፃሕነት ክፍተታት ንምምላእ ውፅኢታዊ ዝኾነ ስርዓት ምጥያሽን ነቶም ህፃናት ኩለ-መዳያዊ ሓገዝ ምቕራብን"
     ],
     "Purpose1": [
         "ዕላማ",
-        "መጻኢ ሃገር ዝኾኑ ህጻናት፡ ንገዛእ ርእሶም ጥራይ ዘይኮኑስ ንሃገር እውን ዝጠቕሙ ብቑዓት ዜጋታት ክኾኑ፡ ኩለመዳያውን ብዙሕ ሸነኻት ዘለዎን ደገፍ ምሃብ።",
-        "ህጻናት ኣብ መዓልቲ ሰለስተ ግዜ እኹልን ሚዛናውን መግቢ ከምዝምገቡ ምርግጋጽ",
-        "ንተማሃሮ ምስ መዛኑኦም ዝመጣጠን መምሃሪ ናውትን ዩኒፎርምን ምቕራብ፡ ብዘይ ዝኾነ ምዝንባል ምሉእ ብምሉእ ኣብ ትምህርቶም ከተኩሩ ዘኽእሎም።",
-        "ኣተገባብራ ክንክን ጥዕና ቀዳምነት ብምሃብን ህፃናት ብሰንኪ ሕማም ካብ ትምህርቲ ከይተርፉን ግቡእ ሕክምና ከምዝረኽቡ ብምግባርን ብሰንኪ ሕፅረት ሕክምናዊ ክንክን ዘስዕቦ ግዝያውን ነባሪን ጉድኣት ንምንካይ።",
-        "ዝተፈላለየ ተፈጥሮኣዊ ክእለት ዘለዎም ተምሃሮ ክእለቶም ከማዕብሉ ምድጋፍ (ናብ መሰል ዋንነት ዘብጽሕ እንተኾይኑ) ምስ ሕልምታቶም ብምስምማዕ ጻዕርታቶም ምትብባዕ።",
-        "ቶም ክሳብ ዕድመ ንእስነት ዝበጽሑ ካብ ስድራቤቶም ስነ-ኣእምሮኣውን ንዋታውን ደገፍ ክገብሩ ዓቕሚ ዘይብሎም ንምሕያል ምስራሕ።"
+        " ሰፊሕን ብዙሕ መልክዕ ብዘለዎን ሓገዝ መፃኢ ናይዛ ሃገር ዝኾኑ ህፃናት ምድላው፤ በዚ ድማ ዓርሶም ጥራሕ ዘይኮነስ ሃገሮም እውን ተረባሒት ክገብርዋ ይኽእሉ እዮም።",
+        "ህፃናት ኣብ መዓልቲ 3 ግዘ እኹልን ዝተመጣጠነን ምግቢ ይበልዑ ከም ዘለው ምርግጋፅ",
+        "ንተምሃሮ ምስ ናይ መሓዙቶም ተመሳሳሊ ዝኾነ ናይ ትምህርቲ ናውቲን ዲቪዛን ብምቕራብ ብዘይ ምንም ዝርብሾም ነገር ምሉእ ኣቃልቦኦም ኣብ ትምህርቲ ጥራሕ ንክኸውን ምግባር",
+        "ን ሓለዋ ጥዕና ተፈፃምነት ቅድሚያ ብምሃብ ብሰንኪ ሕፅረት ሕክምና ዘጋጥም ጊዚያውን ቐዋምን ጉድኣት ምንካይን፤ ህፃናት ብሰንኪ ሕማም ካብ ትምህርቲ ንኸይተርፉን ስሩዕ ሕክምናዊ ሓገዝ ከም ዝረኸቡ ምርግጋፅን",
+        "ብዙሕ ተፈጥራዊ ተውህብቶታት ዘለዎም ተምሃሮ ተውህቦኦም ንኸማዕብሉ ምሕጋዝን ሕልሞም ምስ ፃዕሮም ንክዛመድ ምትብባዕን"
+, "ነቶም ካብ ወለዶም ስነ-ኣእምሮኣዊን ንዋታውን ሓገዝ ምርካብ ዘይከኣሉ ህፃናት ኣካለ መጠን ክሳብ ዝበፅሑ ንምሕጋዝ ምስራሕ"
     ],
 
     "Our_partners_T":"መሻርኽትና",
-"country":"አገር",
-"got_it":"ተረዲእኒ",
-"academicLevel": [
-        "ደረጃ ትምህርቲ",
-        "ካልኣይ ደረጃ ቤት ትምህርቲ",
+    "academicLevel": [
+        "ናይ ትምህርቲ ደረጃ",
+        "2ይ ብርኪ",
         "ዲፕሎማ",
-        "ዲግሪ",
-        "ማስተርስ",
-        "ፒኤችዲ"
+        "1ይ ዲግሪ",
+        "2ይ ዲግሪ",
+        "ፒኤች-ዲ"
     ],
     "maritalStatus": [
         "ኩነታት ሓዳር",
-        "ነፀላ",
-        "ምርዕው",
-        "ተፋቲሑ",
-        "መበለት"
-    ],        
+        "ዘይተመርዓወ/ት",
+        "ምርዑው/ቲ",
+        "ፍቱሕ/ቲ",
+        "ሰበይቱ/ሰብኣያ ዝሞታ"
+    ],
+
+        
+      
 
 }
 },
@@ -2443,176 +2443,173 @@ translation: {
 "login":"Login",
 "our_gallery":"Misilenke",
 "description":"Xawishsha",
-"send_msg":"SEND MESSAGE",
-        "msg":"Message",
-        "msg_ph":"Enter your message",
-         "email1": "Email Address",
-    "email_ph": "Enter your email address",
-    "phone": "Phone Number",
-    "phone_ph": "Enter your phone number",
-    "full_name1": "Full Name",
-    "full_name_ph": "Enter your full name",
-    "send_message": "Send us a message",
-    "fill_out_form": "Fill out the form below and we'll get back to you as soon as possible.",
-
-    "contact_us1": "Contact Us",
-    "hear_from_you": "We'd love to hear from you. Get in touch with our team!",
-    "get_in_touch": "Get in Touch",
-    "ready_to_make_difference": "Ready to make a difference? Reach out to us and let's work together to create positive change in our community.",
-    "email_us": "Email us",
-    "address1": "Address",
-    "address_detail": "Saris, Addis Ababa, around total gas station 'dawi' building 4th floor, Addis Ababa, Ethiopia",
-    "call_us": "Call us",
-    "office_hours": "Office hours",
-    "office_hours_detail": "Monday to Sunday, 9:00 A.M. to 7:00 P.M.",
-    "join_community": "Join Our Amazing Community",
-    "community_message": "Choose your preferred way to work with us and become part of something bigger. Together, we can make a real difference in our community.",
-     "volunteer1": [
-        "Choose to be seasonal or lifetime volunteer",
-        "Seasonal: Help on different tasks seasonally",
-        "Fulltime volunteers are always available when needed",
-        "Volunteer",
-    ],
+ "send_msg":"soyi",
+        
+          "email1": "emaile",
+    "email_ph": "emiilekki eesi",
+    "phone": "bilbilu kiiro",
+    "phone_ph": "bilbilu kiiro eesi",
+    "full_name1": "wo’ma su”ma",
+    "full_name_ph": "wo’ma eesi",
+    "msg": "sokka",
+    "msg_ph": "sokka booorreessi",
+    "send_message": "sokka sokkenke",
+    "fill_out_form": "konni woroonni noota xa’mote darga wonshshitinne sokkenke ninkena dandiinummo rahonni qolo qolemmo’nenna.",
+    "contact_us1": "xaadenke",
+    "hear_from_you": "ki”newiinni macciishsha hasi”neemmo. Miillanke ledo xaade!",
+    "get_in_touch": "xaadenke",
+    "ready_to_make_difference": "Badooshshe abbate qixxaawo? Haasaawisenke , daganke giddo danchare abbate mitteeni loonso. ",
+    "email_us": "emaile sokkenke",
+    "address1": "teesso",
+    "address_detail": "saaris, Addis Ababa, tootaale,daawi fooqe layinki fooqera addis ababa, ethiopia.",
+    "call_us": "bilbilenke",
+    "office_hours": "loosu saate",
+    "office_hours_detail": "sagnote sanbatu geeshsha soodo sase saatenni hashshihunni 1 saate geeshsha.",
+    "join_community": "tenne xageenfantay mittimmawa e’e",
+    "community_message": "ninke ledo loosate doodhitinay doogo doodhitine jawu coyi miila ikke.mittimatenni daganike aana halaalaancho sooro abba dandiineemmo.",
+        
+    "volunteer1": [
+        "yanniwwitte (shiima yannata) woy wo’ma yanna fajjote soqqaansho doodhe",
+        "shiima yanati(yanniwwitte)፡ arro rosaanno rosiisate noo babbaxxitino loossara fajjote soqqanshsho ",
+        "wo’ma yanna fajjote soqqanshsho wo’manka wote hasiisinani wote afama noo’ne",
+        "fajjote soqqamancho"
+    ],      
 "member_option1": [
-        "Participate in every task when needed",
-        "Be present in annual meetings",
-        "Take on additional responsibilities as required",
-        "Become a Member",
-    ],
-    "special_member1": [
-        "Perfect for those living outside Addis Ababa or Ethiopia",
-        "Help Askal mainly through donations",
-        "Stay connected with our mission from anywhere",
-        "Special Member",
-        
-
-    ],
-    "franchise1": [
-        "Represent Askal in your company or location",
-        "Expand our reach and impact",
-        "Build partnerships in your community",
-        "Franchise",
-    ],
-
-
-    "learn":"Learn More",
-    "welcome_future_member": "Welcome, Future Member!",
-    "thank_you_message": "Thank you for deciding to be an Askal member. Please come to our office at Saris, Addis Ababa, around total gas station 'dawi' building 4th floor, and bring a formal letter to be a member of Askal.",
- 
-    "register_as_franchise": "Register as Franchise",
-    "represent_askal": "Represent Askal in your location",
-    "register_as_special_member": "Register as Special Member",
-    "join_global_community": "Join our global community of supporters",
-    "moneyamount":"How much money would you like to donate",
-    "gender":"Gender",
-    "countryresidence": "Country of residence",
-    "nationality": "Nationality",
-    "moneyamountschedule": "How often do you make your donation?",
-    "start_donation": "When can you start donating?",
-    "late_notification": "How will we notify you if you are late in making the donation for various reasons?",
-    "birr":"birr",
-    "Countryresidence":"Country of residence",
-    "addressresidence":"Residential address - city/region/zone",
-    "donation_frequency": [
-        "Every week",
-        "Every 15 days",
-        "Every month",
-        "Every three months",
-        "Every six months",
-        "Once a year"
-    ],
-
-    "donation_duration": [
-      "How long can you donate the amount you choose?",
-        "For six consecutive months",
-        "For one year",
-        "For three years",
-        "I would not stop."],
-
-        "donation_option": [
-        "Which option would you prefer to make your donation?",
-        "By direct deposit into Askal's bank account (CBE-1000448386377)",
-        "By transferring money to Askal's account via phone (CBE-1000448386377)",
-        "By visiting Askal's office in person",
-        "By coming to your location and receiving it"
-    ],
-    
-     "reminder_preference": [
-      "Would you like us to remind you when your donation date is approaching?",
-        "Yes",
-        "NO"
-    ],
-    "reminder_method": [
-        "If your answer is 'yes' to the previous question, what method should we use to remind you?",
-        "Call me",
-        "Send me a short text message",
-        "Connect with me through my social media page",
-        "Come to my location in person and remember me"
-    ],
-
-    "missed_deadline_notification": [
-        "How soon should we notify you if you miss the deadline of the donation?",
-        "If I passed the donation deadline by 1 day",
-        "If I passed the donation deadline by 3 days",
-        "If I passed the donation deadline by 1 week"
-    ],
-
-    "board_members":"Board members",
-
-    "BM_name": [
-        "Belay Niguse",
-        "Abel Gizaw",
-        "Zeyneb Ashifa",
-        "Hamelmal Mekuria"
-    ],
-
-    "BM_role": [
-        "Founder and CEO",
-        "Board Director",
-        "General Assembly ChairPerson",
-        "Chief Secretary of the General Assembly"
-    ],
-
-"Vision1": [
-        "Vision",
-        "To see all children with their physical health preserved, their intellectual capacity expanded with knowledge, their psychological strength developed, and their ability to continuously benefit the country.",
-        "Ensuring children's physical and mental health is protected",
-        "Reducing or eliminating the fear that parents (guardians) have in regards to the future survival of their children",
-        "To ensure that no child, no matter if he or she comes from a poor family, is left out of school or drops out of school due to family circumstances.",
-        "To develop students who are competitive and effective in their academic performance.",
-        "To enable children's potential and creative talent to be recognized globally"
-    ],
-     "Mission1": [
-        "Mission",
-        "To ensure that children are reached in a continuous manner by establishing an effective system to fill the accessibility gap in child support and by providing comprehensive support for the children."
-    ],
-    "Purpose1": [
-        "Purpose",
-        "To provide children, who are the future of the country, with comprehensive and multifaceted support, so that they can become capable citizens who will benefit not only themselves but also the country.",
-        "Ensuring that children eat sufficient and balanced meals three times a day",
-        "Providing students with learning materials and uniforms that are comparable to their peers, allowing them to fully focus on their studies without distractions.",
-        "To reduce the temporary and permanent harm caused by lack of medical care by prioritizing health care implementation and ensuring that children do not miss school due to illness and receive appropriate treatment.",
-        "Supporting students with diverse natural talents to develop their talents (if it leads to ownership rights) and encouraging their efforts by aligning with their dreams.",
-        "To work towards empowering those who cannot afford psychological and material support from their families until they reach adulthood."
-    ],
-
-    "Our_partners_T":"Our Partners",
-    "country":"Country",
-    "academicLevel": [
-        "Academic Level",
-        "High School",
-        "Diploma",
-        "Bachelor",
-        "Master",
-        "PhD"
+        "hasiisiha ikkiro baaluniku loosira afantinay",
+        "diru xaadooshshi aana afantinay",
+        "wole lexxoteni loosu qeecha adhitinay",
+        "miila ikke",
     ],
-    "maritalStatus": [
-        "Marital Status",
-        "Single",
-        "Married",
-        "Divorced",
-        "Widowed"
+    "special_member1": [
+        "addis ababahona ethiopiyu giddo heedhaarira woyyanno",
+        "Asikaali umihunni woxunni irikkisse",
+        "ayiwano heedhine ninke sokka ledo uure",
+        "miila ikke"
+
     ],
+    "franchise1": [
+        "dirijjittetenna qooxeesi’ne giddo Asikaali riqiwaancho ikke",
+        "iiliinemmowanna looniseemmowa battisenke",
+        "dagate mereero beeqanchimma kalaqqe",//
+        "Firanchis/ፍራንቻይስ"
+    ],
+
+    "learn":"lede afate",
+    "welcome_future_member": "Hawwalle keeruy dagginni!",
+    "thank_you_message": "Asikaal miila ikkate daafira galanteemo.loosu teessonkewa amme.miila ikkate dabdabe adhitine amme.",
+    
+     "register_as_franchise": "firanchisi/ፍራንቻይስ gedde borreessamme",
+    "represent_askal": "darga baala Asikaal riqiwaancho ikke",
+    "register_as_special_member": "baxxino miila ikkitine borreessamme",
+    "join_global_community": "kalqete wo”ma kaa’laanonke karissamme",
+    "moneyamount":"kaa’la danditinay birru geeshsha",
+    "gender":"koo/tee",
+     "countryresidence": "gobba",
+    "nationality": "ilama",
+    "moneyamountschedule": "murtini kaa’lote woxe woy mawwaaco mageeshi yanna badooshshini eesitinay?",
+    "start_donation": "Woxu kaa’lo woy mawwaaco mamote eessa hanafinay?",
+    "late_notification": "babbaxino korkaatinni mawwaaco eesa hoogginniro hiittoonni kullo’ne?",
+    "birr":"birra",
+    "Countryresidence":"gobba",
+    "addressresidence":"teesso-quchchuma/qoqowo/zoone",
+
+    "donation_frequency": [
+        "lamalate",
+        "15 barrinni",
+        "aganuni",
+        "3 aganninni",
+        "6 aganninni",
+        "dirunni mitte hige"
+    ],
+     "donation_duration": [
+      "doritinoonita mawwaaco mageeshi yannara kaa’litinay?",
+        "6 aganira",
+        "1 dirira",
+        "3 dirira",
+        "keerela uyiero uurrissummoki"
+    ],
+
+    "donation_option": [
+        "tenne mawwaaco maayinni sokkinanke?",
+        "Asikaal codhote baankete kiirora eessate(CBE-1000448386377)",
+        "bilbilunni Asikaal baankete kiirora saayisate(CBE-1000448386377)",
+        "Asikaal b/mine daatenni",
+        "ninke ki’ne hedhiinoonniwa dange adhate"
+    ],
+    
+     "reminder_preference": [
+      "mawwacote barri iiliro qaagiisinammora hasidhinayi?",
+        "ee",
+        "dasireemmo"
+    ],
+
+     "reminder_method": [
+        "balaxxe noo xa’mora dawaro ee ikkituro ma doogonni qaagiisino’ne?",
+        "bilbila bilbilatenni",
+        "harancho borrote sokka soyatenni",
+        "dagate gambo xaadate gufora borreessatenni",
+        "noomo base daatenni qaagiissatenni"
+    ],
+    
+      "missed_deadline_notification": [
+        "mawwaco eesa hasiissanno yanna sa’uro mageeshshi yanna gedenisaanni qaagiissino’ne?",
+        "1 barri sairo",
+        "3 barri sairo",
+        "7 barri sairo"
+    ],
+
+    "board_members":"boordete miila",
+    "BM_name": [
+        "Belay Niguse",
+        "Abel gizawu",
+        "zeyneba shifa",
+        "hemelmal mekuria"
+    ],
+
+    "BM_role": [ 
+        "xintaanchona qara loosu loosisaancho",
+        "boordte sooreessa",
+        "xaphoomu gaamo qara xaadisaancho",
+        "xaphoomu gaamo qara boorreessancho"
+    ],
+
+    "Vision1": [
+        "Ajuuja",
+        "Baalunku qaaqquulli maalu keerinsa agarame. Bu’ensa eggennotenni lophite,giddiidi kaajjilinsa ledeena uurrissukkinni gobbansara horote ikkitana la’ate.",
+        "qaaqquullu maaluna bu’ensa keeri agaraminoha ikkanno gede assa.",
+        "baala dooggonni qaaqquullu aana maateteniinno ikko lossitaarwiinni iillannosare waajja ajishsha woy huna.",
+        "Ayi qaaqqinno buxxicho maateni afaminoha nafa ikkiro maatesi heeshsho korkaattinni rosannokiha woy roso aguranno qaaqqo ikkannokki gede assa.",
+        "rosu deerinnisayi shorramanohana gumaamma rosaano kalaqa.",
+        "kalqete deerinni qaaqquullinihu maaxaminnoha kalaqate dando jawa geeshsha adhamano gede assa."
+    ],
+     "Mission1": [
+        "sokka",
+        "በህፃናት እገዛ  ዙሪያ ያለውን የተደራሽነት ክፍተት ለመሙላት ብቃት ያለው አሰራር በመዘርጋትና  ከህፃናቱ ጎን በመሆን ሁሉን አቀፍ ድጋፍ ተደራሽ በማድረግ ቀጣይነቱ በማይነጥፍ መልኩ ለህፃናቱ መድረሱን ማረጋገጥ፡፡"
+    ],
+    "Purpose1": [
+        "mixo",
+        "የነገ  ሃገር ተረካቢ የሆኑ ህጻናትን ዘርፈ ብዙ የሆነ  ሁሉን አቀፍ  ድጋፍ በመስጠት ከራሳቸው አልፎ  ለሃገር  የሚጠቅሙ ብቁ ዜጋ ማድረግ፡፡",
+        "ህጻናቱ በቂና ተመጣጣኝ ምግብ በቀን ሶስት ጊዜ እንዲመገቡ ማስቻል፡፡",
+        "ተማሪዎች ከእኩዮቻቸው ጋር ተመጣጣኝ የሆነ የመማሪያ ቁሳቁሶችንና የደንብ ልብስ(uniform) በማሟላት ያለመሳቀቅ ሙሉ ትኩረታቸውን ትምህርታቸው ላይ እንዲያረጉ ማስቻል፡፡",
+        "በህመም ምክንያት ከትምህርት ገበታቸው ላይ እንዳይቀሩ በቅድሚያ የጤና ክብካቤ አተገባበር  በመንደፍና ተገቢውን ህክምና እንዲያገኙ በማድረግ በህክምና እጦት  የሚመጣውን ጊዜያዊና ዘላቂ ጉዳቱን መቀነስ፡፡",
+        "የተለያዩ ተፈጥሯዊ ክህሎት(talent) ያላቸውን ተማሪዎች ተሰጧቸውን እንዲያዳብሩድጋፍ በማድረግ( የባለቤትነት መብት የሚያስገኝ ከሆነ) ከህልማቸው ጎን ተሰልፎ ውጥናቸውን ነፍስ መዝራት፡፡",
+        "ለአካለ መጠን እስኪደርሱ ድረስ ቤተሰብ ሊያሟላላቸው ያልቻላቸውን ስነልቦናዊና ቁሳዊ ድጋፍ በማድረግ የማብቃት ስራ መስራት፡፡"
+    ],
+
+    "Our_partners_T":"አብረውን የሚሰሩ ድርጅቶች",
+
+"country":"gobba",
+    "single":"adhinokiha/assidhinokita",
+    "married":"adhinoha/assidhinota",
+    "divorced":"tidhaminoha/tidhanitinota",
+    "widowed":"rewote baxxinoha",
+    "level_high_school":"2kki deera",
+    "level_diploma":"dippolooma",
+    "level_bachelor":"digire",
+    "level_master":"maasiterse",
+"level_phd":"PHD",
+        
+
 }
 },
       // Add more languages here

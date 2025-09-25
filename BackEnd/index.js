@@ -43,10 +43,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'Uploads'), {
 }));
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+   origin: ['https://www.askalcharityassociation.org', 'https://admin.askalcharityassociation.org'],
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
 }));
 
 app.use((req, res, next) => {
