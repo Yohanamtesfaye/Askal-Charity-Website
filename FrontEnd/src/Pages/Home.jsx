@@ -149,7 +149,7 @@ const Home = () => {
               <FaDonate className='mx-auto text-5xl mb-4' />
               <h2 className='text-2xl font-bold mb-4'> {t('donate_online')}</h2>
               <p className='mb-6'>
-              {t('cbe')}: 1000278927892<br />
+              {t('cbe')}: 1000448386377<br />
               {t('telebirr')}: 0909090909
               </p>
               <Link 
